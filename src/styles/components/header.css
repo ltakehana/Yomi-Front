@@ -1,0 +1,114 @@
+#header{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    font-family: Roboto;
+}
+
+#header_content{
+    display: flex;
+    height:18vh;
+    width: 100%;
+    vertical-align: middle;
+    color:#8C52FF;
+    margin-top: 2.5%;
+}
+
+
+#header_logo{
+    margin-left:0.5%;
+    width:15%;
+    vertical-align: middle;
+}
+
+#header_search{
+    width: 63%;
+    height: 40%;
+    margin-top:2.5%;
+    margin-left:2%;
+    margin-right: 2%;
+    border:none;
+    background: #F8F5FF;
+    border-radius: 50em;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+    padding-top: 0px;
+}
+#header_search_icon{
+    font-size:3.5em;
+    float:right;
+    margin-right: 1.5%;
+    padding-top: 0.5%;
+    cursor: pointer;
+}
+
+#header_search input{
+    margin-top: 0px;
+    padding-top: 0px;
+    vertical-align: top;
+    width:90%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left:2%;
+    font-weight: bold;
+    color:#8C52FF;
+    font-size:1rem;
+}
+
+#header_icons span{
+    font-size:3.5em;
+    cursor: pointer;
+    margin-left:5%;
+}
+
+#header_icons label{
+    font-size:1.3em;
+    cursor: pointer;
+    line-height: 3.5rem;
+    vertical-align: top;
+}
+
+#header_icons{
+    height: 40%;
+    float: right;
+    width: 30%;
+    margin-right: 0px;
+    padding-right: 0px;
+    margin-top:2.5%;
+    padding-top: 0px;
+}
+
+#header_categories{
+    list-style: none;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+    height: 6vh;
+    line-height: 6vh;
+    padding:0.2em;
+    border-radius: 1em;
+    background: #F8F5FF;
+    align-items: center;
+    vertical-align: middle;
+    align-content: center;
+    font-weight: bold;
+    color:#8C52FF;
+    font-size:1.5em;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+#header_categories span{
+    font-size:2em;
+    cursor: pointer;
+    margin-left:1%;
+    vertical-align: middle;
+}
+
+
+#header_categories li{
+    display: inline;
+    margin-right: 2%;
+    line-height: 6vh;
+    vertical-align: top;
+}
