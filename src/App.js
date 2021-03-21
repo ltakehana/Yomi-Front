@@ -1,9 +1,8 @@
-
+import Login from "./Pages/Login/Login";
+import Cadastro from "./Pages/Cadastro/Cadastro";
 
 function App() {
-  return (
-    <h1>Yomi</h1>
-  );
+	return Cadastro();
 }
 
 export default App;
