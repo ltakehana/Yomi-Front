@@ -1,9 +1,9 @@
 
+import Login from "./Pages/Login/Login";
+
 
 function App() {
-  return (
-    <h1>Yomi</h1>
-  );
+	return Login();
 }
 
 export default App;
