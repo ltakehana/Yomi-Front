@@ -35,7 +35,7 @@ const ProductCarrousel = ({ id = 'carousel', children }) => {
 
   const carouselArrow = ({ type, onClick, isEdge }) => {
 
-    const pointer = type === consts.PREV ? ((<span class="material-icons">arrow_back_ios</span>)) : ((<span class="material-icons">arrow_forward_ios</span>))
+    const pointer = type === consts.PREV ? ((<span className="material-icons">arrow_back_ios</span>)) : ((<span className="material-icons">arrow_forward_ios</span>))
     
     return (
       <a className="carouselArrows" onClick={onClick} disabled={isEdge}>
