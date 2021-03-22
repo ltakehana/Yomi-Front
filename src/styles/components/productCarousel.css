@@ -1,0 +1,28 @@
+.carouselArrows{
+    margin-top: 4em;
+    height: 6em;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.carouselArrows .material-icons{
+    font-size: 5em;
+}
+
+#component-carousel-content{
+    position: absolute;
+    border:none;
+    background: #F8F5FF;
+    border-radius: 1em;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+    width: 80vw;
+    left:10vw;
+    height: 14em;
+}
+
+#component-carousel-container{
+    margin-top: 5em;
+    width: 90vw;
+    margin-left: 5vw;
+    height: 10em;
+}

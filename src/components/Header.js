@@ -27,11 +27,6 @@ const Header = (props) => {
             </div>
         </div>
         <ul id="header_categories"> 
-            <li>
-                <span class="material-icons">
-                    menu
-                </span>
-            </li>
             <li>lorem ipsum</li>
             <li>lorem ipsum</li>
             <li>lorem ipsum</li>
