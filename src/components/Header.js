@@ -9,19 +9,19 @@ const Header = (props) => {
             <img id="header_logo" src={logo}/>
             <div id="header_search">
                 <input/>
-                <span class="material-icons" id="header_search_icon">
+                <span className="material-icons" id="header_search_icon">
                     search  
                 </span>
             </div>
             <div id="header_icons">
-                <span class="material-icons">
+                <span className="material-icons">
                     person
                 </span>
                 <label>Entre ou cadastre-se</label>
-                <span class="material-icons">
+                <span className="material-icons">
                   bookmark
                 </span>
-                <span class="material-icons">
+                <span className="material-icons">
                  local_library
                 </span>
             </div>
