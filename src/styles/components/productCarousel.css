@@ -3,6 +3,7 @@
     height: 6em;
     cursor: pointer;
     vertical-align: middle;
+    color:#8C52FF;
 }
 
 .carouselArrows .material-icons{
@@ -24,5 +25,5 @@
     margin-top: 5em;
     width: 90vw;
     margin-left: 5vw;
-    height: 10em;
+    height: 14em;
 }
