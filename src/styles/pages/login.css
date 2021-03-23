@@ -47,6 +47,7 @@ button {
 	font-size: 48px;
 	color: #8c52ff;
 	margin-bottom: 40px;
+	font-weight: bold;
 }
 .right-content form {
 	display: flex;

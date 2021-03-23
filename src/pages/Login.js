@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "../styles/pages/login.css";
 import face from "../../assets/facebook.svg";
 import google from "../../assets/googleIcon.svg";
 import micro from "../../assets/microsoftIcon.svg";
@@ -11,9 +11,7 @@ function Login() {
 
 			<div className="right-content">
 				<div className="title">
-					<p>
-						<strong>Bem Vindo ao Yomi!!!</strong>
-					</p>
+					<p>Bem Vindo ao Yomi!!!</p>
 				</div>
 
 				<form>

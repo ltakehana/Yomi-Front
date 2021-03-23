@@ -1,0 +1,140 @@
+#header {
+	display: block;
+	width: 100vw;
+	margin: 0px;
+	font-family: Roboto;
+	padding: 0px;
+}
+
+#header_content {
+	display: flex;
+	width: 100vw;
+	vertical-align: middle;
+	color: #8c52ff;
+	margin-top: 2.5vh;
+	margin-bottom: 5vh;
+}
+
+#header_logo {
+	margin-top: 1.2em;
+	margin-left: 0.5em;
+	height: 7.2em;
+	vertical-align: middle;
+}
+
+#header_search {
+	width: 50vw;
+	height: 3.6em;
+	margin-top: 3em;
+	margin-left: 2em;
+	margin-right: 2em;
+	border: none;
+	background: #f8f5ff;
+	border-radius: 50em;
+	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+	padding-top: 0px;
+}
+
+#header_search:hover {
+	background: #8c52ff;
+	color: #f8f5ff;
+}
+#header_search_icon {
+	font-size: 3.5em;
+	float: right;
+	margin: 0px;
+	margin-right: 1.5%;
+	margin-top: 0.05em;
+	cursor: pointer;
+}
+
+#header_search input {
+	margin: 0px;
+	padding-top: 0px;
+	vertical-align: top;
+	width: calc(95% - 3.5em);
+	height: 3.5em;
+	border-radius: 50em;
+	border: none;
+	background-color: transparent;
+	padding-left: 2%;
+	font-weight: bold;
+	background: #f8f5ff;
+	color: #8c52ff;
+	font-size: 1rem;
+}
+
+#header_icons span {
+	font-size: 3.5em;
+	cursor: pointer;
+	margin-left: 5%;
+}
+
+#header_icons label {
+	font-size: 1.3em;
+	cursor: pointer;
+	line-height: 3.5rem;
+	vertical-align: top;
+}
+
+#header_icons {
+	height: 40%;
+	float: right;
+	width: 30%;
+	margin-right: 0px;
+	padding-right: 0px;
+	margin-top: 2.5%;
+	padding-top: 0px;
+}
+
+#header_categories {
+	width: 90vw;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	background-color: #f8f5ff;
+	font-weight: bold;
+	overflow: hidden;
+	padding: 0px;
+	border-radius: 1em;
+	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+#header_categories li {
+	float: left;
+	display: block;
+	color: #8c52ff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	margin: 0px;
+}
+
+#header_categories li:hover {
+	background-color: #8c52ff;
+	color: #f8f5ff;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+	#header_categories li.icon {
+		float: right;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#header_categories.responsive {
+		position: relative;
+	}
+	#header_categories.responsive li.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	#header_categories.responsive li {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}

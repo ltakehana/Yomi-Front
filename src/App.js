@@ -1,9 +1,12 @@
-
-import Login from "./Pages/Login/Login";
-
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
 
 function App() {
-	return Login();
+	return (
+		<BrowserRouter>
+			<Routes />
+		</BrowserRouter>
+	);
 }
 
 export default App;
