@@ -310,6 +310,7 @@ const Home = (props) => {
   return (
     <div id="body-container">
         <Header></Header>
+        <h3 className="carousel-title">Destaques</h3>
         <ProductCarousel>
           {destaques.map((book,index) => (
             <div className="bookTitle" key={index}>
@@ -318,6 +319,9 @@ const Home = (props) => {
             </div>
           ))}
         </ProductCarousel>
+        <div>
+          <h3 className="carousel-title">Produtos</h3>
+        </div>
         <div  className="grade-container">
           {productView.map((book,index) => (
             <div className="bookContainer" key={index}>
