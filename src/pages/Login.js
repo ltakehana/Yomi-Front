@@ -1,13 +1,18 @@
 import React from "react";
 import "../styles/pages/login.css";
-import face from "../../assets/facebook.svg";
-import google from "../../assets/googleIcon.svg";
-import micro from "../../assets/microsoftIcon.svg";
+import face from "../assets/facebook.svg";
+import google from "../assets/googleIcon.svg";
+import micro from "../assets/microsoftIcon.svg";
+import logo from "../assets/logo_purple.svg";
 
 function Login() {
 	return (
 		<div className="container">
-			<div className="left-content"></div>
+			<div className="left-content">
+				<div className="logo">
+					<img src={logo} alt="Yomi icon" />
+				</div>
+			</div>
 
 			<div className="right-content">
 				<div className="title">
@@ -25,9 +30,9 @@ function Login() {
 					<p>Logar com:</p>
 				</div>
 				<div className="socialMedia">
-					<img src={google} alt="Icon da google" />
-					<img src={face} alt="Icon do face" />
-					<img src={micro} alt="Icon da microsft" />
+					<img src={google} alt="Google icon" />
+					<img src={face} alt="Facebook icon" />
+					<img src={micro} alt="Microsft icon" />
 				</div>
 				<div className="cadastro">
 					<p>Não tem uma conta?</p>
