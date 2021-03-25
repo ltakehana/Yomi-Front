@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');/*importa a fonte Roboto*/
+*{
+
+  /*a metragem da pagina*/
+  margin    : 0;
+  padding   : 0;
+  outline   : 0;
+  box-sizing: border-box;
+}
+
+html, body, #root{
+  min-height: 100%;
+}
+
+body {
+  background-color      : #FFFF;                    /*Define a cor do plano de fundo como branca*/
+  background-size       : cover;                    /*Define que deve cobrir a pagina inteira*/
+  -webkit-font-smoothing: antialiased  !important;  /*importa kit de fontes*/
+}
+
+body,input,button{ /*input e button não herdam a fote do corpo, por isso tem q chamar aqui denovo*/
+font-family: 'Roboto', Arial;
+font-size  : 14px;
+}
+
+.content{
+  position: absolute;
+  width   : 700px;
+  height  : 30px;
+  right   : 100px;
+  top     : 60px;
+
+
+}
+
+.image{
+  height       : 359px;
+  width        : 318px;
+  left         : 608px;
+  top          : 553px;
+  border-radius: 0px;
+
+  position: absolute;
+  width   : 1840px;
+  height  : 1301px;
+  left    : 26px;
+  top     : 444px
+
+  
+  
+}
+.text{
+  font-family   : Roboto;
+  font-size     : 24px;
+  font-style    : normal;
+  font-weight   : 700;
+  line-height   : 56px;
+  letter-spacing: 0em;
+  text-align    : center;
+  color         : blueviolet;
+
+  height       : 56px;
+  width        : 242px;
+  left         : 26px;
+  top          : 444px;
+  border-radius: nullpx;
+
+  
+}
+.editor{
+  font-family: Roboto;
+  font-size  : 24px;
+  font-style : normal;
+  font-weight: 700;
+  
+  position      : absolute;
+  width         : 333px;
+  height        : 272px;
+  left          : 53px;
+  top           : 250px;
+  color         : blueviolet;
+  display       : flex;
+  flex-direction: column;
+
+
+}
+
+.autor{
+  font-family: Roboto;
+  font-size  : 24px;
+  font-style : normal;
+  font-weight: 700;
+  
+  position      : absolute;
+  width         : 333px;
+  height        : 272px;
+  left          : 53px;
+  top           : 450px;
+  color         : blueviolet;
+  display       : flex;
+  flex-direction: column;
+
+
+}
+.genero{
+  font-family: Roboto;
+  font-size  : 24px;
+  font-style : normal;
+  font-weight: 700;
+  
+  position      : absolute;
+  width         : 333px;
+  height        : 272px;
+  left          : 53px;
+  top           : 650px;
+  color         : blueviolet;
+  display       : flex;
+  flex-direction: column;
+
+
+}
