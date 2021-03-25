@@ -1,13 +1,18 @@
 import React from "react";
-import "./Cadastro.css";
-import face from "../../assets/facebook.svg";
-import google from "../../assets/googleIcon.svg";
-import micro from "../../assets/microsoftIcon.svg";
+import "../styles/pages/cadastro.css";
+import face from "../assets/facebook.svg";
+import google from "../assets/googleIcon.svg";
+import micro from "../assets/microsoftIcon.svg";
+import logo from "../assets/logo_purple.svg";
 
 function Cadastro() {
 	return (
 		<div className="container">
-			<div className="left-content"></div>
+			<div className="left-content">
+				<div className="logo">
+					<img src={logo} alt="Yomi icon" />
+				</div>
+			</div>
 
 			<div className="right-content">
 				<div className="title">
