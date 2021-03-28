@@ -85,11 +85,6 @@ float: left;
     font-family: Roboto;
 }
 
-#searchContainer p:hover{
-  background-color: #8C52FF;
-  color: #F8F5FF;
-  cursor: pointer;
-}
 
 #searchContainer li:hover{
   background-color: #8C52FF;

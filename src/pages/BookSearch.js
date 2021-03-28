@@ -14,20 +14,20 @@ const produtos=[
     name: "livro do lucas neto"
   },
   {
-    img : "https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-    name: "livro do rezende evil"
+    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+    name: "livro de Flávia Muniz"
   },
   {
     img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
     name: "livro do lucas neto"
   },
   {
-    img : "https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-    name: "livro do rezende evil"
+    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112355",
+    name: "livro de Martha Batalha"
   },
   {
-    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-    name: "livro do lucas neto"
+    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112350",
+    name: "livro de Haruki Murakami"
   },
   {
     img : "https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
@@ -45,8 +45,8 @@ const produtos=[
     img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
     name: "livro do lucas neto"
   },  {
-    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-    name: "livro do lucas neto"
+    img : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112330",
+    name: "livro de Jon Rogawski"
   },
   {
     img : "https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
