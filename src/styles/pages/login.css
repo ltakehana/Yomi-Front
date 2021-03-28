@@ -28,7 +28,7 @@ button {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 }
-.left-content {
+.left-content-login {
 	background-color: #6820fa;
 	margin: 0;
 	display: flex;
@@ -49,7 +49,7 @@ button {
 	margin-right: 12.5vw;
 }
 
-.left-content .logo {
+.left-content-login .logo {
 	display: flex;
 	justify-content: center;
 	margin-top: auto;
@@ -57,7 +57,7 @@ button {
 	cursor: pointer;
 }
 
-.right-content {
+.right-content-login {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -78,23 +78,24 @@ button {
 	width: 50vw;
 }
 
-.right-content .title p {
+.right-content-login .title p {
 	font-size: 3em;
 	color: #8c52ff;
 	margin-bottom: 1.5em;
 	font-weight: bold;
 }
-.right-content form {
+.right-content-login form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.right-content label {
+.right-content-login label {
 	width: 35vw;
 	text-align: left;
 	color: #8c52ff;
+	padding:0px;
 }
-.right-content input {
+.right-content-login input {
 	width: 35vw;
 	padding-left: 0.5em;
 	margin-bottom: 1.1em;
@@ -107,7 +108,7 @@ button {
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.right-content form button {
+.right-content-login form button {
 	margin-top: 0.5em;
 	font-size: 1.8em;
 	border: none;
@@ -119,36 +120,36 @@ button {
 	cursor: pointer;
 }
 
-.right-content form button:hover {
+.right-content-login form button:hover {
 	background: #6820fa;
 }
 
-.right-content .log p {
+.right-content-login .log p {
 	font-size: 1.3em;
 	margin-top: 0.6em;
 	color: #8c52ff;
 }
-.right-content .socialMedia {
+.right-content-login .socialMedia {
 	display: flex;
 }
-.right-content .socialMedia img {
+.right-content-login .socialMedia img {
 	height: 3em;
 	width: 3em;
 	margin: 0.3em;
 	cursor: pointer;
 }
-.right-content .cadastro {
+.right-content-login .cadastro {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.right-content .cadastro p {
+.right-content-login .cadastro p {
 	font-size: 1em;
 	margin-top: 0.2em;
 	color: #8c52ff;
 	margin-bottom: 0.4em;
 }
-.right-content .cadastro button {
+.right-content-login .cadastro button {
 	font-size: 1.6em;
 	font-weight: bold;
 	border-radius: 0.4em;
@@ -160,7 +161,7 @@ button {
 	cursor: pointer;
 }
 
-.right-content .cadastro button:hover {
+.right-content-login .cadastro button:hover {
 	background: #8c52ff;
 	color: #ffffff;
 }

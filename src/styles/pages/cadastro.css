@@ -28,57 +28,88 @@ button {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 }
-.left-content {
-	display: block;
-	max-width: 100vh;
+.right-content-register {
 	background-color: #6820fa;
-}
-
-.left-content .logo {
-	display: flex;
-	justify-content: center;
-	margin-top: 40vh;
-	cursor: pointer;
-}
-
-.right-content {
-	margin: 5em auto 0;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100vh;
+	vertical-align: middle;
+	width: 50vw;
+	height: 100vh;
 }
 
-.right-content .title p {
+.right-content-register .logo {
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	cursor: pointer;
+}
+
+.logo{
+	width: 100%;
+}
+
+#logoRegister{
+	width: 25vw;
+	margin-left: 12.5vw;
+	margin-right: 12.5vw;
+}
+
+
+#registerContainer{
+	margin: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	width: 50vw;
+}
+
+.left-content-register {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	width: 50vw;
+	height: 100vh;
+}
+
+.left-content-register .title p {
 	font-size: 3em;
 	color: #8c52ff;
 	margin-bottom: 1.2em;
 	font-weight: bold;
 }
-.right-content form {
+.left-content-register form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.right-content label {
-	width: 45em;
+.left-content-register label {
+	width: 35vw;
 	text-align: left;
 	color: #8c52ff;
-	margin-bottom: 0.4em;
-	padding-left: 3.5em;
+	padding:0px;
 }
-.right-content input {
-	width: 45em;
-	padding-left: 3.5em;
+.left-content-register input {
+	width: 35vw;
+	padding-left: 0.5em;
 	margin-bottom: 1.1em;
-	height: 2.5em;
+	height: 5vh;
+	font-weight: bold;
+	color:#8c52ff;
 	border-radius: 0.5em;
 	background: #f8f5ff;
 	border: none;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.right-content form button {
+.left-content-register form button {
 	margin-top: 0.7em;
 	font-size: 1.6em;
 	border: none;
@@ -91,19 +122,19 @@ button {
 	cursor: pointer;
 }
 
-.right-content form button:hover {
+.left-content-register form button:hover {
 	background: #6820fa;
 }
 
-.right-content .log p {
+.left-content-register .log p {
 	font-size: 1.3em;
 	margin-top: 0.3em;
 	color: #8c52ff;
 }
-.right-content .socialMedia {
+.left-content-register .socialMedia {
 	display: flex;
 }
-.right-content .socialMedia img {
+.left-content-register .socialMedia img {
 	height: 3em;
 	width: 3em;
 	margin: 0.2em;
