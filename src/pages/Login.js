@@ -8,13 +8,13 @@ import logo from "../assets/logo_purple.svg";
 function Login() {
 	return (
 		<div className="container">
-			<div className="left-content">
+			<div className="left-content-login">
 				<div className="logo">
 					<img src={logo} id="logoLogin" alt="Yomi icon" />
 				</div>
 			</div>
 
-			<div className="right-content">
+			<div className="right-content-login">
 				<div id="loginContainer">
 					<div className="title">
 						<p>Bem Vindo ao Yomi!!!</p>
