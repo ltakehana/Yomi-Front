@@ -1,5 +1,5 @@
 import React from "react";
-import "./cadastroCompra.css";
+import "../styles/pages/cadastroCompra.css";
 
 function CadastroCompra(){
     return(
