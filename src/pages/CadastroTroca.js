@@ -2,7 +2,8 @@ import React from "react";
 import "../styles/pages/cadastroCompra.css";
 import HeaderSimple from "../components/HeaderSimple";
 
-function CadastroCompra(){
+
+function CadastroTroca(){
     return(
     <html>
 
@@ -40,19 +41,21 @@ function CadastroCompra(){
                 </div>            
                     
                 <div className = "ultimaLinha"> 
-
+                    <div className = "ultimaLinhaEsquerda">
                     <input className = "cep" type = "cep" id = "cep" placeholder ="CEP*"/>
                     
-
-                    <input className = "preco" type = "preco" id = "preco" placeholder ="Preço(R$)*"/>
+                    <div className = "fotoMaos"></div>
+                    </div>
                     
-                    <div className = "enviarFoto">
+                    <div className = "enviarFotoTroca">
 
                         <input className = "inputButton" type="file"
                             id="foto" name="foto"
                             accept="image/png, image/jpeg"></input>
+
                     
                     </div>
+                
 
                 </div>
             
@@ -70,4 +73,4 @@ function CadastroCompra(){
     );
 }
 
-export default CadastroCompra;
+export default CadastroTroca;
