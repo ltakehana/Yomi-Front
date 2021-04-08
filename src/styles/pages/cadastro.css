@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+html,
+body,
+#root {
+	min-width: 100%;
+}
+
+body {
+	background-size: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+	font-family: "Roboto", Arial, Arial, Helvetica, sans-serif;
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+.right-content-register {
+	background-color: #6820fa;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	width: 50vw;
+	height: 100vh;
+}
+
+.right-content-register .logo {
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	cursor: pointer;
+}
+
+.logo{
+	width: 100%;
+}
+
+#logoRegister{
+	width: 25vw;
+	margin-left: 12.5vw;
+	margin-right: 12.5vw;
+}
+
+
+#registerContainer{
+	margin: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	width: 50vw;
+}
+
+.left-content-register {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	width: 50vw;
+	height: 100vh;
+}
+
+.left-content-register .title p {
+	font-size: 3em;
+	color: #8c52ff;
+	margin-bottom: 1.2em;
+	font-weight: bold;
+}
+.left-content-register form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.left-content-register label {
+	width: 35vw;
+	text-align: left;
+	color: #8c52ff;
+	padding:0px;
+}
+.left-content-register input {
+	width: 35vw;
+	padding-left: 0.5em;
+	margin-bottom: 1.1em;
+	height: 5vh;
+	font-weight: bold;
+	color:#8c52ff;
+	border-radius: 0.5em;
+	background: #f8f5ff;
+	border: none;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.left-content-register form button {
+	margin-top: 0.7em;
+	font-size: 1.6em;
+	border: none;
+	font-weight: bold;
+	border-radius: 0.4em;
+	background: #8c52ff;
+	color: #f8f5ff;
+	height: 2em;
+	width: 9em;
+	cursor: pointer;
+}
+
+.left-content-register form button:hover {
+	background: #6820fa;
+}
+
+.left-content-register .log p {
+	font-size: 1.3em;
+	margin-top: 0.3em;
+	color: #8c52ff;
+}
+.left-content-register .socialMedia {
+	display: flex;
+}
+.left-content-register .socialMedia img {
+	height: 3em;
+	width: 3em;
+	margin: 0.2em;
+	cursor: pointer;
+}
