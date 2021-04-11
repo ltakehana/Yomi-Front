@@ -9,8 +9,8 @@
 	z-index: 1;
 }
 #ModalWrapper {
-	width: 97vw;
-	height: 97vh;
+	width: 85vw;
+	height: 85vh;
 	box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 	background: #fff;
@@ -21,6 +21,35 @@
 	top: 1em;
 	right: 1em;
 	padding: 0;
-	z-index: 3;
-	color: #8c52ff;
+	z-index: 10;
+}
+
+#ModalView{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+
+.content-logo-login{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 50%;
+	height: 100%;
+	background-color: #8c52ff;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+
+}
+
+#logoLogin{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: auto;
+	margin-left: auto;
+	width: 60%;
 }

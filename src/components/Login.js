@@ -1,32 +1,24 @@
 import React from "react";
-import "../styles/pages/login.css";
+import "../styles/components/login.css";
 import face from "../assets/facebook.svg";
 import google from "../assets/googleIcon.svg";
 import micro from "../assets/microsoftIcon.svg";
 import logo from "../assets/logo_purple.svg";
 
-function Login() {
+function Login({onRegister= ()=>{}}) {
 	return (
-		<div className="container">
-			<div className="left-content-login">
-				<div className="logo">
-					<img src={logo} id="logoLogin" alt="Yomi icon" />
-				</div>
-			</div>
-
-			<div className="right-content-login">
+		<div className="login-container">
+			<div className="login-content">
 				<div id="loginContainer">
 					<div className="title">
 						<p>Bem Vindo ao Yomi!!!</p>
 					</div>
 
-					<form>
-						<label htmlFor="email">Email: </label>
-						<input id="email" type="email" />
-						<label htmlFor="Senha">Senha: </label>
-						<input id="senha" type="password" />
-						<button type="submit">Login</button>
-					</form>
+					<label htmlFor="email">Email: </label>
+					<input id="email" type="email" />
+					<label htmlFor="Senha">Senha: </label>
+					<input id="senha" type="password" />
+					<button type="submit">Login</button>
 					<div className="log">
 						<p>Logar com:</p>
 					</div>
@@ -37,7 +29,7 @@ function Login() {
 					</div>
 					<div className="cadastro">
 						<p>Não tem uma conta?</p>
-						<button type="submit">Cadastre-se aqui</button>
+						<button onClick={onRegister}>Cadastre-se aqui</button>
 					</div>
 				</div>
 			</div>
