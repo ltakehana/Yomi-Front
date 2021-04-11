@@ -27,7 +27,7 @@ export const Modal = ({ showModal, setShowModal }) => {
 
 
 	const closeModal = (e) => {
-		if (modalRef.current == e.target) {
+		if (modalRef.current === e.target) {
 			setShowRegister(false);
 			setShowModal(false);
 		}
@@ -52,7 +52,7 @@ export const Modal = ({ showModal, setShowModal }) => {
 			{showModal ? (
 				<div id="Background" onClick={closeModal} ref={modalRef}>
 					<animated.div style={animationModal}>
-						<div id="ModalWrapper" showModal={showModal}>
+						<div id="ModalWrapper">
 							<div id="ModalView">
 								<Cadastro></Cadastro>
 								<Login onRegister={()=>{setShowRegister(true)}}></Login>

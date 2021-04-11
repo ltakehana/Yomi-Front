@@ -31,7 +31,7 @@ const Header = (props) => {
 							person
 						</span>
 
-						<label>Entre ou cadastre-se</label>
+						<label onClick={openModal}>Entre ou cadastre-se</label>
 						<span className="material-icons">bookmark</span>
 						<span className="material-icons">local_library</span>
 					</div>

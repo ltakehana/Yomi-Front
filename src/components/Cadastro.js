@@ -3,7 +3,6 @@ import "../styles/components/cadastro.css";
 import face from "../assets/facebook.svg";
 import google from "../assets/googleIcon.svg";
 import micro from "../assets/microsoftIcon.svg";
-import logo from "../assets/logo_purple.svg";
 
 
 function Cadastro() {

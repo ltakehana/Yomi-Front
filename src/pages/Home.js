@@ -345,7 +345,7 @@ const Home = (props) => {
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(productViewCount);
 		setProductView(produtos.slice(0, productViewCount));
-		if (productView.length % Math.floor(window.innerWidth / 288) == 0) {
+		if (productView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
 			let invisibleElements = [];
@@ -370,7 +370,7 @@ const Home = (props) => {
 		setProductViewCount(tmpProductViewCount);
 		setProductView(produtos.slice(0, tmpProductViewCount));
 		const tmpProductView = produtos.slice(0, tmpProductViewCount);
-		if (tmpProductView.length % Math.floor(window.innerWidth / 288) == 0) {
+		if (tmpProductView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
 			let invisibleElements = [];
