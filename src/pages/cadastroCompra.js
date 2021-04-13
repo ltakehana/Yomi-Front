@@ -4,7 +4,7 @@ import HeaderSimple from "../components/HeaderSimple";
 
 function CadastroCompra(){
     return(
-    <html>
+    <html id="html_font">
 
         <HeaderSimple></HeaderSimple>
 
@@ -23,28 +23,28 @@ function CadastroCompra(){
             <div className = "quadroInformacoes">
 
                 <div>
-                    <input className = "titulo" type = "titulo" id = "titulo" placeholder ="Título*"/>
+                    <input  className = "titulo" type = "titulo" id="details" placeholder ="Título*"/>
 
-                    <input className = "categoria" type = "Categoria" id = "categoria" placeholder ="Categoria*"/>
+                    <input className = "categoria" type = "Categoria" id = "details" placeholder ="Categoria*"/>
                 </div>
 
                 <div>
-                    <input className = "autor" type = "autor(a)" id = "autor(a)" placeholder ="Autor(a)*"/>
-                    <input className = "editora" type = "editora" id = "editora" placeholder ="Editora*"/>
-                    <input className = "ano" type = "Ano" id = "Ano" placeholder ="Ano*"/>
-                    <input className = "paginas" type = "paginas" id = "paginas" placeholder ="Nº de pág*"/>
+                    <input className = "autor" type = "autor(a)" id = "details" placeholder ="Autor(a)*"/>
+                    <input className = "editora" type = "editora" id = "details" placeholder ="Editora*"/>
+                    <input className = "ano" type = "Ano" id = "details" placeholder ="Ano*"/>
+                    <input className = "paginas" type = "paginas" id = "details" placeholder ="Nº de pág*"/>
                 </div>
 
                 <div>
-                    <textarea className = "descricao" type = "descricao" id = "descricao" placeholder ="Breve descrição*" ></textarea>
+                    <textarea className = "descricao" type = "descricao" placeholder ="Breve descrição*" ></textarea>
                 </div>            
                     
                 <div className = "ultimaLinha"> 
 
-                    <input className = "cep" type = "cep" id = "cep" placeholder ="CEP*"/>
+                    <input className = "cep" type = "cep" id = "details" placeholder ="CEP*"/>
                     
 
-                    <input className = "preco" type = "preco" id = "preco" placeholder ="Preço(R$)*"/>
+                    <input className = "preco" type = "preco" id = "details" placeholder ="Preço(R$)*"/>
                     
                     <div className = "enviarFoto">
 

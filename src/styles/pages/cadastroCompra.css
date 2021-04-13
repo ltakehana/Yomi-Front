@@ -1,27 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-*{
-    margin: 100;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-    font-weight: bold;
-}
-
-html, body, #root{
-    
-    min-height: 100%;
-    
-}
-
-body{
-    
-    background-size: cover;
-    -webkit-font-smoothing: antialiased;
-    
-}
-body, imput, button{
-    font-family: 'roboto', Arial, Helvetica, sans-serif;
+#html_font{
     font-size: 14px;
 }
 
@@ -84,7 +63,7 @@ body, imput, button{
     
 }
 
-input, textarea{
+#details{
     
     font-weight: normal;
     height: 3.5em;
@@ -94,7 +73,6 @@ input, textarea{
     border-color: #AAA3A3;
     text-indent: 1.5em;
     font-size: 1.5em;
-    margin-left: 3%;
     margin-top: 4%;
     word-break: break-word;
     
@@ -111,6 +89,7 @@ input, textarea{
 .categoria{
 
     width: 15%;
+    margin-left: 3%;
 
 }
 
@@ -124,27 +103,39 @@ input, textarea{
 .editora{
 
     width: 25.5%;
+    margin-left: 3%;
 
 }
 
 .ano{
 
     width: 13%;
+    margin-left: 3%;
 
 }
 
 .paginas{
 
     width: 15%;
+    margin-left: 3%;
 
 }
 
 .descricao{
-
+        
+    font-weight: normal;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.01em;
+    border-color: #AAA3A3;
+    padding: 1.5em;
+    padding-top: 1em;
+    font-size: 1.5em;
     margin-left: 6%;
+    margin-top: 4%;
+    word-break: break-word;
     width: 88%;
     height: 10em;
-    padding-top: 1em;
     font-size:1.7em;
     resize: none;
     
@@ -161,7 +152,8 @@ input, textarea{
 .preco{
 
     width: 10em;
-    margin-right: 2.5em;
+    margin-right: 3em;
+    margin-left: 3%;
 
     
 }
@@ -232,12 +224,10 @@ input, textarea{
 
 .inputButton{
     
-    width: 20em;
-    height: 13.2em;
+    width: 100%;
+    height: 100%;
     margin:0em;
     content-visibility: hidden;
-    border: none;
-
 }
 
 .ultimaLinha{

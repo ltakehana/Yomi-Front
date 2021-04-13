@@ -4,14 +4,14 @@ import logo from "../assets/logo_white.svg"
 
 const HeaderSimple = (props) => {
   return (
-    <div id="header">
-        <div id="header_content">
-            <img id="header_logo" src={logo}/>
-            <div id="header_icons">
+    <div className = "header">
+        <div className="header_content">
+            <img className="header_logo" src={logo}/>
+            <div className="header_icons">
                 <span className="material-icons">
                     person
                 </span>
-                <label classname = "text_header">Olá usuário</label>
+                <label>Olá usuário</label>
             </div>
         </div>
 
