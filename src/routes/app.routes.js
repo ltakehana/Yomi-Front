@@ -3,14 +3,17 @@ import { Route, Switch } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Cadastro from "../pages/Cadastro";
+import CadastroCompra from "../pages/cadastroCompra";
 import Login from "../pages/Login";
+import CadastroTroca from "../pages/CadastroTroca";
 
 const AppRoutes = () => (
 	<Switch>
 		<Route component={Home} path="/" exact />
 		<Route component={Cadastro} path="/cadastro" exact />
 		<Route component={Login} path="/Login" exact />
-	</Switch>
+    <Route component={CadastroCompra} path="/Publish_Product" exact/>
+    <Route component={CadastroTroca} path="/Publish_Product_exchange" exact/>
+  </Switch>
 );
-
 export default AppRoutes;
