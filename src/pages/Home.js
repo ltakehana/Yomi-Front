@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 import "../styles/pages/home.css";
+import Footer from "../components/Footer"
 
 const destaques = [
 	{
@@ -424,6 +425,7 @@ const Home = (props) => {
 					&middot;&middot;&middot;
 				</button>
 			</div>
+			<Footer></Footer>
 		</div>
 	);
 };
