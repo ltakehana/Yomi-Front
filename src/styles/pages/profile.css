@@ -1,0 +1,78 @@
+.profileContent{
+    display: flex;
+    flex-direction: row;
+    margin:2%;
+    margin-left: 0px;
+}
+
+.profileDiv{
+    width: 37.5vw;
+    align-items: center;
+}
+
+.profileInput{
+    display: block;
+	font-weight: bold;
+	background: #f8f5ff;
+	color: #8c52ff;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin:0.9em;
+    margin-bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5em;
+    border:none;
+    width: 70%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#profileBirthDate{
+    display: block;
+	font-weight: bold;
+	background: #f8f5ff;
+	color: #8c52ff;
+    font-size: 1.2em;
+    padding: 0.7em;
+    margin:0.9em;
+    margin-bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5em;
+    border:none;
+    width: 30%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#profileImage{
+    display: block;
+    margin:0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 43%;
+}
+
+#profileChangePassword{
+    color:#8C52FF;
+    width: 37.5%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+    padding:0.5em;
+    cursor: pointer;
+    margin-left:20%;
+}
+
+#profileUpdateButton{
+    display: block;
+    background-color:#8C52FF;
+    color:white;
+    font-weight: bold;
+    text-align: start;
+    font-size: 1.5em;
+    padding:0.5em;
+    border-radius:0.5em;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
