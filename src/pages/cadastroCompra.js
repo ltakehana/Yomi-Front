@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/pages/cadastroCompra.css";
 import HeaderSimple from "../components/HeaderSimple";
+import Footer from "../components/footer";
 
 function CadastroCompra(){
     return(
@@ -58,16 +59,16 @@ function CadastroCompra(){
             
             </div>
         
+        
         </body>
+        
+        <Footer></Footer>
 
-
-        <footer>
-
-
-        </footer>
     </html>
 
     );
 }
+
+
 
 export default CadastroCompra;
