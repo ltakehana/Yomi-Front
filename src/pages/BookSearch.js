@@ -232,15 +232,15 @@ const BookSearch = (props) => {
   return (
   
                 
-      <div >
+      <div className= "search-header">
         <Header>
           
         </Header>
+        
         <div>
-          <h3 className="grade-title">Resultados</h3>
-        </div>
-        <div>
+        <div className="grade-title"><h1>Resultados</h1></div>
         <div className= "searchBox">
+       
         <ul id="searchContainer" >
           <p>Editora</p>
             <li>Galera</li>
@@ -258,15 +258,17 @@ const BookSearch = (props) => {
             <li>Lucas Neto</li>
         </ul>
         </div>
-        <button class ="filter-1">
-            <li>Doações</li>
+        <div className = "search-buttons">
+        <button id = "filter-1"type = "submit">
+            Doações
         </button>
-        <button class ="filter-2">
-            <li>Vendas</li>
+        <button id = "filter-2"type = "submit">
+            Vendas
         </button>
-        <button class ="filter-3">
-            <li>Trocas</li>
+        <button id = "filter-3"type = "submit">
+            Trocas
         </button>
+        </div>
         <div className = "gradeContainer">
           {productView.map((book,index) => (
             <div className = "book-container" key = {index}>
@@ -279,7 +281,7 @@ const BookSearch = (props) => {
           ))
         }
         {(invisibleProducts)}
-        <button onClick={()=>{gradeExpandHandle()}} className="grade-expand">&middot;&middot;&middot;</button>
+        <button onClick={()=>{gradeExpandHandle()}} className="gradeExpand">&middot;&middot;&middot;</button>
       </div>
   </div>
 
