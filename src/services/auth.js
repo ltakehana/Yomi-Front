@@ -7,7 +7,9 @@ const Auth = async (username, password) => {
       { auth: { username, password } });
     if (response.data.token) {
       const accessToken= response.data.token;
+      const expiration= response.data.expiration;
       sessionStorage.setItem('userToken', accessToken);
+      sessionStorage.setItem('userExpiration', expiration);
     }
 
     return response.data;

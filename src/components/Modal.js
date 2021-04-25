@@ -54,7 +54,7 @@ export const Modal = ({ showModal, setShowModal }) => {
 					<animated.div style={animationModal}>
 						<div id="ModalWrapper">
 							<div id="ModalView">
-								<Cadastro></Cadastro>
+								<Cadastro onLogin={()=>{setShowRegister(false)}}></Cadastro>
 								<Login onRegister={()=>{setShowRegister(true)}}></Login>
 							</div>
 							<animated.div className="content-logo-login" style={animationLogo}>
