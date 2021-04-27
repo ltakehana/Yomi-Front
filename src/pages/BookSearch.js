@@ -241,12 +241,12 @@ const BookSearch = (props) => {
         <div className="grade-title"><h1>Resultados</h1></div>
         <div className= "searchBox">
        
-        <ul id="searchContainer" >
+        <div className="searchContainer" >
           <p>Editora</p>
             <li>Galera</li>
             <li>Intrínseca</li>
             <li>Rocco</li>
-                 <p>Gênero</p>
+               <p>Gênero</p>
             <li>Terror</li>
             <li>Romance</li>
             <li>Comédia</li>
@@ -256,7 +256,7 @@ const BookSearch = (props) => {
             <li> Rick Riordan</li>
             <li>Rezende</li>
             <li>Lucas Neto</li>
-        </ul>
+        </div>
         </div>
         <div className = "search-buttons">
         <button id = "filter-1"type = "submit">

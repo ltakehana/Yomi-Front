@@ -1,18 +1,19 @@
 
 body {
 	overflow-x: hidden;
+	display: block;
 }
 
-.grade-title {
-	margin-top: 2em;
-	margin-left: 5.6em;
+.grade-title h1 {
+	margin-top: 1em;
+	margin-left: 1.5em;
 	font-family: Roboto;
 	color: #8c52ff;
 	font-size: 2em;
 }
 
 .gradeExpand{
-	width: 50vw;
+	width: 100vw;
 	font-size: 5em;
 	margin-top: 0.5em;
 	font-weight: bolder;
@@ -70,18 +71,14 @@ background-color: #8c52ff;
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-#searchContainer p {
-	float: left;
+.searchContainer p {
 	display: block;
 	color: #8c52ff;
-	text-align: left;
-	padding: 0.5em 0.5em;
-	text-decoration: none;
-	font-size: 1.5em;
-	margin: 0em;
 	font-family: Roboto;
-	margin-left: 0em;
-	font-weight: 700;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 0.2em 0.2em;
+	margin: 0.5em;
 }
 
 .searchBox {
@@ -96,28 +93,27 @@ background-color: #8c52ff;
 	float: left;
 }
 
-#searchContainer li {
+.searchContainer li {
 	display: block;
 	color: #8c52ff;
-	text-align: right;
-	padding: 0.1em 0.1em;
+	text-align: left;
+	padding: 0.2em 0.2em;
 	font-size: 1.3em;
-	margin-bottom: 0.3em;
-	margin-right: 3em;
 	font-family: Roboto;
-}
-#searchContainer li:last-child {
-	margin-bottom: 1em;
+	margin-top: 0.5em;
+	text-align: center;
 }
 
-#searchContainer li:hover {
+
+.searchContainer li:hover {
 	background-color: #8c52ff;
 	color: #f8f5ff;
-	cursor: pointer;
+	cursor:pointer;
+
 }
 
 .gradeContainer {
-	width: 80vw;
+	width: 70vw;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: center;
@@ -147,7 +143,7 @@ background-color: #8c52ff;
 	float: right;
 }
 
-#filter-1  {
+    #filter-1  {
 	width: 5em;
     height: 2em;
 	font-size: 1em;
