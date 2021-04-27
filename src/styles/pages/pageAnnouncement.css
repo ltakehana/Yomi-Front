@@ -1,0 +1,61 @@
+#body-book-container {
+	height: 100vh;
+	width: 100vw;
+}
+#book-info-container {
+	display: flex;
+	flex-direction: row;
+	padding: 3em;
+}
+
+/*description container*/
+#book-resume-container {
+	color: #8c52ff;
+	padding-left: 3em;
+}
+#book-resume-title {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+#book-resume-description {
+	padding-top: 5em;
+	font-size: 1.3em;
+}
+#book-image {
+	width: 13em;
+	height: 19em;
+	margin-left: 4em;
+}
+
+/*seller container*/
+#book-sellers-container {
+	color: #8c52ff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	padding-left: 16em;
+	width: 100em;
+}
+#book-value {
+	font-size: 2.4em;
+	font-weight: bold;
+}
+#book-seller-type {
+	font-size: 1.3em;
+	padding-top: 1em;
+}
+#seller-name {
+	font-size: 1.2em;
+}
+#contact-icons {
+	width: 5em;
+	margin: 0.8em;
+}
+#contact-icons:hover {
+	cursor: pointer;
+}
+.seller-book {
+	font-size: 1.2em;
+	padding-top: 0.5em;
+}
