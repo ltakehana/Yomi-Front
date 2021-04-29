@@ -1,13 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
-
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
+import { AuthProvider } from "./contexts/auth";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<AuthProvider>
+				<Routes />
+			</AuthProvider>
+		</BrowserRouter>
+	);
 }
 
 export default App;

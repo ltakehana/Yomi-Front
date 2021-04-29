@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
 import BookSearch from "../pages/BookSearch";
-import Chat from  "../pages/Chat";
+import Chat from "../pages/Chat";
 const AppRoutes = () => (
 	<Switch>
 		<Route component={Home} path="/" exact />
@@ -15,5 +15,4 @@ const AppRoutes = () => (
 		<Route component={Chat} path="/chat" exact />
 	</Switch>
 );
-
 export default AppRoutes;
