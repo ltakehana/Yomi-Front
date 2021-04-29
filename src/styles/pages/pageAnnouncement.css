@@ -39,23 +39,72 @@
 }
 #book-value {
 	font-size: 2.4em;
-	font-weight: bold;
 }
 #book-seller-type {
 	font-size: 1.3em;
 	padding-top: 1em;
+	padding-bottom: 1em;
 }
 #seller-name {
 	font-size: 1.2em;
 }
-#contact-icons {
+.contact-icons {
 	width: 5em;
 	margin: 0.8em;
 }
 #contact-icons:hover {
 	cursor: pointer;
 }
-.seller-book {
+#seller-chat {
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 1em;
+}
+#mensagem-icon {
+	width: 2em;
+	padding-right: 0.5em;
+}
+#other-seller-book {
 	font-size: 1.2em;
 	padding-top: 0.5em;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/*book descripition*/
+#book-description-container {
+	padding-left: 7em;
+}
+#book-description-title {
+	font-size: 1.7em;
+	color: #8c52ff;
+	font-weight: bold;
+	padding-bottom: 0.5em;
+}
+#book-description {
+	font-weight: bold;
+	color: rgb(150, 147, 147);
+	width: 70vw;
+}
+#book-description td {
+	padding: 0.6em;
+	border-top: 1px solid rgb(150, 147, 147);
+	border-collapse: collapse;
+}
+#table-exp-button {
+	color: #8c52ff;
+	padding-left: 35vw;
+	padding-bottom: 3em;
+	padding-top: 2em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+/*highlights*/
+#highlights {
+	padding-left: 5em;
+	color: #8c52ff;
+	font-weight: bold;
+	font-size: 1.5em;
+	padding-bottom: 2em;
 }
