@@ -237,7 +237,7 @@ const BookSearch = (props) => {
         <Header>
           
         </Header>
-        <div>
+        <div className= "searchBody">
         <div className="gradeTitle"><h1>Resultados</h1></div>
         <div className= "searchContainer">
         <div  id ="searchBox" >
