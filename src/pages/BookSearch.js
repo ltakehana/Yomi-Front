@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../styles/pages/bookSearch.css';
 
 
@@ -232,17 +233,15 @@ const BookSearch = (props) => {
   return (
   
                 
-      <div className= "search-header">
+      <div className= "searchHeader">
         <Header>
           
         </Header>
-        
         <div>
-        <div className="grade-title"><h1>Resultados</h1></div>
-        <div className= "searchBox">
-       
-        <div className="searchContainer" >
-          <p>Editora</p>
+        <div className="gradeTitle"><h1>Resultados</h1></div>
+        <div className= "searchContainer">
+        <div  id ="searchBox" >
+             <p>Editora</p>
             <li>Galera</li>
             <li>Intrínseca</li>
             <li>Rocco</li>
@@ -257,23 +256,24 @@ const BookSearch = (props) => {
             <li>Rezende</li>
             <li>Lucas Neto</li>
         </div>
-        </div>
-        <div className = "search-buttons">
-        <button id = "filter-1"type = "submit">
+        
+        <div id = "searchButtons">
+        <button className = "filter-1"type = "submit">
             Doações
         </button>
-        <button id = "filter-2"type = "submit">
+        <button className= "filter-2"type = "submit">
             Vendas
         </button>
-        <button id = "filter-3"type = "submit">
+        <button classeName = "filter-3"type = "submit">
             Trocas
         </button>
+        </div>
         </div>
         <div className = "gradeContainer">
           {productView.map((book,index) => (
             <div className = "book-container" key = {index}>
             <div className = "book-title">
-            <img src       = {book.img}/>
+            <img src = {book.img}/>
                 <label>{book.name}</label>
               </div>
               
@@ -285,9 +285,8 @@ const BookSearch = (props) => {
       </div>
   </div>
 
-
-            
-   
+        <Footer></Footer>
+        
      </div>
      
   );
