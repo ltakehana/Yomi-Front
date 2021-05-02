@@ -6,14 +6,16 @@ import Cadastro from "../pages/Cadastro";
 import CadastroCompra from "../pages/cadastroCompra";
 import Login from "../pages/Login";
 import CadastroTroca from "../pages/CadastroTroca";
+import MeusAnuncios from "../pages/MeusAnuncios"
 
 const AppRoutes = () => (
 	<Switch>
 		<Route component={Home} path="/" exact />
 		<Route component={Cadastro} path="/cadastro" exact />
 		<Route component={Login} path="/Login" exact />
-    <Route component={CadastroCompra} path="/Publish_Product" exact/>
-    <Route component={CadastroTroca} path="/Publish_Product_exchange" exact/>
-  </Switch>
+    	<Route component={CadastroCompra} path="/Publish_Product" exact/>
+    	<Route component={CadastroTroca} path="/Publish_Product_exchange" exact/>
+		<Route component={MeusAnuncios} path="/My_Products" exact />
+  	</Switch>
 );
 export default AppRoutes;

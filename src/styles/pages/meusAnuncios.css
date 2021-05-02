@@ -1,0 +1,95 @@
+body {
+	overflow-x: hidden;
+}
+.bookTitle_my_products img {
+	height: 10em;
+	object-fit: cover;
+	object-position: center;
+    vertical-align: middle;
+    border-radius: 1em;
+}
+
+#image{
+    height: 10em;
+    width: 8em;
+    padding: 0.5em;
+    margin-right: 0em;
+    float: left;
+
+}
+
+#title {
+	width: 6em;
+    font-family: Roboto;
+    font-size: 2.5em;
+	color: #8c52ff;
+	font-weight: bold;
+	text-align: left;
+    vertical-align: top;
+    margin-left: 4%;
+    margin-right: 10em;
+    margin-bottom: 0.3em;
+    float:left;
+}
+
+
+#description{
+	width: 31em;
+    font-family: Roboto;
+    font-size: 1.7em;
+	color: #8c52ff;
+	font-weight: normal;
+    float: left;
+    margin-left:4%;
+}
+
+.bookTitle_my_products  {
+	height: 15em;
+    width: 68em;
+    align-items: center;
+	vertical-align: middle;
+	padding: 2em;
+	cursor: pointer;
+    float:right
+}
+
+.bookContainer_my_products  {
+    align-items: center;
+	vertical-align: middle;
+	width: 70em;
+    height: 10em;
+	margin: 2em;
+}
+
+.grade-container_my_products  {
+    float: right;
+    align-items: center;
+	justify-content: center;
+    width: 70vw;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grade-container_my_products  .bookTitle img {
+	height: 13.5em;
+	width: 10em;
+}
+.grade-container_my_products  .bookTitle label {
+	font-size: 1.5em;
+}
+
+.grade-expand_my_products  {
+	width: 50vw;
+	font-size: 5em;
+	margin-top: 0.5em;
+	font-weight: bolder;
+	vertical-align: top;
+	background: #f8f5ff;
+	border: none;
+	font-family: Roboto;
+	color: #8c52ff;
+	cursor: pointer;
+	border-radius: 0.4em;
+	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
