@@ -36,11 +36,11 @@ const Header = (props) => {
 						{(signed)?
 						(
 							<>
-								<div class="dropdown">
+								<div className="dropdown">
 									<span className="material-icons">
 										person
 									</span>
-									<div class="dropdown-content">
+									<div className="dropdown-content">
 										<p className="dropdown-itens" onClick={signOut}>
 											Sair
 										</p>
