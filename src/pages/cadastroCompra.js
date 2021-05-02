@@ -10,45 +10,45 @@ function CadastroCompra(){
 
         <Header></Header>
 
-        <div className = "publishAnnounceContent">
+        <div className = "publishProductContent">
             <UserNavbar></UserNavbar>
 
             <div className = "rightElements">
 
-                <div className ="top-elements">
+                <div className ="topElements">
                             Selecione a transação desejada:
                             
                             <button> Trocas </button> <button> Vendas </button> <button> Doações </button>
                     
                 </div>
 
-                <div className = "quadroInformacoes">
+                <div className = "informations">
 
                     <div>
-                        <input  className = "titulo" type = "titulo" id="details" placeholder ="Título*"/>
+                        <input  className = "title" type = "titulo" id="details" placeholder ="Título*"/>
 
-                        <input className = "categoria" type = "Categoria" id = "details" placeholder ="Categoria*"/>
+                        <input className = "category" type = "Categoria" id = "details" placeholder ="Categoria*"/>
                     </div>
 
                     <div>
-                        <input className = "autor" type = "autor(a)" id = "details" placeholder ="Autor(a)*"/>
-                        <input className = "editora" type = "editora" id = "details" placeholder ="Editora*"/>
-                        <input className = "ano" type = "Ano" id = "details" placeholder ="Ano*"/>
-                        <input className = "paginas" type = "paginas" id = "details" placeholder ="Nº de pág*"/>
+                        <input className = "author" type = "autor(a)" id = "details" placeholder ="Autor(a)*"/>
+                        <input className = "press" type = "editora" id = "details" placeholder ="Editora*"/>
+                        <input className = "year" type = "Ano" id = "details" placeholder ="Ano*"/>
+                        <input className = "pages" type = "paginas" id = "details" placeholder ="Nº de pág*"/>
                     </div>
 
                     <div>
-                        <textarea className = "descricao" type = "descricao" placeholder ="Breve descrição*" ></textarea>
+                        <textarea className = "description" type = "descricao" placeholder ="Breve descrição*" ></textarea>
                     </div>            
                         
-                    <div className = "ultimaLinha"> 
+                    <div className = "lastLine"> 
 
                         <input className = "cep" type = "cep" id = "details" placeholder ="CEP*"/>
                         
 
-                        <input className = "preco" type = "preco" id = "details" placeholder ="Preço(R$)*"/>
+                        <input className = "price" type = "preco" id = "details" placeholder ="Preço(R$)*"/>
                         
-                        <div className = "enviarFoto">
+                        <div className = "uploadPhoto">
 
                             <input className = "inputButton" type="file"
                                 id="foto" name="foto"

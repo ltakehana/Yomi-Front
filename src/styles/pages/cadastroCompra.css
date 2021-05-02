@@ -1,14 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-#html_font{
-    font-size: 14px;
-}
-
-.publishAnnounceContent{
+.publishProductContent{
 
     display: flex;
     flex-direction: row;
-    margin-right:4%;
     
 }
 
@@ -23,12 +18,13 @@
 .rightElements{
 
     margin-right: 5%;
+    width: 75vw;
 
 
 }
 
 
-.top-elements{
+.topElements{
     
     color: #8C52FF;
     font-size:  1.5em;
@@ -39,10 +35,10 @@
 }
 
 
-.top-elements button{
+.topElements button{
     font-weight: bold;
     color: #8C52FF;
-    font-size: .8em;
+    font-size: 0.8em;
     background-color: #F8F5FF;
     border-radius: 0.8em;
     border: none;
@@ -54,7 +50,7 @@
 }
     
 
-.top-elements button:hover {
+.topElements button:hover {
     
     background-color: #8C52FF;
     color: white;
@@ -62,19 +58,12 @@
     
 }
 
-.botoes:focus {
-    background-color: #F8F5FF;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #8C52FF;
-}
-
-
-.quadroInformacoes{
-    font-size: 0.8em;
+.informations{
+    font-size: 0.75em;
     float:right;
 }
 
-.quadroInformacoes input,textarea{
+.informations input,textarea{
     
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
     background-color: #F8F5FF;
@@ -95,47 +84,47 @@
 
 }
 
-.titulo{
+.title{
 
     width: 75%;
 
 }
 
-.categoria{
+.category{
 
     width: 20%;
     float:right;
 
 }
 
-.autor{
+.author{
 
     width: 30%;
 
 }
 
-.editora{
+.press{
 
     width: 28%;
     margin-left: 4%;
 
 }
 
-.ano{
+.year{
 
     width: 15%;
     margin-left: 4%;
 
 }
 
-.paginas{
+.pages{
 
     width: 15%;
     margin-left: 4%;
 
 }
 
-.descricao{
+.description{
         
     font-weight: normal;
     border-radius: 1em;
@@ -161,7 +150,7 @@
     
 }
 
-.preco{
+.price{
 
     width: 30%;
     margin-right: 3em;
@@ -177,7 +166,7 @@
 
 }
 
-.enviarFoto{
+.uploadPhoto{
     float: right;
     width: 30em;
     height: 20em;
@@ -241,6 +230,6 @@
     opacity: 0%;
 }
 
-.ultimaLinha{
+.lastLine{
     display: flex;
 }
