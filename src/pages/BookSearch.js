@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/pages/bookSearch.css";
 
-const produtos = [
+const trocas = [
 	{
 		img:
 			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
@@ -11,224 +11,233 @@ const produtos = [
 	},
 	{
 		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		name: "livro do rezende evil",
+	},
+];
+const doacoes = [
+	{
+		img:
 			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
 		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+	{
+		img:
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
+		name: "livro do lucas neto",
+	},
+];
+const vendas = [
+	{
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
 		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
 		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112355",
-		name: "livro de Martha Batalha",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112350",
-		name: "livro de Haruki Murakami",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112330",
-		name: "livro de Jon Rogawski",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
+		img: "http://lojasaraiva.vteximg.com.br/arquivos/ids/12112332",
+		name: "livro de Flávia Muniz",
 	},
 ];
 
@@ -239,10 +248,20 @@ const BookSearch = (props) => {
 
 	const [productViewCount, setProductViewCount] = useState(0);
 
+	const [annouceTypeToggle, setAnnouceTypeToggle] = useState("trocas");
+
 	useEffect(() => {
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(productViewCount);
-		setProductView(produtos.slice(0, productViewCount));
+		if (annouceTypeToggle == "trocas") {
+			setProductView(trocas.slice(0, productViewCount));
+		}
+		if (annouceTypeToggle == "doacoes") {
+			setProductView(doacoes.slice(0, productViewCount));
+		}
+		if (annouceTypeToggle == "vendas") {
+			setProductView(vendas.slice(0, productViewCount));
+		}
 		if (productView.length % Math.floor(window.innerWidth / 288) == 0) {
 			setInvisibleProducts([]);
 		} else {
@@ -265,8 +284,21 @@ const BookSearch = (props) => {
 		const tmpProductViewCount =
 			productViewCount + Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(tmpProductViewCount);
-		setProductView(produtos.slice(0, tmpProductViewCount));
-		const tmpProductView = produtos.slice(0, tmpProductViewCount);
+		let tmpProductView = null;
+		if (annouceTypeToggle == "trocas") {
+			setProductView(trocas.slice(0, productViewCount));
+			tmpProductView = trocas.slice(0, tmpProductViewCount);
+		}
+		if (annouceTypeToggle == "doacoes") {
+			setProductView(doacoes.slice(0, productViewCount));
+			tmpProductView = doacoes.slice(0, tmpProductViewCount);
+		}
+
+		if (annouceTypeToggle == "vendas") {
+			setProductView(vendas.slice(0, productViewCount));
+			tmpProductView = vendas.slice(0, tmpProductViewCount);
+		}
+
 		if (tmpProductView.length % Math.floor(window.innerWidth / 288) == 0) {
 			setInvisibleProducts([]);
 		} else {
@@ -296,13 +328,46 @@ const BookSearch = (props) => {
 						<h1>Resultados</h1>
 					</div>
 					<div id="searchButtons">
-						<button className="filter" type="outline">
+						<button
+							className={
+								annouceTypeToggle == "doacoes"
+									? "filterSelected"
+									: "filter"
+							}
+							type="outline"
+							onClick={() => {
+								setAnnouceTypeToggle("doacoes");
+								gradeExpandHandle();
+							}}
+						>
 							Doações
 						</button>
-						<button className="filter" type="outline">
+						<button
+							className={
+								annouceTypeToggle == "vendas"
+									? "filterSelected"
+									: "filter"
+							}
+							type="outline"
+							onClick={() => {
+								setAnnouceTypeToggle("vendas");
+								gradeExpandHandle();
+							}}
+						>
 							Vendas
 						</button>
-						<button className="filter" type="outline">
+						<button
+							className={
+								annouceTypeToggle == "trocas"
+									? "filterSelected"
+									: "filter"
+							}
+							type="outline"
+							onClick={() => {
+								setAnnouceTypeToggle("trocas");
+								gradeExpandHandle();
+							}}
+						>
 							Trocas
 						</button>
 					</div>
