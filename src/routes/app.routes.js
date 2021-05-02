@@ -7,6 +7,7 @@ import CadastroCompra from "../pages/cadastroCompra";
 import Login from "../pages/Login";
 import CadastroTroca from "../pages/CadastroTroca";
 import MeusAnuncios from "../pages/MeusAnuncios"
+import Profile from "../pages/Profile";
 
 const AppRoutes = () => (
 	<Switch>
@@ -16,6 +17,8 @@ const AppRoutes = () => (
     	<Route component={CadastroCompra} path="/Publish_Product" exact/>
     	<Route component={CadastroTroca} path="/Publish_Product_exchange" exact/>
 		<Route component={MeusAnuncios} path="/My_Products" exact />
-  	</Switch>
+		<Route component={Profile} path="/Profile" exact />
+
+  </Switch>
 );
 export default AppRoutes;
