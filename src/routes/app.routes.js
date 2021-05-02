@@ -17,7 +17,7 @@ const AppRoutes = () => (
 			path="/Publish_Product_exchange"
 			exact
 		/>
-		<Route component={PageAnnouncement} path="/Publish_Product" exact />
+		<Route component={PageAnnouncement} path="/book" exact />
 	</Switch>
 );
 export default AppRoutes;

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
+import BookPreview from "../components/BookPreview";
 import "../styles/pages/pageAnnouncement.css";
 import whatsapp from "../assets/whatsapp.svg";
 import email from "../assets/email.svg";
@@ -40,18 +41,54 @@ const bookImage = [
 	},
 ];
 
+const ImagePreview = [
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		Number: 1,
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		Number: 2,
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		Number: 3,
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		Number: 4,
+	},
+	{
+		img:
+			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+		Number: 5,
+	},
+];
+
 function PageAnnouncement() {
 	return (
 		<div id="body-book-container">
 			<Header></Header>
-
 			<div id="book-info-container">
-				<img
-					id="book-image"
-					src={
-						"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg"
-					}
-				/>
+				<div id="book-image-preview">
+					<img
+						id="book-image"
+						src={
+							"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg"
+						}
+					/>
+					<BookPreview>
+						{ImagePreview.map((book, index) => (
+							<div className="bookPreview" key={index}>
+								<img src={book.img} />
+							</div>
+						))}
+					</BookPreview>
+				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
 						<p>Lorem ipsum - sit amet</p>

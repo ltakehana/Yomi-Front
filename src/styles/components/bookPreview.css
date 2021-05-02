@@ -1,0 +1,17 @@
+.previewArrows {
+	height: 5em;
+	cursor: pointer;
+	color: #8c52ff;
+	padding-top: 1em;
+}
+
+.previewArrows .material-icons {
+	font-size: 3em;
+}
+
+#component-preview-container {
+	margin-top: 0em;
+	padding-top: 2em;
+	width: 24vw;
+	height: 7em;
+}
