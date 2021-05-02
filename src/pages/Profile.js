@@ -5,7 +5,6 @@ import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/profile.css"
 import profileImage from "../assets/person-24px 1.png"
 import userInfo from "../services/userInfo";
-import { useAuth } from "../contexts/auth";
 import updateUser from "../services/updateUser";
 
 
