@@ -9,15 +9,11 @@ function CadastroCompra(){
         <HeaderSimple></HeaderSimple>
 
         <body>
-
-            <div className ="topText">
-                Selecione a transação desejada
-            </div>
-            
-            <div className = "alinhamentoBotoes">
+            <div className ="top-elements">
+                        Selecione a transação desejada:
+                        
+                        <button> Trocas </button> <button> Vendas </button> <button> Doações </button>
                 
-                <button className = "botoes"> Trocas </button> <button className = "botoes"> Vendas </button> <button className = "botoes"> Doações </button>
-            
             </div>
 
             <div className = "quadroInformacoes">

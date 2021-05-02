@@ -4,29 +4,31 @@
     font-size: 14px;
 }
 
-.topText{
+
+.top-elements{
     
     color: #8C52FF;
-    font-size:  3.5em;
-    text-align: center;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
-
+    font-size:  1.5em;
+    text-align: right;
+    margin-right: 2.5em;
+    margin-top: 3em;
 }
 
-.botoes{
-    
+
+.top-elements button{
+    font-weight: bold;
     color: #8C52FF;
-    font-size: 1.5em;
-    padding: 1.4em 7em;
+    font-size: .8em;
     background-color: #F8F5FF;
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     border: none;
-    margin: 1.5em;
-    box-shadow: 0em 0.15em 0.3em 0em rgb(58, 58, 58);
     margin-bottom: 2em;
-    
+    width: 6em;
+    height: 1.8em;
+    margin-left: 0.5em;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
+    
 
 .botoes:hover {
     
@@ -42,36 +44,28 @@
     color: #8C52FF;
 }
 
-.alinhamentoBotoes{
-    
-    text-align: center;
-    
-}
 
 .quadroInformacoes{
+    width: 70%;
+    margin-left: 4em;
+    margin-right: 4em;
+    float:right;
+}
+
+.quadroInformacoes input,textarea{
     
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-color: #AAA3A3;
-    border-width: 0.1em;
-    border-radius: 1em;
-    margin: auto;
+	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
     background-color: #F8F5FF;
-    height: auto;
-    width: 90em;
-    margin-bottom: 10em;
-    
-    
+
 }
 
 #details{
     
     font-weight: normal;
     height: 3.5em;
-    border-radius: 1em;
-    border-style: solid;
-    border-width: 0.01em;
-    border-color: #AAA3A3;
-    text-indent: 1.5em;
+    border:none;
+    border-radius: 2em;
+    text-indent: 1em;
     font-size: 1.5em;
     margin-top: 4%;
     word-break: break-word;
@@ -81,43 +75,41 @@
 
 .titulo{
 
-    width: 70%;
-    margin-left: 6%;
+    width: 75%;
 
 }
 
 .categoria{
 
-    width: 15%;
-    margin-left: 3%;
+    width: 20%;
+    float:right;
 
 }
 
 .autor{
 
-    width: 25%;
-    margin-left: 6%;
+    width: 30%;
 
 }
 
 .editora{
 
-    width: 25.5%;
-    margin-left: 3%;
+    width: 28%;
+    margin-left: 4%;
 
 }
 
 .ano{
 
-    width: 13%;
-    margin-left: 3%;
+    width: 15%;
+    margin-left: 4%;
 
 }
 
 .paginas{
 
     width: 15%;
-    margin-left: 3%;
+    margin-left: 4%;
 
 }
 
@@ -125,16 +117,15 @@
         
     font-weight: normal;
     border-radius: 1em;
-    border-style: solid;
+    border: none;
     border-width: 0.01em;
     border-color: #AAA3A3;
     padding: 1.5em;
     padding-top: 1em;
     font-size: 1.5em;
-    margin-left: 6%;
     margin-top: 4%;
     word-break: break-word;
-    width: 88%;
+    width: 100%;
     height: 10em;
     font-size:1.7em;
     resize: none;
@@ -144,17 +135,15 @@
 
 .cep{
 
-    margin-left: 6%;
     margin-bottom: 1em;
     
 }
 
 .preco{
 
-    width: 10em;
+    width: 30%;
     margin-right: 3em;
     margin-left: 3%;
-
     
 }
 
@@ -167,6 +156,7 @@
 }
 
 .enviarFoto{
+    float: right;
     width: 30em;
     height: 20em;
     background-image: url(/src/assets/uploadImagem.png);
@@ -174,15 +164,14 @@
     background-position-x: center;
     background-color: white;
     background-size: 20em;
-    border-radius: 1em;
-    border-style: solid;
-    border-width: 0.01em;
-    border-color: #AAA3A3;
-    display: flex;
-    margin-left: 8em;
+    border-radius: 3em;
+    border:  none;
     margin-top: 4em;
+    margin-left: 5%;
     margin-bottom: 2em;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
     color: #8C52FF;
+    background-color: #F8F5FF;
     
 }
 
@@ -227,7 +216,7 @@
     width: 100%;
     height: 100%;
     margin:0em;
-    content-visibility: hidden;
+    opacity: 0%;
 }
 
 .ultimaLinha{
