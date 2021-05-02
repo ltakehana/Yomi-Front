@@ -4,14 +4,38 @@
     font-size: 14px;
 }
 
+.publishAnnounceContent{
+
+    display: flex;
+    flex-direction: row;
+    margin-right:4%;
+    
+}
+
+.navBar{
+    
+    margin-top:10em;
+    display:block;
+    float: left;
+
+}
+
+.rightElements{
+
+    margin-right: 5%;
+
+
+}
+
 
 .top-elements{
     
     color: #8C52FF;
     font-size:  1.5em;
     text-align: right;
-    margin-right: 2.5em;
-    margin-top: 3em;
+    margin-top: 2em;
+    float: right;
+    height: 2em;
 }
 
 
@@ -30,7 +54,7 @@
 }
     
 
-.botoes:hover {
+.top-elements button:hover {
     
     background-color: #8C52FF;
     color: white;
@@ -46,9 +70,7 @@
 
 
 .quadroInformacoes{
-    width: 70%;
-    margin-left: 4em;
-    margin-right: 4em;
+    font-size: 0.8em;
     float:right;
 }
 
