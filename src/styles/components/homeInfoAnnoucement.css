@@ -1,0 +1,94 @@
+#Book-announce-container {
+	height: 100%;
+	width: 100%;
+	background-color: #8c52ff;
+	display: flex;
+	flex-direction: column;
+}
+.AnnounceHeader {
+	display: flex;
+	flex-direction: row;
+	height: 25%;
+	width: 100%;
+}
+
+.Logo-header-announce {
+	margin: 2em;
+}
+.header-title {
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 1em;
+}
+
+/*-------------------------Input-CSS------------------------------*/
+#middle-container {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	margin: 1.5em;
+}
+#PhotoInputDiv {
+	flex: 1;
+}
+#PhotoInput {
+	height: 95%;
+	width: 93%;
+	border-radius: 0.9em;
+	border: none;
+}
+
+#bookInput {
+	flex: 2;
+}
+#TitleInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+	width: 100%;
+	padding-left: 1em;
+	margin-bottom: 1em;
+}
+#AutorInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+	margin-bottom: 1.5em;
+	margin-right: 1em;
+}
+#EditInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+	margin-right: 1em;
+}
+#YearInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+}
+#CategoriaInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+	margin-right: 1em;
+}
+#PageInput {
+	height: 4em;
+	border-radius: 0.9em;
+	border: none;
+}
+#SinopseInputDiv {
+	flex: 1;
+	margin-right: 1.5em;
+	margin-left: 1.5em;
+}
+#SinopseInput {
+	width: 100%;
+	height: 65%;
+	border-radius: 0.9em;
+	border: none;
+}
