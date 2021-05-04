@@ -24,7 +24,7 @@
 	padding-left: 1em;
 }
 
-/*-------------------------Input-CSS------------------------------*/
+/*------------------------Photo-Input-------------------------------*/
 #middle-container {
 	display: flex;
 	flex-direction: row;
@@ -34,16 +34,18 @@
 #PhotoInputDiv {
 	flex: 1;
 }
-#PhotoInput {
+#PhotoInputButton {
 	height: 95%;
 	width: 93%;
-	border-radius: 0.9em;
-	border: none;
 }
+
+/*------------------------Book-Input-------------------------------*/
 
 #bookInput {
 	flex: 2;
 }
+/*--------Placeholder------*/
+
 #TitleInput {
 	height: 4em;
 	border-radius: 0.9em;
@@ -52,35 +54,83 @@
 	padding-left: 1em;
 	margin-bottom: 1em;
 }
+#TitleInput::placeholder {
+	opacity: 0.6;
+}
+/*------------------------Middle-Input-------------------------------*/
+
+#midInput {
+	display: flex;
+	flex-direction: row;
+}
 #AutorInput {
 	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-bottom: 1.5em;
 	margin-right: 1em;
+	flex: 1;
+	padding-left: 1em;
 }
-#EditInput {
+
+#EditoraInput {
 	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-right: 1em;
+	flex: 1;
+	padding-left: 1em;
 }
 #YearInput {
 	height: 4em;
 	border-radius: 0.9em;
 	border: none;
+	width: 15%;
+	padding-left: 1em;
+}
+/*--------Placeholder------*/
+
+#AutorInput::placeholder {
+	opacity: 0.6;
+}
+#EditoraInput::placeholder {
+	opacity: 0.6;
+}
+#YearInput::placeholder {
+	opacity: 0.6;
+}
+/*------------------------Last-Input-------------------------------*/
+
+#lastInput {
+	display: flex;
+	flex-direction: row;
 }
 #CategoriaInput {
 	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-right: 1em;
+	flex: 1;
+	padding-left: 1em;
 }
 #PageInput {
 	height: 4em;
 	border-radius: 0.9em;
 	border: none;
+	width: 15%;
+	padding-left: 1em;
 }
+/*--------Placeholder------*/
+
+#PageInput::placeholder {
+	opacity: 0.6;
+}
+#CategoriaInput::placeholder {
+	opacity: 0.6;
+}
+
+/*-------------------------Sinopse-Input------------------------------*/
+
 #SinopseInputDiv {
 	flex: 1;
 	margin-right: 1.5em;
@@ -91,4 +141,11 @@
 	height: 65%;
 	border-radius: 0.9em;
 	border: none;
+	padding: 1em;
+	font-family: "Roboto";
+	font-size: 0.9em;
+}
+/*--------Placeholder------*/
+#SinopseInput::placeholder {
+	opacity: 0.6;
 }

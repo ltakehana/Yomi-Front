@@ -13,16 +13,20 @@ function HomeInfoAnnouncement() {
 			</div>
 			<div id="middle-container">
 				<div id="PhotoInputDiv">
-					<input id="PhotoInput" placeholder="photo"></input>
+					<input
+						id="PhotoInputButton"
+						type="file"
+						accept="image/png, image/jpeg"
+					></input>
 				</div>
 				<div id="bookInput">
 					<input id="TitleInput" placeholder="Título"></input>
-					<div>
+					<div id="midInput">
 						<input id="AutorInput" placeholder="Autor(a)"></input>
-						<input id="EditInput" placeholder="Editora"></input>
+						<input id="EditoraInput" placeholder="Editora"></input>
 						<input id="YearInput" placeholder="Ano"></input>
 					</div>
-					<div>
+					<div id="lastInput">
 						<input
 							id="CategoriaInput"
 							placeholder="Categoria"
@@ -35,7 +39,10 @@ function HomeInfoAnnouncement() {
 				</div>
 			</div>
 			<div id="SinopseInputDiv">
-				<input id="SinopseInput" placeholder="Sinopse do livro"></input>
+				<textarea
+					id="SinopseInput"
+					placeholder="Sinopse do livro"
+				></textarea>
 			</div>
 		</div>
 	);
