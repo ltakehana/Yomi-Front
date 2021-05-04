@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 import "../styles/pages/home.css";
+import Footer from "../components/Footer"
 
 const destaques = [
 	{
@@ -345,7 +346,7 @@ const Home = (props) => {
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(productViewCount);
 		setProductView(produtos.slice(0, productViewCount));
-		if (productView.length % Math.floor(window.innerWidth / 288) == 0) {
+		if (productView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
 			let invisibleElements = [];
@@ -370,7 +371,7 @@ const Home = (props) => {
 		setProductViewCount(tmpProductViewCount);
 		setProductView(produtos.slice(0, tmpProductViewCount));
 		const tmpProductView = produtos.slice(0, tmpProductViewCount);
-		if (tmpProductView.length % Math.floor(window.innerWidth / 288) == 0) {
+		if (tmpProductView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
 			let invisibleElements = [];
@@ -424,6 +425,7 @@ const Home = (props) => {
 					&middot;&middot;&middot;
 				</button>
 			</div>
+			<Footer></Footer>
 		</div>
 	);
 };

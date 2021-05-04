@@ -63,7 +63,6 @@ function CadastroCompra(){
         </body>
         
         <Footer></Footer>
-
     </html>
 
     );

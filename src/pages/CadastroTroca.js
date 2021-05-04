@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/pages/cadastroCompra.css";
 import HeaderSimple from "../components/HeaderSimple";
+import Footer from "../components/Footer"
 
 
 function CadastroTroca(){
@@ -64,10 +65,10 @@ function CadastroTroca(){
         </body>
 
 
-        <footer>
+        <Footer>
 
 
-        </footer>
+        </Footer>
     </html>
 
     );
