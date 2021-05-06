@@ -35,10 +35,23 @@
 	flex: 1;
 }
 #PhotoInputButton {
-	height: 95%;
-	width: 93%;
+	display: none;
 }
-
+#photoInput {
+	color: #8c52ff;
+	height: 100%;
+	width: 95%;
+	background-color: white;
+	border-radius: 0.9em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: bold;
+}
+#PhotoIcon {
+	width: 40%;
+	padding-top: 5%;
+}
 /*------------------------Book-Input-------------------------------*/
 
 #bookInput {
@@ -148,4 +161,35 @@
 /*--------Placeholder------*/
 #SinopseInput::placeholder {
 	opacity: 0.6;
+}
+/*--------Next-button------*/
+.NextButton {
+	position: absolute;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	bottom: 1em;
+	right: 1em;
+}
+.NextButton p {
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.arrowNext .material-icons {
+	font-size: 2em;
+}
+.BackButton {
+	position: absolute;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	bottom: 1em;
+	left: 1em;
+}
+.BackButton p {
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
 }

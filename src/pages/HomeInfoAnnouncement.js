@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/components/homeInfoAnnoucement.css";
 import logo from "../assets/logo_purple.svg";
+import Photo from "../assets/Photo.svg";
 
 function HomeInfoAnnouncement() {
 	return (
@@ -13,6 +14,13 @@ function HomeInfoAnnouncement() {
 			</div>
 			<div id="middle-container">
 				<div id="PhotoInputDiv">
+					<label For="PhotoInputButton">
+						<div id="photoInput">
+							<img src={Photo} id="PhotoIcon"></img>
+							<div>Adicione Fotos</div>
+							<div>(JPG e PNG somentes)</div>
+						</div>
+					</label>
 					<input
 						id="PhotoInputButton"
 						type="file"
@@ -43,6 +51,19 @@ function HomeInfoAnnouncement() {
 					id="SinopseInput"
 					placeholder="Sinopse do livro"
 				></textarea>
+			</div>
+			<div className="NextButton">
+				<p>Avançar</p>
+				<div className="arrowNext">
+					<span className="material-icons">arrow_forward_ios</span>
+				</div>
+			</div>
+			<div className="BackButton">
+				<div className="arrowNext">
+					<span className="material-icons">arrow_back_ios</span>
+				</div>
+
+				<p>Voltar</p>
 			</div>
 		</div>
 	);
