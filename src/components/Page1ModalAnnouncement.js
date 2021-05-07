@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "../styles/components/homeAnnoucement.css";
+import React from "react";
+import "../styles/components/page1ModalAnnouncement.css";
 import logo from "../assets/logo_purple.svg";
 
-function HomeAnnouncement() {
+function Page1ModalAnnouncement() {
 	return (
 		<div id="Home-announce-container">
 			<img src={logo} id="Logo-home"></img>
@@ -31,4 +31,4 @@ function HomeAnnouncement() {
 	);
 }
 
-export default HomeAnnouncement;
+export default Page1ModalAnnouncement;

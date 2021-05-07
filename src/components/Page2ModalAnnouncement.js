@@ -1,11 +1,11 @@
 import React from "react";
-import "../styles/components/homeInfoAnnoucement.css";
+import "../styles/components/page2ModalAnnouncement.css";
 import logo from "../assets/logo_purple.svg";
 import Photo from "../assets/Photo.svg";
 
-function HomeInfoAnnouncement() {
+function Page2ModalAnnouncement() {
 	return (
-		<div id="Book-announce-container">
+		<div className="Book-announce-container">
 			<div className="AnnounceHeader">
 				<img src={logo} className="Logo-header-announce"></img>
 				<div className="header-title">
@@ -69,4 +69,4 @@ function HomeInfoAnnouncement() {
 	);
 }
 
-export default HomeInfoAnnouncement;
+export default Page2ModalAnnouncement;
