@@ -1,42 +1,65 @@
-import React from 'react'
-import Header from '../components/Header';
+import React, {useState} from 'react'
+import HeaderSimple from '../components/HeaderSimple';
 import '../styles/pages/chat.css';
 
 
-function Chat () {
-return(
-    <div>
-<div className = "chat-header">
-<Header></Header>
-</div>
-               	
-<form id="chat">
-       <div className="chat-title"><h1>Bem-vindo ao seu chat ! </h1></div>
-        <div className = "input-user">
-         <input type= "text" name = "username" placeholder= "Digite o usuário"></input>
-         </div>
-        
-         <div className = "messages-box"></div>
-         
-         <div className = "input-menssages">
-                 <input type= "text" name = "username" placeholder= "Digite sua mensagem">
-                
-                 </input>
-          </div>
-
-          <div className = "chat-button">
-                 <button type = "submit">Enviar </button>
-         </div>
-
-</form>
-
-
-</div>
-
-);
-
-}
-
-
-
-export default Chat
+const Chat = () => {
+       const [message, updateMessage] = useState('')
+       const [messages, updateMessages] = useState([])
+   
+       const handleFormSubmit = event => {
+           event.preventDefault()
+           if (message.trim()) {
+               updateMessages([...messages, {
+                    id: 1,
+                    message
+               }])
+               updateMessage(' ')
+           }
+       }
+   
+       const handleInputChange = event =>
+           updateMessage(event.target.value)
+   
+       return (
+              <div className= "chatBody">
+                     <HeaderSimple></HeaderSimple>
+                  
+           <main className="chatContainer">
+                  <div className= "chatHeader">
+                            <div id = "chat_title">
+                                   Nome do usuário
+                              </div>
+                  </div>
+            
+                       <ul className="list">
+                              { messages.map( m  => (
+                     
+                                 <li className= "list-item">
+                                   <span className="message"
+                                             key={m.id}
+                                                     >
+                               { m.message }
+                           </span>
+                           
+                       </li>
+                  )) }
+               </ul>
+              
+               <form className="chatForm" onSubmit={handleFormSubmit}>
+                   <input
+                       className="form-field"
+                       onChange={handleInputChange}
+                       placeholder="Escreva uma mensagem"
+                       type="text"
+                       value={message}
+                   />
+               </form>
+              
+           </main>
+           </div>
+       )
+   }
+   
+   export default Chat
+   
