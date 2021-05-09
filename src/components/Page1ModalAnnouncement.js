@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import "../styles/components/page1ModalAnnouncement.css";
 import logo from "../assets/logo_purple.svg";
 
 function Page1ModalAnnouncement() {
+	
+
 	return (
 		<div id="Home-announce-container">
 			<img src={logo} id="Logo-home"></img>
