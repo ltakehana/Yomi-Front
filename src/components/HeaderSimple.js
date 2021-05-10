@@ -1,4 +1,3 @@
-import React, {useState } from 'react';
 import "../styles/components/headerSimple.css"
 import logo from "../assets/logo_white.svg"
 

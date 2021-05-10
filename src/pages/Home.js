@@ -342,6 +342,7 @@ const Home = (props) => {
 
 	const [productViewCount, setProductViewCount] = useState(0);
 
+	const [annouceTypeToggle, setAnnouceTypeToggle] = useState("trocas");
 	useEffect(() => {
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(productViewCount);
@@ -403,8 +404,52 @@ const Home = (props) => {
 					</div>
 				))}
 			</ProductCarousel>
-			<div>
+			<div id="gradeHomeHeader">
 				<h3 className="carousel-title">Produtos</h3>
+				<div id="homeFilterButtons">
+					<button
+						className={
+							annouceTypeToggle == "doacoes"
+								? "filterSelected"
+								: "filterButtons"
+						}
+						type="outline"
+						onClick={() => {
+							setAnnouceTypeToggle("doacoes");
+							gradeExpandHandle();
+						}}
+					>
+						Doações
+					</button>
+					<button
+						className={
+							annouceTypeToggle == "vendas"
+								? "filterSelected"
+								: "filterButtons"
+						}
+						type="outline"
+						onClick={() => {
+							setAnnouceTypeToggle("vendas");
+							gradeExpandHandle();
+						}}
+					>
+						Vendas
+					</button>
+					<button
+						className={
+							annouceTypeToggle == "trocas"
+								? "filterSelected"
+								: "filterButtons"
+						}
+						type="outline"
+						onClick={() => {
+							setAnnouceTypeToggle("trocas");
+							gradeExpandHandle();
+						}}
+					>
+						Trocas
+					</button>
+				</div>
 			</div>
 			<div className="grade-container">
 				{productView.map((book, index) => (

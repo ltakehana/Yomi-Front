@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useCallback, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Login from "./Login";
-import Cadastro from "./Cadastro";
+import Register from "./Register";
 import "../styles/components/Modal.css";
 import logo from "../assets/logo_purple.svg";
 
-export const Modal = ({ showModal, setShowModal }) => {
+export const ModalLogin = ({ showModal, setShowModal }) => {
 	const modalRef = useRef();
 
 	const [showRegister,setShowRegister]=useState(false);
@@ -54,7 +54,7 @@ export const Modal = ({ showModal, setShowModal }) => {
 					<animated.div style={animationModal}>
 						<div id="ModalWrapper">
 							<div id="ModalView">
-								<Cadastro onLogin={()=>{setShowRegister(false)}}></Cadastro>
+								<Register onLogin={()=>{setShowRegister(false)}}></Register>
 								<Login onRegister={()=>{setShowRegister(true)}}></Login>
 							</div>
 							<animated.div className="content-logo-login" style={animationLogo}>

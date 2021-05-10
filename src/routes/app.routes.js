@@ -2,22 +2,16 @@ import React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 
 import Home from "../pages/Home";
-import CadastroCompra from "../pages/cadastroCompra";
-import CadastroTroca from "../pages/CadastroTroca";
+import BookSearch from "../pages/BookSearch";
 import Profile from "../pages/Profile";
-import PageAnnouncement from "../pages/PageAnnouncement";
+import MyAnnouncements from "../pages/MyAnnouncements";
 
 const AppRoutes = () => (
 	<Switch>
 		<Route component={Home} path="/" exact />
+		<Route component={BookSearch} path="/search" exact />
 		<Route component={Profile} path="/Profile" exact />
-		<Route component={CadastroCompra} path="/Publish_Product" exact />
-		<Route
-			component={CadastroTroca}
-			path="/Publish_Product_exchange"
-			exact
-		/>
-		<Route component={PageAnnouncement} path="/book" exact />
+		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />
 	</Switch>
 );
 export default AppRoutes;
