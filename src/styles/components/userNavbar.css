@@ -1,0 +1,31 @@
+#userNavbar{
+    margin:2%;
+    margin-left: 5%;
+    width: 15%;
+}
+
+.userNavbarItem{
+    color:#8C52FF;
+    font-weight: bold;
+    text-align: start;
+    font-size: 1.5em;
+    padding:0.5em;
+    cursor: pointer;
+}
+
+.userNavbarItem:hover{
+    background-color:#8C52FF;
+    color:white;
+    border-radius:0.5em;
+}
+
+.userNavbarSelectedItem{
+    background-color:#8C52FF;
+    color:white;
+    font-weight: bold;
+    text-align: start;
+    font-size: 1.5em;
+    padding:0.5em;
+    border-radius:0.5em;
+    cursor: pointer;
+}
