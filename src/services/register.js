@@ -12,7 +12,7 @@ const register = async (name,email,password) => {
   };
 
   try {
-    response = await api.post('/user',body);
+    response = await api.post('/register',body);
 
     if (response.data.token) {
         const accessToken= response.data.token;
