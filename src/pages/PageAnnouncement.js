@@ -81,13 +81,15 @@ function PageAnnouncement() {
 							"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg"
 						}
 					/>
-					<BookPreview>
-						{ImagePreview.map((book, index) => (
-							<div className="bookPreview" key={index}>
-								<img src={book.img} />
-							</div>
-						))}
-					</BookPreview>
+					<div id="BookPreviewCarousel">
+						<BookPreview>
+							{ImagePreview.map((book, index) => (
+								<div className="bookPreview" key={index}>
+									<img src={book.img} />
+								</div>
+							))}
+						</BookPreview>
+					</div>
 				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
@@ -126,6 +128,7 @@ function PageAnnouncement() {
 					</div>
 				</div>
 			</div>
+
 			<div id="book-description-container">
 				<div id="book-description-title">
 					<p>Detalhes</p>
