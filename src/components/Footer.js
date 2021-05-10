@@ -15,12 +15,7 @@ const Footer= (props) => {
 
     <div>
         <div id = "Buttons_Footer">
-            <button> <img src={linkedin} alt = "icon Linkedin"></img></button> 
-            <button> <img src={twitter} alt = "icon Twitter"></img></button> 
-            <button> <img src={youtube} alt = "icon Youtube"></img></button> 
             <button> <img src={github} alt = "icon Github"></img></button> 
-            <button> <img src={instagram} alt = "icon Instagram"></img></button> 
-            <button> <img src={facebook} alt = "icon Facebook"></img></button> 
         </div>
 
         <div id = "Contacts">
