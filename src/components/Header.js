@@ -58,7 +58,6 @@ const Header = (props) => {
 							</>
 						)}
 						<span className="material-icons">bookmark</span>
-						<span className="material-icons">local_library</span>
 					</div>
 				</div>
 				<ul id="header_categories">
