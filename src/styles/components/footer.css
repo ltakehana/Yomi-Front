@@ -1,7 +1,7 @@
 
 #Footer {
     width: auto;
-    height: 8em;
+    height: 7em;
     margin-left: 1.2em;
     margin-top: 2em;
     font-size: 2em;
@@ -42,11 +42,11 @@
 }
 
 #Buttons_Footer{
-    width: 20em;
+    width: 4em;
     height: 3em;
     float: right;
     padding-top: 1em;
-    margin-right: 1em;
+    margin-right: 0.5em;
 
 }
 
@@ -61,6 +61,6 @@
     
 }
 
-.Size{
+#Buttons_Footer img{
     width: 5.7em;
 }
