@@ -13,6 +13,7 @@ const userInfo = async (token) => {
   try {
     response = await api.get('/user',config);
     sessionStorage.setItem('userName',response.data.name);
+    sessionStorage.setItem('userPic',response.data.picture);
     return response.data;
   } catch (error) {
     console.log(error);

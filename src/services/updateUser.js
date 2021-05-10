@@ -11,7 +11,8 @@ const updateUser = async (token,body) => {
     name: body.name,
     email: body.email,
     telephone: body.telephone,
-    birth_date: body.birth_date
+    birth_date: body.birth_date,
+    profile_image: body.profile_image
   };
 
   try {

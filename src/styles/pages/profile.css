@@ -51,7 +51,10 @@
     margin:0px;
     margin-left: auto;
     margin-right: auto;
-    width: 43%;
+    width: 25em;
+    height: 25em;
+    border-radius:25em;
+    object-fit: cover;
 }
 
 #profileChangePassword{

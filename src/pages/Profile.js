@@ -33,6 +33,9 @@ const Profile = (props) => {
             if(responseUserInfo.birth_date){
                 setFieldBirth(responseUserInfo.birth_date.replace(" 00:00:00",""));
             }
+            if(responseUserInfo.picture){
+                setProfileImage("http://localhost:5050/static/users_profile_pic/"+responseUserInfo.picture);
+            }
         }
         console.log(responseUserInfo);
     },[]);

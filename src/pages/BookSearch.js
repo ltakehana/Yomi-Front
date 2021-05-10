@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/pages/bookSearch.css";
@@ -242,6 +243,7 @@ const vendas = [
 ];
 
 const BookSearch = (props) => {
+	const history = useHistory();
 	const [invisibleProducts, setInvisibleProducts] = useState([]);
 
 	const [productView, setProductView] = useState([]);
@@ -252,6 +254,8 @@ const BookSearch = (props) => {
 
 	useEffect(() => {
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
+		console.log(history.state)	
+
 		setProductViewCount(productViewCount);
 		if (annouceTypeToggle == "trocas") {
 			setProductView(trocas.slice(0, productViewCount));
