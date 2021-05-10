@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer"
+import ModalAnnouncement from "../components/ModalAnnouncement"
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css"
 
@@ -175,6 +176,15 @@ const announces = [
 
 const MyAnnouncements = (props) => {
 
+	const [showModal, setShowModal] = useState(false);
+
+	const openModal = () => {
+        if(showModal)
+            setShowModal(false);
+        else
+            setShowModal(true);
+	};
+
     const [myAnnouncementsView,setMyAnnouncementsView] = useState([]);
     const [myAnnouncementsCount,setMyAnnouncementsCount] = useState(5);
 
@@ -196,6 +206,7 @@ const MyAnnouncements = (props) => {
 
 	return (
 		<div id="body-container">
+            <ModalAnnouncement showModal={showModal} setShowModal={setShowModal} />
 			<Header></Header>
             <div className="myAnnouncementsContent">
                 <UserNavbar selectedItem={1}></UserNavbar>
@@ -219,7 +230,7 @@ const MyAnnouncements = (props) => {
             >
                 &middot;&middot;&middot;
             </button>
-            <button title="Crie um novo anuncio" id="createAnnounceButton">+</button>
+            <button onClick={openModal} title="Crie um novo anuncio" id="createAnnounceButton">+</button>
 			<Footer></Footer>
 		</div>
 	);

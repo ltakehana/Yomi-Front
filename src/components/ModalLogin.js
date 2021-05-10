@@ -5,7 +5,7 @@ import Cadastro from "./Cadastro";
 import "../styles/components/Modal.css";
 import logo from "../assets/logo_purple.svg";
 
-export const Modal = ({ showModal, setShowModal }) => {
+export const ModalLogin = ({ showModal, setShowModal }) => {
 	const modalRef = useRef();
 
 	const [showRegister,setShowRegister]=useState(false);

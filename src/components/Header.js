@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/components/header.css";
 import logo from "../assets/logo_white.svg";
-import { Modal } from "./Modal";
+import { ModalLogin } from "./ModalLogin";
 import { useAuth } from '../contexts/auth';
 
 const Header = (props) => {
@@ -18,7 +18,7 @@ const Header = (props) => {
 
 	return (
 		<div>
-			<Modal showModal={showModal} setShowModal={setShowModal} />
+			<ModalLogin showModal={showModal} setShowModal={setShowModal} />
 			<div id="header">
 				<div id="header_content">
 					<img id="header_logo" src={logo} />
@@ -58,7 +58,6 @@ const Header = (props) => {
 							</>
 						)}
 						<span className="material-icons">bookmark</span>
-						<span className="material-icons">local_library</span>
 					</div>
 				</div>
 				<ul id="header_categories">
