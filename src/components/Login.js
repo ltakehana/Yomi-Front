@@ -1,8 +1,5 @@
 import React, {useState} from "react";
 import "../styles/components/login.css";
-import face from "../assets/facebook.svg";
-import google from "../assets/googleIcon.svg";
-import micro from "../assets/microsoftIcon.svg";
 import { useAuth } from '../contexts/auth';
 
 function Login({onRegister= ()=>{}}) {
@@ -37,15 +34,8 @@ function Login({onRegister= ()=>{}}) {
 					<label htmlFor="Senha">Senha: </label>
 					<input id="senha" type="password" onChange={(e) => setPassword(e.target.value)} />
 					<button onClick={handleSignIn}>Login</button>
-					<div className="log">
-						<p>Logar com:</p>
-					</div>
-					<div className="socialMedia">
-						<img src={google} alt="Google icon" />
-						<img src={face} alt="Facebook icon" />
-						<img src={micro} alt="Microsft icon" />
-					</div>
-					<div className="cadastro">
+					<br/>
+					<div className="register">
 						<p>Não tem uma conta?</p>
 						<button onClick={onRegister}>Cadastre-se aqui</button>
 					</div>
