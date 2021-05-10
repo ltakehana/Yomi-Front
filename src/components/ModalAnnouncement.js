@@ -13,6 +13,9 @@ import "../styles/components/page3ModalAnnouncement.css";
 const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [page,setPage] = useState(1);
 	const [announceType,setAnnounceType] = useState(1);
+	const [contactChat,setContactChat] = useState(true);
+	const [contactTelephone,setContactTelephone] = useState(false);
+	const [contactEmail,setContactEmail] = useState(false);
 	const modalRef = useRef();
 
 	const closeModal = (e) => {
@@ -28,6 +31,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		opacity: showModal ? 1 : 0,
 		transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
 	});
+	
 
 	const keyPress = useCallback(
 		(e) => {
@@ -150,10 +154,10 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					</div>
 				</div>
 				<div id="ContactInfo">
-					<p>Informações de contato</p>
-					<p> Desejo exibir meu telefone</p>
-					<p> Desejo exibir meu email</p>
-					<p> Desejo utilizar o chat do site</p>
+					<label id="contactInfoTitle">Informações de contato:</label>
+					<label onClick={()=>{setContactChat(!contactChat)}} class={(contactChat)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo utilizar o chat do site</label>
+					<label onClick={()=>{setContactEmail(!contactEmail)}} class={(contactEmail)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo exibir meu email</label>
+					<label onClick={()=>{setContactTelephone(!contactTelephone)}} class={(contactTelephone)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo exibir meu telefone</label>
 				</div>
 				<div className="CepContainerRow">
 					<input className="CepInput" placeholder="CEP"></input>
@@ -167,7 +171,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				<div id="DescriptionRow">
 					<textarea
 						id="DiscriptionInput"
-						placeholder="Sinopse do livro"
+						placeholder="Descrição do anúncio"
 					></textarea>
 				</div>
 				{(announceType==2)&&(<div id="PriceRow">
