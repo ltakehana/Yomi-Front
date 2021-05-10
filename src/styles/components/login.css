@@ -126,18 +126,18 @@ button {
 	margin: 0.3em;
 	cursor: pointer;
 }
-.login-content .cadastro {
+.login-content .register {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.login-content .cadastro p {
+.login-content .register p {
 	font-size: 1em;
 	margin-top: 0.2em;
 	color: #8c52ff;
 	margin-bottom: 0.4em;
 }
-.login-content .cadastro button {
+.login-content .register button {
 	font-size: 1.6em;
 	font-weight: bold;
 	border-radius: 0.4em;
@@ -149,7 +149,7 @@ button {
 	cursor: pointer;
 }
 
-.login-content .cadastro button:hover {
+.login-content .register button:hover {
 	background: #8c52ff;
 	color: #ffffff;
 }

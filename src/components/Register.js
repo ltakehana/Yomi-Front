@@ -1,12 +1,9 @@
 import React, {useState} from "react";
-import "../styles/components/cadastro.css";
-import face from "../assets/facebook.svg";
-import google from "../assets/googleIcon.svg";
-import micro from "../assets/microsoftIcon.svg";
+import "../styles/components/register.css";
 import { useAuth } from "../contexts/auth";
 
 
-function Cadastro({onLogin=()=>{}}) {
+function Register({onLogin=()=>{}}) {
 
 	const {signUp} = useAuth();
 
@@ -48,14 +45,6 @@ function Cadastro({onLogin=()=>{}}) {
 				<label htmlFor="Email">Confirma senha: </label>
 				<input id="TrueSenha" type="password" onChange={(e) => setConfirmPassword(e.target.value)}/>
 				<button type="submit" onClick={handleSignUp}>Cadastre-se</button>
-				<div className="log">
-					<p>ou</p>
-				</div>
-				<div className="socialMedia">
-					<img src={google} alt="Icon da google" />
-					<img src={face} alt="Icon do face" />
-					<img src={micro} alt="Icon da microsoft" />
-				</div>
 				<span id="returnLogin" onClick={onLogin}>Já tem uma conta?</span>
 				</div>
 			</div>
@@ -63,4 +52,4 @@ function Cadastro({onLogin=()=>{}}) {
 	);
 }
 
-export default Cadastro;
+export default Register;

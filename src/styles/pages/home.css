@@ -76,3 +76,73 @@ body {
 	color: #8c52ff;
 	font-size: 2em;
 }
+
+#gradeHomeHeader {
+	display: flex;
+	flex-direction: row;
+	padding-top: 3em;
+	width: 95vw;
+}
+
+.carousel-title{
+	margin-right: 5%;
+}
+
+#homeFilterButtons{
+	vertical-align: bottom;
+	margin-top: auto;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: auto;
+}
+
+.filterButtons{
+	cursor: pointer;
+	width: 5em;
+	margin-top: auto;
+	margin-bottom: 0px;
+	height: 2.2em;
+	font-size: 1em;
+	background-color: #f8f5ff;
+	border: none;
+	border-radius: 0.7em;
+	font-weight: bold;
+	color: #8c52ff;
+	margin-left: 0.5em;
+	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+
+.filterButtons:hover{
+	cursor: pointer;
+	box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.25);
+	filter: none;
+	width: 5em;
+	height: 2.2em;
+	margin-top: auto;
+	margin-bottom: 0px;
+	font-size: 1em;
+	background-color: #f8f5ff;
+	border: none;
+	border-radius: 0.7em;
+	font-weight: bold;
+	color: #8c52ff;
+	margin-left: 0.5em;
+}
+
+.filterSelected{
+	cursor: pointer;
+	box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.25);
+	filter: none;
+	width: 5em;
+	height: 2.2em;
+	margin-top: auto;
+	margin-bottom: 0px;
+	font-size: 1em;
+	background-color: #f8f5ff;
+	border: none;
+	border-radius: 0.7em;
+	font-weight: bold;
+	color: #8c52ff;
+	margin-left: 0.5em;
+}

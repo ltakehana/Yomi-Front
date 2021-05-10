@@ -26,13 +26,16 @@ const Header = (props) => {
 		history.push("/Profile")
 	}
 
+	const homeRedirect=()=>{
+		history.push("/")
+	}
 
 	return (
 		<div>
 			<ModalLogin showModal={showModal} setShowModal={setShowModal} />
 			<div id="header">
 				<div id="header_content">
-					<img id="header_logo" src={logo} />
+					<img id="header_logo" src={logo} style={{cursor:"pointer"}} onClick={homeRedirect} />
 
 					<div id="header_search">
 						<input />
