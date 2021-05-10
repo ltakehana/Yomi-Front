@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
-import BookPreview from "../components/BookPreview";
+
 import "../styles/pages/pageAnnouncement.css";
 import whatsapp from "../assets/whatsapp.svg";
 import email from "../assets/email.svg";
@@ -77,6 +77,7 @@ function PageAnnouncement() {
 			<div id="book-info-container">
 				<div id="book-image-preview">
 					<img id="book-image" src={bookSelected.img} />
+					{/*
 					<div id="BookPreviewCarousel">
 						<BookPreview>
 							{ImagePreview.map((book, index) => (
@@ -91,6 +92,7 @@ function PageAnnouncement() {
 							))}
 						</BookPreview>
 					</div>
+						*/}
 				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
@@ -124,9 +126,6 @@ function PageAnnouncement() {
 						<img id="mensagem-icon" src={mensagem}></img>
 						<p>Conversar com o vendedor</p>
 					</div>
-					<div id="other-seller-book">
-						<p>Ver outros anuncios do vendedor</p>
-					</div>
 				</div>
 			</div>
 
@@ -136,21 +135,40 @@ function PageAnnouncement() {
 				</div>
 				<table id="book-description">
 					<tr>
-						<td>Número</td>
-						<td>1</td>
+						<td>Número de Páginas</td>
+						<td>176</td>
 					</tr>
 					<tr>
 						<td>Ano</td>
 						<td>1992</td>
 					</tr>
+
 					<tr>
-						<td>Número de Páginas</td>
-						<td>176</td>
+						<td>Autor</td>
+						<td>Rezende</td>
+					</tr>
+					<tr>
+						<td>Edição</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Editora</td>
+						<td>youtube</td>
+					</tr>
+					<tr>
+						<td>Categoria</td>
+						<td>Terror</td>
+					</tr>
+					<tr>
+						<td>Sinopse</td>
+						<td>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit. Praesent nulla risus, viverra eu convallis
+							tempus, vehicula a mi. Suspendisse ultrices erat at
+							ligula lacinia, et convallis ex egestas
+						</td>
 					</tr>
 				</table>
-				<div id="table-exp-button">
-					<p>VER TODAS AS CARACTERÍSTICAS</p>
-				</div>
 			</div>
 			<div id="highlights">
 				<p>Produtos Relacionados</p>
