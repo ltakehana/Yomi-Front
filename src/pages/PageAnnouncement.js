@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 import BookPreview from "../components/BookPreview";
@@ -49,7 +49,7 @@ const ImagePreview = [
 	},
 	{
 		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
 		Number: 2,
 	},
 	{
@@ -59,7 +59,7 @@ const ImagePreview = [
 	},
 	{
 		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
+			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
 		Number: 4,
 	},
 	{
@@ -70,22 +70,23 @@ const ImagePreview = [
 ];
 
 function PageAnnouncement() {
+	const [bookSelected, setbookSelected] = useState(ImagePreview[0]);
 	return (
 		<div id="body-book-container">
 			<Header></Header>
 			<div id="book-info-container">
 				<div id="book-image-preview">
-					<img
-						id="book-image"
-						src={
-							"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg"
-						}
-					/>
+					<img id="book-image" src={bookSelected.img} />
 					<div id="BookPreviewCarousel">
 						<BookPreview>
 							{ImagePreview.map((book, index) => (
 								<div className="bookPreview" key={index}>
-									<img src={book.img} />
+									<img
+										src={book.img}
+										onClick={() => {
+											setbookSelected(book);
+										}}
+									/>
 								</div>
 							))}
 						</BookPreview>
