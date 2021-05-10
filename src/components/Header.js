@@ -30,6 +30,11 @@ const Header = (props) => {
 		history.push("/")
 	}
 
+	const myLibraryRedirect=()=>{
+	  history.push("/MyLibrary");
+	}
+  
+
 	return (
 		<div>
 			<ModalLogin showModal={showModal} setShowModal={setShowModal} />
@@ -57,6 +62,9 @@ const Header = (props) => {
 									<div className="dropdown-content">
 										<p className="dropdown-itens" onClick={myAnnouncementsRedirect}>
 											Meus anúncios
+										</p>
+										<p className="dropdown-itens" onClick={myLibraryRedirect}>
+											Minha biblioteca
 										</p>
 										<p className="dropdown-itens" onClick={profileRedirect}>
 											Meu Perfil
