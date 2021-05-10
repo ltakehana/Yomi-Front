@@ -8,14 +8,12 @@ import "../styles/components/page1ModalAnnouncement.css";
 import "../styles/components/page2ModalAnnouncement.css";
 import "../styles/components/page3ModalAnnouncement.css";
 
-
-
 const ModalAnnouncement = ({ showModal, setShowModal }) => {
-	const [page,setPage] = useState(1);
-	const [announceType,setAnnounceType] = useState(1);
-	const [contactChat,setContactChat] = useState(true);
-	const [contactTelephone,setContactTelephone] = useState(false);
-	const [contactEmail,setContactEmail] = useState(false);
+	const [page, setPage] = useState(1);
+	const [announceType, setAnnounceType] = useState(1);
+	const [contactChat, setContactChat] = useState(true);
+	const [contactTelephone, setContactTelephone] = useState(false);
+	const [contactEmail, setContactEmail] = useState(false);
 	const modalRef = useRef();
 
 	const closeModal = (e) => {
@@ -31,7 +29,6 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		opacity: showModal ? 1 : 0,
 		transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
 	});
-	
 
 	const keyPress = useCallback(
 		(e) => {
@@ -47,8 +44,6 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		return () => document.removeEventListener("keydown", keyPress);
 	}, [keyPress]);
 
-
-
 	const Page1ModalAnnouncement = () => {
 		return (
 			<div id="Home-announce-container">
@@ -60,12 +55,50 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					</div>
 
 					<div id="Announce-buttons-container">
-						<button onClick={()=>{setAnnounceType(1)}} className={(announceType==1)?("Announce-buttons-selected"):("Announce-buttons")}>Trocas</button>
-						<button onClick={()=>{setAnnounceType(2)}} className={(announceType==2)?("Announce-buttons-selected"):("Announce-buttons")}>Vendas</button>
-						<button onClick={()=>{setAnnounceType(3)}} className={(announceType==3)?("Announce-buttons-selected"):("Announce-buttons")}>Doações</button>
+						<button
+							onClick={() => {
+								setAnnounceType(1);
+							}}
+							className={
+								announceType == 1
+									? "Announce-buttons-selected"
+									: "Announce-buttons"
+							}
+						>
+							Trocas
+						</button>
+						<button
+							onClick={() => {
+								setAnnounceType(2);
+							}}
+							className={
+								announceType == 2
+									? "Announce-buttons-selected"
+									: "Announce-buttons"
+							}
+						>
+							Vendas
+						</button>
+						<button
+							onClick={() => {
+								setAnnounceType(3);
+							}}
+							className={
+								announceType == 3
+									? "Announce-buttons-selected"
+									: "Announce-buttons"
+							}
+						>
+							Doações
+						</button>
 					</div>
 
-					<div onClick={()=>{setPage(2)}} className="NextButton">
+					<div
+						onClick={() => {
+							setPage(2);
+						}}
+						className="NextButton"
+					>
 						<p>Avançar</p>
 						<div className="arrowNext">
 							<span className="material-icons">
@@ -76,7 +109,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				</div>
 			</div>
 		);
-	}
+	};
 
 	const Page2ModalAnnouncement = () => {
 		return (
@@ -105,8 +138,14 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					<div id="bookInput">
 						<input id="TitleInput" placeholder="Título"></input>
 						<div id="midInput">
-							<input id="AutorInput" placeholder="Autor(a)"></input>
-							<input id="EditoraInput" placeholder="Editora"></input>
+							<input
+								id="AutorInput"
+								placeholder="Autor(a)"
+							></input>
+							<input
+								id="EditoraInput"
+								placeholder="Editora"
+							></input>
 							<input id="YearInput" placeholder="Ano"></input>
 						</div>
 						<div id="lastInput">
@@ -127,13 +166,25 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 						placeholder="Sinopse do livro"
 					></textarea>
 				</div>
-				<div onClick={()=>{setPage(3)}} className="NextButton">
+				<div
+					onClick={() => {
+						setPage(3);
+					}}
+					className="NextButton"
+				>
 					<p>Avançar</p>
 					<div className="arrowNext">
-						<span className="material-icons">arrow_forward_ios</span>
+						<span className="material-icons">
+							arrow_forward_ios
+						</span>
 					</div>
 				</div>
-				<div onClick={()=>{setPage(1)}} className="BackButton">
+				<div
+					onClick={() => {
+						setPage(1);
+					}}
+					className="BackButton"
+				>
 					<div className="arrowNext">
 						<span className="material-icons">arrow_back_ios</span>
 					</div>
@@ -142,7 +193,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				</div>
 			</div>
 		);
-	}
+	};
 
 	const Page3ModalAnnouncement = () => {
 		return (
@@ -155,9 +206,45 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				</div>
 				<div id="ContactInfo">
 					<label id="contactInfoTitle">Informações de contato:</label>
-					<label onClick={()=>{setContactChat(!contactChat)}} class={(contactChat)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo utilizar o chat do site</label>
-					<label onClick={()=>{setContactEmail(!contactEmail)}} class={(contactEmail)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo exibir meu email</label>
-					<label onClick={()=>{setContactTelephone(!contactTelephone)}} class={(contactTelephone)?("contactInfoOptionsSelected"):("contactInfoOptions")}> Desejo exibir meu telefone</label>
+					<label
+						onClick={() => {
+							setContactChat(!contactChat);
+						}}
+						class={
+							contactChat
+								? "contactInfoOptionsSelected"
+								: "contactInfoOptions"
+						}
+					>
+						{" "}
+						Desejo utilizar o chat do site
+					</label>
+					<label
+						onClick={() => {
+							setContactEmail(!contactEmail);
+						}}
+						class={
+							contactEmail
+								? "contactInfoOptionsSelected"
+								: "contactInfoOptions"
+						}
+					>
+						{" "}
+						Desejo exibir meu email
+					</label>
+					<label
+						onClick={() => {
+							setContactTelephone(!contactTelephone);
+						}}
+						class={
+							contactTelephone
+								? "contactInfoOptionsSelected"
+								: "contactInfoOptions"
+						}
+					>
+						{" "}
+						Desejo exibir meu telefone
+					</label>
 				</div>
 				<div className="CepContainerRow">
 					<input className="CepInput" placeholder="CEP"></input>
@@ -174,17 +261,24 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 						placeholder="Descrição do anúncio"
 					></textarea>
 				</div>
-				{(announceType==2)&&(<div id="PriceRow">
-					<p>Preço: </p>
-					<input id="PriceInput" placeholder="R$ 0,00"></input>
-				</div>)}
+				{announceType == 2 && (
+					<div id="PriceRow">
+						<p>Preço: </p>
+						<input id="PriceInput" placeholder="R$ 0,00"></input>
+					</div>
+				)}
 				<div className="NextButton">
 					<p>Finalizar</p>
 					<div className="arrowNext">
 						<span class="material-icons">check_circle</span>
 					</div>
 				</div>
-				<div onClick={()=>{setPage(2)}} className="BackButton">
+				<div
+					onClick={() => {
+						setPage(2);
+					}}
+					className="BackButton"
+				>
 					<div className="arrowNext">
 						<span className="material-icons">arrow_back_ios</span>
 					</div>
@@ -193,9 +287,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				</div>
 			</div>
 		);
-	}
-
-
+	};
 
 	return (
 		<>
@@ -203,14 +295,22 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				<div id="Background" onClick={closeModal} ref={modalRef}>
 					<animated.div style={animationModal}>
 						<div id="ModalWrapper">
-							{(page==1)&&(<Page1ModalAnnouncement></Page1ModalAnnouncement>)}
-							{(page==2)&&(<Page2ModalAnnouncement></Page2ModalAnnouncement>)}
-							{(page==3)&&(<Page3ModalAnnouncement></Page3ModalAnnouncement>)}
+							{page == 1 && (
+								<Page1ModalAnnouncement></Page1ModalAnnouncement>
+							)}
+							{page == 2 && (
+								<Page2ModalAnnouncement></Page2ModalAnnouncement>
+							)}
+							{page == 3 && (
+								<Page3ModalAnnouncement></Page3ModalAnnouncement>
+							)}
 							<div
 								id="Close"
 								className="material-icons"
-								onClick={() => {setShowModal(false)}}
-								style={{color:"white"}}
+								onClick={() => {
+									setShowModal(false);
+								}}
+								style={{ color: "white" }}
 							>
 								close
 							</div>
