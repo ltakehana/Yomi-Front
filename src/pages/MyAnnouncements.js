@@ -4,8 +4,7 @@ import Footer from "../components/Footer";
 import ModalAnnouncement from "../components/ModalAnnouncement";
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css";
-import getMyAnnouncements from "../services/getMyAnnouncements"
-
+import getMyAnnouncements from "../services/getMyAnnouncements";
 
 const MyAnnouncements = (props) => {
 	const [showModal, setShowModal] = useState(false);
@@ -20,16 +19,26 @@ const MyAnnouncements = (props) => {
 	const [myAnnouncementsCount, setMyAnnouncementsCount] = useState(5);
 
 	useEffect(async () => {
-		const token = sessionStorage.getItem("userToken")
-		let announces = await getMyAnnouncements(token); 
-		if(announces.length>0)
-			setMyAnnouncementsView(announces.slice(0, Math.max(myAnnouncementsCount,announces.length)));
+		const token = sessionStorage.getItem("userToken");
+		let announces = await getMyAnnouncements(token);
+		if (announces != null && announces.length > 0)
+			setMyAnnouncementsView(
+				announces.slice(
+					0,
+					Math.max(myAnnouncementsCount, announces.length),
+				),
+			);
 		setAnnounces(announces);
 	}, []);
 
 	useEffect(() => {
-		if(announces.length>0)
-			setMyAnnouncementsView(announces.slice(0, Math.max(myAnnouncementsCount,announces.length)));
+		if (announces != null && announces.length > 0)
+			setMyAnnouncementsView(
+				announces.slice(
+					0,
+					Math.max(myAnnouncementsCount, announces.length),
+				),
+			);
 	}, [announces]);
 	console.log(myAnnouncementsView);
 	const listExpandHandle = () => {
@@ -53,36 +62,61 @@ const MyAnnouncements = (props) => {
 			<div className="myAnnouncementsContent">
 				<UserNavbar selectedItem={1}></UserNavbar>
 				<div className="myAnnouncementsDiv">
-					{
-						(myAnnouncementsView.length==0)?
-						(<span style={{textAlign:"center",display:"block",width:"100%",color:"gray"}}>Infelizmente você ainda não possui nenhum anúncio. :(</span>)
-						:(myAnnouncementsView.map((announce, index) => (
+					{myAnnouncementsView.length == 0 ? (
+						<span
+							style={{
+								textAlign: "center",
+								display: "block",
+								width: "100%",
+								color: "gray",
+							}}
+						>
+							Infelizmente você ainda não possui nenhum anúncio.
+							:(
+						</span>
+					) : (
+						myAnnouncementsView.map((announce, index) => (
 							<div className="announceItem">
-								<img className="announceImage" src={"http://localhost:5050/static/books_images/"+announce.book_cover} />
+								<img
+									className="announceImage"
+									src={
+										"http://localhost:5050/static/books_images/" +
+										announce.book_cover
+									}
+								/>
 								<div className="announcesText">
 									<label className="announcesTitle">
 										{announce.name}
-										<span className="material-icons">delete</span>
-										<span className="material-icons" onClick={openModal}>edit</span>
+										<span className="material-icons">
+											delete
+										</span>
+										<span
+											className="material-icons"
+											onClick={openModal}
+										>
+											edit
+										</span>
 									</label>
 									<span className="announcesDescription">
 										{announce.description}
 									</span>
 								</div>
 							</div>
-						)))
-					}
+						))
+					)}
 				</div>
 			</div>
 
-			{(announces!=null && announces.length>myAnnouncementsCount)&&(<button
-				onClick={() => {
-					listExpandHandle();
-				}}
-				className="list-expand"
-			>
-				&middot;&middot;&middot;
-			</button>)}
+			{announces != null && announces.length > myAnnouncementsCount && (
+				<button
+					onClick={() => {
+						listExpandHandle();
+					}}
+					className="list-expand"
+				>
+					&middot;&middot;&middot;
+				</button>
+			)}
 			<button
 				onClick={openModal}
 				title="Crie um novo anuncio"
