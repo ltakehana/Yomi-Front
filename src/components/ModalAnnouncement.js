@@ -210,7 +210,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 						onClick={() => {
 							setContactChat(!contactChat);
 						}}
-						class={
+						className={
 							contactChat
 								? "contactInfoOptionsSelected"
 								: "contactInfoOptions"
@@ -223,7 +223,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 						onClick={() => {
 							setContactEmail(!contactEmail);
 						}}
-						class={
+						className={
 							contactEmail
 								? "contactInfoOptionsSelected"
 								: "contactInfoOptions"
@@ -236,7 +236,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 						onClick={() => {
 							setContactTelephone(!contactTelephone);
 						}}
-						class={
+						className={
 							contactTelephone
 								? "contactInfoOptionsSelected"
 								: "contactInfoOptions"
@@ -270,7 +270,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 				<div className="NextButton">
 					<p>Finalizar</p>
 					<div className="arrowNext">
-						<span class="material-icons">check_circle</span>
+						<span className="material-icons">check_circle</span>
 					</div>
 				</div>
 				<div

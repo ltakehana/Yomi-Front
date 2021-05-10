@@ -237,7 +237,7 @@ const MyLibrary = (props) => {
 							<div className="announcesText">
 								<label className="announcesTitle">
 									{announce.name}
-									<span class="material-icons">delete</span>
+									<span className="material-icons">delete</span>
 								</label>
 								<span className="announcesDescription">
 									{announce.description}
