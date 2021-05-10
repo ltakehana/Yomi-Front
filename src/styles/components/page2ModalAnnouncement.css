@@ -59,7 +59,7 @@
 }
 
 #TitleInput {
-	height: 4em;
+	height: 30%;
 	border-radius: 0.9em;
 	border: none;
 	width: 100%;
@@ -75,31 +75,32 @@
 #midInput {
 	display: flex;
 	flex-direction: row;
+	flex: 1;
+	height: 33%;
 }
 #AutorInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 	margin-right: 1em;
 	flex: 1;
 	padding-left: 1em;
 }
 
 #EditoraInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-right: 1em;
 	flex: 1;
 	padding-left: 1em;
+	margin-bottom: 1em;
 }
 #YearInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	width: 15%;
 	padding-left: 1em;
+	margin-bottom: 1em;
 }
 /*--------Placeholder------*/
 
@@ -117,9 +118,9 @@
 #lastInput {
 	display: flex;
 	flex-direction: row;
+	height: 27%;
 }
 #CategoriaInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-right: 1em;
@@ -127,7 +128,6 @@
 	padding-left: 1em;
 }
 #PageInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	width: 15%;

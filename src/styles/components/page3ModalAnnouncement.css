@@ -6,13 +6,13 @@
 
 .CepContainerRow {
 	display: flex;
+	height: 13%;
 	flex-direction: row;
 	margin-left: 10%;
 	margin-right: 10%;
 }
 
 .CepInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-bottom: 1.5em;
@@ -29,7 +29,6 @@
 /*------------------------Bairro-Input-------------------------------*/
 
 #BairroInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-bottom: 1.5em;
@@ -38,7 +37,6 @@
 	padding-left: 1em;
 }
 #RuaInput {
-	height: 4em;
 	border-radius: 0.9em;
 	border: none;
 	margin-bottom: 1.5em;
