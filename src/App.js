@@ -1,15 +1,9 @@
-import { BrowserRouter } from "react-router-dom";
-import Routes from "./routes";
-import { AuthProvider } from "./contexts/auth";
+
 
 function App() {
-	return (
-		<BrowserRouter>
-			<AuthProvider>
-				<Routes />
-			</AuthProvider>
-		</BrowserRouter>
-	);
+  return (
+    <h1>Yomi</h1>
+  );
 }
 
 export default App;
