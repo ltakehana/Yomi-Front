@@ -4,211 +4,12 @@ import Footer from "../components/Footer";
 import ModalAnnouncement from "../components/ModalAnnouncement";
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css";
+import getMyAnnouncements from "../services/getMyAnnouncements"
 
-const announces = [
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla risus, viverra eu convallis tempus, vehicula a mi. Suspendisse ultrices erat at ligula lacinia, et convallis ex egestas",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-		description: "lorem ipsum lorem ipsum",
-	},
-];
 
 const MyAnnouncements = (props) => {
 	const [showModal, setShowModal] = useState(false);
+	const [announces, setAnnounces] = useState([]);
 
 	const openModal = () => {
 		if (showModal) setShowModal(false);
@@ -218,10 +19,19 @@ const MyAnnouncements = (props) => {
 	const [myAnnouncementsView, setMyAnnouncementsView] = useState([]);
 	const [myAnnouncementsCount, setMyAnnouncementsCount] = useState(5);
 
-	useEffect(() => {
-		setMyAnnouncementsView(announces.slice(0, myAnnouncementsCount));
+	useEffect(async () => {
+		const token = sessionStorage.getItem("userToken")
+		let announces = await getMyAnnouncements(token); 
+		if(announces.length>0)
+			setMyAnnouncementsView(announces.slice(0, Math.max(myAnnouncementsCount,announces.length)));
+		setAnnounces(announces);
 	}, []);
 
+	useEffect(() => {
+		if(announces.length>0)
+			setMyAnnouncementsView(announces.slice(0, Math.max(myAnnouncementsCount,announces.length)));
+	}, [announces]);
+	console.log(myAnnouncementsView);
 	const listExpandHandle = () => {
 		let announcesCont = myAnnouncementsCount;
 		if (announcesCont + 5 <= announces.length) {
@@ -243,31 +53,36 @@ const MyAnnouncements = (props) => {
 			<div className="myAnnouncementsContent">
 				<UserNavbar selectedItem={1}></UserNavbar>
 				<div className="myAnnouncementsDiv">
-					{myAnnouncementsView.map((announce, index) => (
-						<div className="announceItem">
-							<img className="announceImage" src={announce.img} />
-							<div className="announcesText">
-								<label className="announcesTitle">
-									{announce.name}
-									<span className="material-icons">delete</span>
-									<span className="material-icons" onClick={openModal}>edit</span>
-								</label>
-								<span className="announcesDescription">
-									{announce.description}
-								</span>
+					{
+						(myAnnouncementsView.length==0)?
+						(<span style={{textAlign:"center",display:"block",width:"100%",color:"gray"}}>Infelizmente você ainda não possui nenhum anúncio. :(</span>)
+						:(myAnnouncementsView.map((announce, index) => (
+							<div className="announceItem">
+								<img className="announceImage" src={"http://localhost:5050/static/books_images/"+announce.book_cover} />
+								<div className="announcesText">
+									<label className="announcesTitle">
+										{announce.name}
+										<span className="material-icons">delete</span>
+										<span className="material-icons" onClick={openModal}>edit</span>
+									</label>
+									<span className="announcesDescription">
+										{announce.description}
+									</span>
+								</div>
 							</div>
-						</div>
-					))}
+						)))
+					}
 				</div>
 			</div>
-			<button
+
+			{(announces!=null && announces.length>myAnnouncementsCount)&&(<button
 				onClick={() => {
 					listExpandHandle();
 				}}
 				className="list-expand"
 			>
 				&middot;&middot;&middot;
-			</button>
+			</button>)}
 			<button
 				onClick={openModal}
 				title="Crie um novo anuncio"

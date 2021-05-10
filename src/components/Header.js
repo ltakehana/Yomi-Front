@@ -85,25 +85,25 @@ const Header = (props) => {
 
 									<div className="dropdown-content">
 										<p className="dropdown-itens" onClick={myAnnouncementsRedirect}>
-											<span class="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
 												campaign
 											</span>
 											<span style={{fontSize:"1em"}}>Meus anúncios</span>
 										</p>
 										<p className="dropdown-itens" onClick={myLibraryRedirect}>
-											<span class="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
 												bookmark
 											</span>
 											<span style={{fontSize:"1em"}}>Minha biblioteca</span>
 										</p>
 										<p className="dropdown-itens" onClick={profileRedirect}>
-											<span class="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
 												person
 											</span>
 											<span style={{fontSize:"1em"}}>Meu Perfil</span>
 										</p>
 										<p className="dropdown-itens" onClick={signOut}>
-											<span class="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
 												logout
 											</span>
 											<span style={{fontSize:"1em"}}>Sair</span>
