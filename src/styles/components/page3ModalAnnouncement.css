@@ -1,28 +1,28 @@
 #ContactInfo {
-	display: block;
-	color:white;
+	display: flex;
+	color: white;
 	margin-left: 10%;
 	margin-right: 10%;
 	font-weight: bold;
 	margin-bottom: 2%;
 }
 
-#contactInfoTitle{
+#contactInfoTitle {
 	font-size: 2em;
 }
 
-.contactInfoOptions{
+.contactInfoOptions {
 	margin-left: 1%;
-	padding:2%;
+	padding: 2%;
 	font-size: 1em;
 	max-width: 30%;
 	cursor: pointer;
 }
 
-.contactInfoOptions:hover{
+.contactInfoOptions:hover {
 	margin-left: 3%;
-	border-radius:1em;
-	padding:2%;
+	border-radius: 1em;
+	padding: 2%;
 	max-width: 30%;
 	font-size: 1em;
 	cursor: pointer;
@@ -30,11 +30,11 @@
 	color: #8c52ff;
 }
 
-.contactInfoOptionsSelected{
+.contactInfoOptionsSelected {
 	margin-left: 3%;
 	max-width: 30%;
-	border-radius:1em;
-	padding:2%;
+	border-radius: 1em;
+	padding: 2%;
 	font-size: 1em;
 	cursor: pointer;
 	background-color: white;
