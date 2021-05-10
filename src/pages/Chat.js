@@ -31,6 +31,17 @@ const Chat = () => {
 				<div id="chatHeader">
 					<div id="chat_title">Nome do usuário</div>
 				</div>
+                            <div id = "chat_icon_pearson">
+                              <span className="material-icons">
+                            person
+                        </span>
+                              </div>
+
+                              <div id = "chat_icon_arrow">
+                              <span className="material-icons">
+                            arrow_back
+                        </span>
+                              </div>
 
 				<ul id="listChat">
 					{messages.map((m) => (
