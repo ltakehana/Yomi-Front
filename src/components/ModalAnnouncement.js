@@ -7,6 +7,8 @@ import Photo from "../assets/Photo.svg";
 import "../styles/components/page1ModalAnnouncement.css";
 import "../styles/components/page2ModalAnnouncement.css";
 import "../styles/components/page3ModalAnnouncement.css";
+import defaultBookImage from "../assets/batman.png";
+import setAnnouncements from "../services/setAnnouncements";
 
 const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [page, setPage] = useState(1);
@@ -14,7 +16,109 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [contactChat, setContactChat] = useState(true);
 	const [contactTelephone, setContactTelephone] = useState(false);
 	const [contactEmail, setContactEmail] = useState(false);
+	const token = sessionStorage.getItem("userToken");
+	const [announceName, setAnnounceName] = useState("");
+	const [announceAuthor, setAnnounceAuthor] = useState("");
+	const [announceYear, setAnnounceYear] = useState("");
+	const [announcePages, setAnnouncePages] = useState("");
+	const [announceSynopsis, setAnnounceSynopsis] = useState("");
+	const [announcePublishing_company, setAnnouncePublishing_company] =
+		useState("");
+	const [announceCep, setAnnounceCep] = useState("");
+	const [announceDistrict, setAnnounceDistrict] = useState("");
+	const [announceCity, setAnnounceCity] = useState("");
+	const [announceDescription, setAnnounceDescription] = useState("");
+	const [announcePrice, setAnnouncePrice] = useState("");
+	const [announceImage, setAnnounceImage] = useState(defaultBookImage);
 	const modalRef = useRef();
+
+	const fileToBase64 = async (file) =>
+		new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload = () => resolve(reader.result);
+			reader.onerror = (e) => reject(e);
+		});
+
+	const handleBookImage = async (e) => {
+		let file = e.target.files[0];
+		let imageBase64 = await fileToBase64(file);
+		setAnnounceImage(imageBase64);
+	};
+
+	const handleAnnounceUpdate = () => {
+		let name = null;
+		let author = null;
+		let year = null;
+		let pages = null;
+		let synopsi = null;
+		let publishing_company = null;
+		let book_cover = null;
+		let type = null;
+		let cep = null;
+		let district = null;
+		let city = null;
+		let description = null;
+		let price = null;
+
+		if (announceName) {
+			name = announceName;
+		}
+		if (announceAuthor) {
+			author = announceAuthor;
+		}
+		if (announceYear) {
+			year = announceYear;
+		}
+		if (announcePages) {
+			pages = announcePages;
+		}
+		if (announceSynopsis) {
+			synopsi = announceSynopsis;
+		}
+		if (announcePublishing_company) {
+			publishing_company = announcePublishing_company;
+		}
+		if (announceImage) {
+			book_cover = announceImage;
+		}
+		if (announceType) {
+			type = announceType;
+		}
+		if (announceCep) {
+			cep = announceCep;
+		}
+		if (announceDistrict) {
+			district = announceDistrict;
+		}
+		if (announceCity) {
+			city = announceCity;
+		}
+		if (announceDescription) {
+			description = announceDescription;
+		}
+		if (announcePrice) {
+			price = announcePrice;
+		}
+
+		let body = {
+			"name": name,
+			"author": author,
+			"year": year,
+			"pages": pages,
+			"synopsi": synopsi,
+			"publishing_company": publishing_company,
+			"book_cover": book_cover,
+			"type": type,
+			"cep": cep,
+			"district": district,
+			"city": city,
+			"description": description,
+			"price": price,
+		};
+		console.log(body);
+		setAnnouncements(token, body);
+	};
 
 	const closeModal = (e) => {
 		if (modalRef.current === e.target) {
@@ -133,20 +237,46 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 							id="PhotoInputButton"
 							type="file"
 							accept="image/png, image/jpeg"
+							onChangeCapture={(e) => {
+								handleBookImage(e);
+							}}
 						></input>
 					</div>
 					<div id="bookInput">
-						<input id="TitleInput" placeholder="Título"></input>
+						<input
+							id="TitleInput"
+							placeholder="Título"
+							type="input"
+							onChange={(e) => setAnnounceName(e.target.value)}
+						></input>
+
 						<div id="midInput">
 							<input
 								id="AutorInput"
 								placeholder="Autor(a)"
+								type="input"
+								onChange={(e) =>
+									setAnnounceAuthor(e.target.value)
+								}
 							></input>
 							<input
 								id="EditoraInput"
 								placeholder="Editora"
+								type="input"
+								onChange={(e) =>
+									setAnnouncePublishing_company(
+										e.target.value,
+									)
+								}
 							></input>
-							<input id="YearInput" placeholder="Ano"></input>
+							<input
+								id="YearInput"
+								placeholder="Ano"
+								type="number"
+								onChange={(e) =>
+									setAnnounceYear(e.target.value)
+								}
+							></input>
 						</div>
 						<div id="lastInput">
 							<input
@@ -156,6 +286,10 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 							<input
 								id="PageInput"
 								placeholder="N° de páginas"
+								type="number"
+								onChange={(e) =>
+									setAnnouncePages(e.target.value)
+								}
 							></input>
 						</div>
 					</div>
@@ -164,6 +298,8 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					<textarea
 						id="SinopseInput"
 						placeholder="Sinopse do livro"
+						type="input"
+						onChange={(e) => setAnnounceSynopsis(e.target.value)}
 					></textarea>
 				</div>
 				<div
@@ -247,9 +383,26 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					</label>
 				</div>
 				<div className="CepContainerRow">
-					<input className="CepInput" placeholder="CEP"></input>
-					<input className="CepInput" placeholder="Estado"></input>
-					<input className="CepInput" placeholder="Cidade"></input>
+					<input
+						className="CepInput"
+						placeholder="CEP"
+						type="input"
+						onChange={(e) => {
+							setAnnounceCep(e.target.value);
+						}}
+					></input>
+					<input
+						className="CepInput"
+						placeholder="Estado"
+						type="input"
+						onChange={(e) => setAnnounceDistrict(e.target.value)}
+					></input>
+					<input
+						className="CepInput"
+						placeholder="Cidade"
+						type="input"
+						onChange={(e) => setAnnounceCity(e.target.value)}
+					></input>
 				</div>
 				<div className="CepContainerRow">
 					<input id="BairroInput" placeholder="Bairro"></input>
@@ -259,17 +412,23 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 					<textarea
 						id="DiscriptionInput"
 						placeholder="Descrição do anúncio"
+						type="input"
+						onChange={(e) => setAnnounceDescription(e.target.value)}
 					></textarea>
 				</div>
 				{announceType == 2 && (
 					<div id="PriceRow">
 						<p>Preço: </p>
-						<input id="PriceInput" placeholder="R$ 0,00"></input>
+						<input
+							id="PriceInput"
+							placeholder="R$ 0,00"
+							onChange={(e) => setAnnouncePrice(e.target.value)}
+						></input>
 					</div>
 				)}
 				<div className="NextButton">
 					<p>Finalizar</p>
-					<div className="arrowNext">
+					<div className="arrowNext" onClick={handleAnnounceUpdate}>
 						<span className="material-icons">check_circle</span>
 					</div>
 				</div>
