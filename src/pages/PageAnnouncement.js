@@ -11,32 +11,41 @@ import getAnnouncement from "../services/getAnnouncement";
 import getAnnouncements from "../services/getAnnouncements";
 import { useHistory } from "react-router-dom";
 
-
 function PageAnnouncement(props) {
 	const announceId = props.match.params.announceId;
 	const [popular, setPopular] = useState([]);
 	const [announce, setAnnounce] = useState([]);
 	const history = useHistory();
-  
 
-    useEffect(async ()=>{
-		let announces =  await getAnnouncement(announceId)
-		setAnnounce(announces)
-		let popular = await getAnnouncements({orderBy:"popularity",limit:10});
+	useEffect(async () => {
+		let announces = await getAnnouncement(announceId);
+		setAnnounce(announces);
+		let popular = await getAnnouncements({
+			orderBy: "popularity",
+			limit: 10,
+		});
 		setPopular(popular.announcements);
-	},[]);
+	}, []);
 
-	const redirectToBook=(id)=>{
-		history.push("/announcement/"+id);
+	const redirectToBook = (id) => {
+		history.push("/announcement/" + id);
 		window.location.reload();
-	}
+	};
 
 	return (
 		<div id="body-book-container">
 			<Header></Header>
 			<div id="book-info-container">
 				<div id="book-image-preview">
-					<img id="book-image" src={"http://localhost:5050/static/books_images/"+announce.book_cover} />
+					{announce && (
+						<img
+							id="book-image"
+							src={
+								"http://35.198.10.112/static/books_images/" +
+								announce.book_cover
+							}
+						/>
+					)}
 					{/*
 					<div id="BookPreviewCarousel">
 						<BookPreview>
@@ -56,28 +65,33 @@ function PageAnnouncement(props) {
 				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
-						<p>{announce.name}</p>
+						<p>{announce && announce.name}</p>
 					</div>
 					<div id="book-resume-description">
-						<p>
-							{announce.description}
-						</p>
+						<p>{announce.description}</p>
 					</div>
 				</div>
 				<div id="book-sellers-container">
-					
-					{(announce.announceType==2)&&(<div id="book-value">
-						<p>R$ {announce.price}</p>
-					</div>)}
-					{(announce.announceType==1)&&(<div id="book-seller-type">
-						<p>Doações</p>
-					</div>)}
-					{(announce.announceType==2)&&(<div id="book-seller-type">
-						<p>Venda</p>
-					</div>)}
-					{(announce.announceType==3)&&(<div id="book-seller-type">
-						<p>Trocas</p>
-					</div>)}
+					{announce.announceType == 2 && (
+						<div id="book-value">
+							<p>R$ {announce.price}</p>
+						</div>
+					)}
+					{announce.announceType == 1 && (
+						<div id="book-seller-type">
+							<p>Doações</p>
+						</div>
+					)}
+					{announce.announceType == 2 && (
+						<div id="book-seller-type">
+							<p>Venda</p>
+						</div>
+					)}
+					{announce.announceType == 3 && (
+						<div id="book-seller-type">
+							<p>Trocas</p>
+						</div>
+					)}
 					<div id="seller-name">
 						<p>{announce.user_name}</p>
 					</div>
@@ -125,9 +139,7 @@ function PageAnnouncement(props) {
 					</tr>
 					<tr>
 						<td>Sinopse</td>
-						<td>
-							{announce.synopsis}
-						</td>
+						<td>{announce.synopsis}</td>
 					</tr>
 				</table>
 			</div>
@@ -135,12 +147,25 @@ function PageAnnouncement(props) {
 				<p>Produtos Relacionados</p>
 			</div>
 			<ProductCarousel>
-				{(popular && popular.length>0)&&(popular.map((book, index) => (
-					<div className="bookTitle" key={index} onClick={()=>{redirectToBook(book.id)}}>
-						<img src={"http://localhost:5050/static/books_images/"+book.book_cover} />
-						<label>{book.name}</label>
-					</div>)
-				))}
+				{popular &&
+					popular.length > 0 &&
+					popular.map((book, index) => (
+						<div
+							className="bookTitle"
+							key={index}
+							onClick={() => {
+								redirectToBook(book.id);
+							}}
+						>
+							<img
+								src={
+									"http://35.198.10.112/static/books_images/" +
+									book.book_cover
+								}
+							/>
+							<label>{book.name}</label>
+						</div>
+					))}
 			</ProductCarousel>
 
 			<Footer></Footer>
