@@ -30,6 +30,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [announceCity, setAnnounceCity] = useState("");
 	const [announceDescription, setAnnounceDescription] = useState("");
 	const [announcePrice, setAnnouncePrice] = useState("");
+	const [announceCategoria, setAnnounceCategoria] = useState("");
 	const [announceImage, setAnnounceImage] = useState(defaultBookImage);
 	const modalRef = useRef();
 
@@ -62,6 +63,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		let price = null;
 		let type = null;
 		let contactType = null;
+		let categoria = null;
 
 		if (announceName) {
 			name = announceName;
@@ -105,6 +107,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		if (announceContactType) {
 			contactType = announceContactType;
 		}
+		if (announceCategoria) {
+			categoria = announceCategoria.toLocaleLowerCase;
+		}
 
 		let body = {
 			name: name,
@@ -121,6 +126,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			price: price,
 			type: announceType,
 			contactType: contactType,
+			categoria: categoria,
 		};
 		console.log(body);
 		setAnnouncements(token, body);
@@ -308,6 +314,12 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 												<input
 													id="CategoriaInput"
 													placeholder="Categoria"
+													type="Input"
+													onChange={(e) =>
+														setAnnounceCategoria(
+															e.target.value,
+														)
+													}
 												></input>
 												<input
 													id="PageInput"

@@ -21,6 +21,7 @@ const setAnnouncements = async (token, body) => {
 		pages: body.pages,
 		year: body.year,
 		contact_type: body.contactType,
+		categories: body.categoria,
 	};
 	try {
 		response = await api.post("/announcement", config);

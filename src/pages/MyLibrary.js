@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
-import getMyLibrary from "../services/getMyLibrary"
-import deleteMyLibraryItem from "../services/deleteMyLibraryItem"
-import {useHistory} from "react-router-dom"
+import getMyLibrary from "../services/getMyLibrary";
+import deleteMyLibraryItem from "../services/deleteMyLibraryItem";
+import { useHistory } from "react-router-dom";
 import "../styles/pages/myAnnouncements.css";
 
 const MyLibrary = (props) => {
@@ -28,9 +28,9 @@ const MyLibrary = (props) => {
 		setAnnounces(announces);
 	}, []);
 
-	const redirectToBook=(id)=>{
-		history.push("/announcement/"+id);
-	}
+	const redirectToBook = (id) => {
+		history.push("/announcement/" + id);
+	};
 
 	useEffect(() => {
 		if (announces != null && announces.length > 0)
@@ -76,15 +76,33 @@ const MyLibrary = (props) => {
 								<img
 									className="announceImage"
 									src={
-										"http://localhost:5050/static/books_images/" +
+										"http://35.198.10.112/static/books_images/" +
 										announce.book_cover
 									}
-									onClick={()=>{redirectToBook(announce.id)}}
+									onClick={() => {
+										redirectToBook(announce.id);
+									}}
 								/>
 								<div className="announcesText">
 									<div className="announcesTitle">
-										<span style={{marginRight:"1vw"}} onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
-										<span className="material-icons" onClick={()=>{deleteMyLibraryItem(announce.id,token);window.location.reload()}}>
+										<span
+											style={{ marginRight: "1vw" }}
+											onClick={() => {
+												redirectToBook(announce.id);
+											}}
+										>
+											{announce.name}
+										</span>
+										<span
+											className="material-icons"
+											onClick={() => {
+												deleteMyLibraryItem(
+													announce.id,
+													token,
+												);
+												window.location.reload();
+											}}
+										>
 											delete
 										</span>
 									</div>

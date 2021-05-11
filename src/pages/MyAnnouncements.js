@@ -86,7 +86,7 @@ const MyAnnouncements = (props) => {
 								<img
 									className="announceImage"
 									src={
-										"http://localhost:5050/static/books_images/" +
+										"http://35.198.10.112/static/books_images/" +
 										announce.book_cover
 									}
 									onClick={() => {
