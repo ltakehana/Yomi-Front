@@ -116,7 +116,6 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			"description": description,
 			"price": price,
 		};
-		console.log(body);
 		setAnnouncements(token, body);
 	};
 

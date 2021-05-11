@@ -37,7 +37,6 @@ const Profile = (props) => {
                 setProfileImage("http://localhost:5050/static/users_profile_pic/"+responseUserInfo.picture);
             }
         }
-        console.log(responseUserInfo);
     },[]);
 
     const handleProfileUpdate = ()=>{
@@ -67,7 +66,6 @@ const Profile = (props) => {
             "birth_date":birth_date,
             "profile_image":profile_image
         };
-        console.log(body);
         updateUser(token,body);
     };
 

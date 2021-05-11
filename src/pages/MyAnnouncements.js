@@ -40,7 +40,6 @@ const MyAnnouncements = (props) => {
 				),
 			);
 	}, [announces]);
-	console.log(myAnnouncementsView);
 	const listExpandHandle = () => {
 		let announcesCont = myAnnouncementsCount;
 		if (announcesCont + 5 <= announces.length) {

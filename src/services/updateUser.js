@@ -7,13 +7,19 @@ const updateUser = async (token,body) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
-    },
-    name: body.name,
-    email: body.email,
-    telephone: body.telephone,
-    birth_date: body.birth_date,
-    profile_image: body.profile_image
+    }
   };
+  if(body.name)
+    config.name = body.name;
+  if(body.email)
+    config.email = body.email;
+  if(body.telephone)
+    config.telephone = body.telephone;
+  if(body.birth_date)
+    config.birth_date = body.birth_date;
+  if(body.profile_image)
+    config.profile_image = body.profile_image;
+
 
   try {
     response = await api.put('/user',config);

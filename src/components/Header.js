@@ -38,7 +38,6 @@ const Header = (props) => {
 	}
 
 	const searchRedirect=(data)=>{
-		console.log(data);
 		history.push({pathname:"/search",state:data});
 	}
 

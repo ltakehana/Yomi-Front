@@ -4,7 +4,10 @@ const getAnnouncements = async (body) => {
 
   let response = null;
 
-  let config = {headers:{}};
+  let config = {
+      headers:{
+      }
+  };
 
   if(body.orderBy){
       config.headers.orderBy=body.orderBy;
@@ -14,6 +17,21 @@ const getAnnouncements = async (body) => {
   }
   if(body.announceType){
       config.headers.announceType=body.announceType;
+  }
+  if(body.filters){
+      config.headers.filters=body.filters;
+  }
+  if(body.price){
+      config.headers.price=body.price;
+  }
+  if(body.maxId){
+      config.headers.maxId=body.maxId;
+  }
+  if(body.maxId){
+      config.headers.maxId=body.maxId;
+  }
+  if(body.categories){
+      config.headers.categories=body.categories;
   }
 
 

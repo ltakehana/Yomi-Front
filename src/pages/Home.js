@@ -153,7 +153,7 @@ const Home = (props) => {
 					</div>
 				))}
 				{invisibleProducts}
-				{(invisibleProducts.length==0)&&(
+				{(invisibleProducts.length==0 && products.length!=0)&&(
 				<button
 					onClick={() => {
 						gradeExpandHandle();
