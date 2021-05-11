@@ -282,7 +282,7 @@ const BookSearch = (props) => {
 	}, []);
 	const gradeExpandHandle = () => {
 		const tmpProductViewCount =
-			productViewCount + Math.floor(window.innerWidth / 288) * 3;
+			productViewCount + Math.floor(window.innerWidth*0.75 / 288) * 3;
 		setProductViewCount(tmpProductViewCount);
 		let tmpProductView = null;
 		if (annouceTypeToggle == "trocas") {
@@ -299,16 +299,16 @@ const BookSearch = (props) => {
 			tmpProductView = vendas.slice(0, tmpProductViewCount);
 		}
 
-		if (tmpProductView.length % Math.floor(window.innerWidth / 288) == 0) {
+		if (tmpProductView.length % Math.floor(window.innerWidth*0.75 / 288) == 0) {
 			setInvisibleProducts([]);
 		} else {
 			let invisibleElements = [];
 			for (
 				let index = 0;
 				index <
-				Math.floor(window.innerWidth / 288) -
+				Math.floor(window.innerWidth*0.75 / 288) -
 					(tmpProductView.length %
-						Math.floor(window.innerWidth / 288));
+						Math.floor(window.innerWidth*0.75 / 288));
 				index++
 			) {
 				invisibleElements.push(
@@ -323,16 +323,16 @@ const BookSearch = (props) => {
 		<div id="searchContainer">
 			<Header></Header>
 			<div>
-				<div id="grade-header">
-					<div id="grade-title">
+				<div id="gradeSearchHeader">
+					<div id="gradeSearchTitle">
 						<h1>Resultados</h1>
 					</div>
 					<div id="searchButtons">
 						<button
 							className={
 								annouceTypeToggle == "doacoes"
-									? "filterSelected"
-									: "filter"
+									? "filterSearchSelected"
+									: "filterSearchButtons"
 							}
 							type="outline"
 							onClick={() => {
@@ -345,8 +345,8 @@ const BookSearch = (props) => {
 						<button
 							className={
 								annouceTypeToggle == "vendas"
-									? "filterSelected"
-									: "filter"
+									? "filterSearchSelected"
+									: "filterSearchButtons"
 							}
 							type="outline"
 							onClick={() => {
@@ -359,8 +359,8 @@ const BookSearch = (props) => {
 						<button
 							className={
 								annouceTypeToggle == "trocas"
-									? "filterSelected"
-									: "filter"
+									? "filterSearchSelected"
+									: "filterSearchButtons"
 							}
 							type="outline"
 							onClick={() => {
@@ -390,10 +390,10 @@ const BookSearch = (props) => {
 					<li>Lucas Neto</li>
 				</div>
 
-				<div className="gradeContainer">
+				<div className="gradeSearchContainer">
 					{productView.map((book, index) => (
-						<div className="book-container" key={index}>
-							<div className="book-title">
+						<div className="bookSearchContainer" key={index}>
+							<div className="bookSearchTitle">
 								<img src={book.img} />
 								<label>{book.name}</label>
 							</div>
@@ -404,7 +404,7 @@ const BookSearch = (props) => {
 						onClick={() => {
 							gradeExpandHandle();
 						}}
-						className="gradeExpand"
+						className="gradeSearchExpand"
 					>
 						&middot;&middot;&middot;
 					</button>

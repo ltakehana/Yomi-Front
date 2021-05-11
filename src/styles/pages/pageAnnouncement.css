@@ -1,0 +1,143 @@
+#body-book-container {
+	height: 100vh;
+	width: 100vw;
+}
+#book-info-container {
+	display: flex;
+	flex-direction: row;
+	padding: 3em;
+}
+/*book-image-preview*/
+#book-image-preview {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+#book-image {
+	width: 60%;
+	height: 100%;
+	margin-left: 4em;
+}
+/*
+
+#BookPreviewCarousel {
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 1em;
+	height: 100%;
+}
+
+.bookPreview img {
+	display: block;
+	height: 100%;
+	width: 80%;
+	object-position: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bookPreview {
+	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+*/
+
+/*description container*/
+#book-resume-container {
+	color: #8c52ff;
+	flex: 1;
+}
+#book-resume-title {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+#book-resume-description {
+	padding-top: 5em;
+	font-size: 1.3em;
+}
+
+/*seller container*/
+#book-sellers-container {
+	color: #8c52ff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: middle;
+	margin-left: 10%;
+	flex: 1;
+}
+#book-value {
+	font-size: 2.4em;
+}
+#book-seller-type {
+	font-size: 1.3em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#seller-name {
+	font-size: 1.2em;
+	margin-bottom: 1em;
+}
+#seller-icon {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 1em;
+}
+.contact-icons {
+	width: 30%;
+	margin-right: 0.8em;
+}
+#contact-icons:hover {
+	cursor: pointer;
+}
+#seller-chat {
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 1em;
+}
+#mensagem-icon {
+	width: 2em;
+	padding-right: 0.5em;
+}
+
+/*book descripition*/
+#book-description-container {
+	padding-left: 7em;
+}
+#book-description-title {
+	font-size: 1.7em;
+	color: #8c52ff;
+	font-weight: bold;
+	padding-bottom: 0.5em;
+}
+#book-description {
+	font-weight: bold;
+	color: rgb(150, 147, 147);
+	width: 70vw;
+}
+#book-description td {
+	padding: 0.6em;
+	border-top: 1px solid rgb(150, 147, 147);
+	border-collapse: collapse;
+	max-width: 40vw;
+}
+#table-exp-button {
+	color: #8c52ff;
+	padding-left: 35vw;
+	padding-bottom: 3em;
+	padding-top: 2em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+/*highlights*/
+#highlights {
+	padding-left: 5em;
+	color: #8c52ff;
+	font-weight: bold;
+	font-size: 1.5em;
+	padding-bottom: 2em;
+}

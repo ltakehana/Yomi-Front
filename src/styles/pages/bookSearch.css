@@ -3,14 +3,16 @@ body {
 	display: block;
 }
 
-#grade-header {
+#gradeSearchHeader {
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
 	justify-content: space-between;
 	padding-top: 3em;
+	width: 95vw;
+	margin-left: 2.5vw;
 }
-#grade-title {
+#gradeSearchTitle {
 	padding-top: 1em;
 	padding-left: 1.5em;
 	padding-bottom: 1.5em;
@@ -18,10 +20,10 @@ body {
 	font-size: 1em;
 }
 #searchButtons {
-	padding-right: 2em;
+	padding-right: 7%;
 }
 
-.filter {
+.filterSearchButtons {
 	width: 5em;
 	height: 2.2em;
 	font-size: 1em;
@@ -34,12 +36,12 @@ body {
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-.filter:hover {
+.filterSearchButtons:hover {
 	cursor: pointer;
 	box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.25);
 	filter: none;
 }
-.filterSelected {
+.filterSearchSelected {
 	cursor: pointer;
 	box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.25);
 	filter: none;
@@ -58,7 +60,7 @@ body {
 
 #searchBox {
 	height: auto;
-	width: 12em;
+	width: 15vw;
 	border-radius: 1em;
 	background: rgba(248, 245, 255, 1);
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -69,16 +71,15 @@ body {
 	color: #8c52ff;
 	font-size: 1.5em;
 	font-weight: bold;
-	padding: 0.2em 0.2em;
+	padding: 0.2em 1em;
 }
 
 #searchBox li {
 	color: #8c52ff;
 	list-style-type: none;
-	padding: 0.2em 0.2em;
+	padding: 0.2em 2em;
 	font-size: 1.3em;
 	margin-top: 0.5em;
-	text-align: center;
 }
 
 #searchBox li:hover {
@@ -89,31 +90,31 @@ body {
 
 /*----------------------------*/
 
-.gradeContainer {
-	width: 70vw;
+.gradeSearchContainer {
+	width: 75vw;
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.gradeContainer .book-title img {
+.gradeSearchContainer .bookSearchTitle img {
 	height: 12em;
 	width: 8em;
 }
 
-.book-container {
+.bookSearchContainer {
 	margin-right: 2em;
 	align-items: center;
 	text-align: center;
-	width: 18em;
+	width: 16em;
 	margin: 2em;
 	background: #f8f5ff;
 	border-radius: 1em;
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-.book-title {
+.bookSearchTitle {
 	align-items: center;
 	text-align: center;
 	vertical-align: middle;
@@ -121,7 +122,7 @@ body {
 	cursor: pointer;
 }
 
-.book-title img {
+.bookSearchTitle img {
 	display: block;
 	height: 9em;
 	width: 7em;
@@ -131,7 +132,7 @@ body {
 	margin-right: auto;
 }
 
-.book-title label {
+.bookSearchTitle label {
 	color: #8c52ff;
 	vertical-align: middle;
 	font-weight: bold;
@@ -141,7 +142,7 @@ body {
 
 /*------------------------------------*/
 
-.gradeExpand {
+.gradeSearchExpand {
 	width: 50vw;
 	font-size: 5em;
 	margin-top: 0.5em;
@@ -157,7 +158,7 @@ body {
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-.gradeExpand:hover {
+.gradeSearchExpand:hover {
 	background-color: #8c52ff;
 	color: #f8f5ff;
 	cursor: pointer;

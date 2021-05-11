@@ -9,7 +9,9 @@
     width: 37.5vw;
     align-items: center;
 }
-
+#profileImageInput{
+    visibility:hidden;
+}
 .profileInput{
     display: block;
 	font-weight: bold;

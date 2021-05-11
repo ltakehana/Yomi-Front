@@ -7,8 +7,7 @@ import MyAnnouncements from "../pages/MyAnnouncements";
 import Home from "../pages/Home";
 import BookSearch from "../pages/BookSearch";
 import Chat from "../pages/Chat";
-
-
+import MyLibrary from "../pages/MyLibrary";
 
 const AppRoutes = () => (
 	<Switch>
@@ -19,6 +18,10 @@ const AppRoutes = () => (
     <Route component={MyAnnouncements} path="/MyAnnouncements" exact/>
 	<Route component={BookSearch} path="/search" exact />
 		<Route component={Chat} path="/chat" exact />
-  </Switch>
+		<Route component={BookSearch} path="/search" exact />
+		<Route component={Profile} path="/Profile" exact />
+		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />
+		<Route component={MyLibrary} path="/MyLibrary" exact />
+	</Switch>
 );
 export default AppRoutes;
