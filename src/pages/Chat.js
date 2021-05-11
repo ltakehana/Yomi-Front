@@ -4,7 +4,6 @@ import "../styles/pages/chat.css";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
 
-
 const Chat = () => {
 	const [message, updateMessage] = useState("");
 	const [messages, updateMessages] = useState([]);
@@ -39,7 +38,9 @@ const Chat = () => {
 			<Header></Header>
 		
 			<div id="chatContainer">
+				<div id ="chatNavBar">
 			<UserNavbar></UserNavbar>
+			</div>
 				<div id="messageContainer">
 					<form id="chatForm" onSubmit={handleFormSubmit}>
 						<input
@@ -50,6 +51,7 @@ const Chat = () => {
 							value={message}
 						/>
 					</form>
+			
 					<ul id="listChat">
 						{messages.map((m) => (
 							<li id="list-item">

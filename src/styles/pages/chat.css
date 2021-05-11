@@ -30,7 +30,7 @@
 #chat_title {
   color: #8c52ff;
   font-weight: bold;
-  padding-inline: 34%;
+  padding-inline: 36%;
 }
 #chat_icon_pearson {
   color: #5935a0;
@@ -89,4 +89,10 @@
   height: 80%;
   padding: 0.5em 0.5em;
   color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  #chatNavBar.responsive{
+    display: none;
+  }
 }
