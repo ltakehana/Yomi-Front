@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import BookSearch from "../pages/BookSearch";
 import Chat from "../pages/Chat";
 import MyLibrary from "../pages/MyLibrary";
+import ChatContacts from "../pages/ChatContacts";
 
 const AppRoutes = () => (
 	<Switch>
@@ -18,6 +19,7 @@ const AppRoutes = () => (
 		<Route component={Profile} path="/Profile" exact />
 		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />
 		<Route component={MyLibrary} path="/MyLibrary" exact />
+		<Route component={ChatContacts} path="/contacts" exact />
 	</Switch>
 );
 export default AppRoutes;

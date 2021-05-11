@@ -95,22 +95,35 @@
 #submitContainer{
   display: flex;
   padding-inline: 8em;
+  
 }
 
 #send_button{
   border: none;
   width:0%;
+  align-self: center;
+  align-items: center;
+
 }
 
 
 #chat_send_message{
   color: white;
-  padding: 0em 4em;
+  background: #5935a0;
+  width: 4em;
+  height: 4em;
+  margin:1em;
+  border-radius: 2em;
+  padding: 1em 1.2em;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 
 }
 
 #chat_send_message:hover{
   color: #5935a0;
+  background-color:white ;
 }
 
 @media only screen and (max-width: 1060px) {

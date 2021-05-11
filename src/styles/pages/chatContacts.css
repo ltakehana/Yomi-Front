@@ -1,0 +1,92 @@
+#contactsBody{
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+#contactsContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 5em;
+    margin-left: 0px;
+}
+
+#contactsDiv{
+    width: 58vw;
+
+}
+
+#contactsItem:hover{
+    background-color:#8C52FF;
+    cursor: pointer;
+
+}
+
+#contactsItem{
+    height:6em;
+    margin:1em;
+    display: flex;
+    background-color:rgba(248, 245, 255, 1);
+    border-radius: 1.5em;
+    margin-left: 10vw;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+    cursor: pointer;
+}
+
+
+#contactsItem:hover .open_chat {
+        background-color:  #8C52FF;
+        color: rgba(248, 245, 255, 1);
+}
+
+.contactsName{
+     color: #8C52FF;
+    font-size: 1.3em;
+    padding: 1.7em;
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50vw;
+    background: none;
+
+}
+#contactsItem:hover .contactsName {
+    background-color:  #8C52FF;
+    color: rgba(248, 245, 255, 1);
+}
+
+
+
+#contactsImage{
+    border-radius: 5em;
+    width: 4em;
+    height: 4em;
+    margin: 1em;
+}
+
+.open_chat{
+ border: none;
+ width:5%;
+ border-radius: 1.5em;
+  background:none;
+  color: #8C52FF;
+  cursor: pointer;
+
+  }
+  
+
+
+.contacts_expand{
+    width: 30vw;
+	font-size: 5em;
+	margin-top: 0.5em;
+	font-weight: bolder;
+	vertical-align: top;
+	background:none;
+	border: none;
+	font-family: Roboto;
+	color: #8c52ff;
+	cursor: pointer;
+    border-radius: 0.4em;
+    margin-left: 42vw;
+}
