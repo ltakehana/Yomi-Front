@@ -3,12 +3,11 @@
   height: 100vh;
 }
 
-
-#chatContainer{
-	display: flex;
-    flex-direction: row;
-    margin:5em;
-    margin-left: 0px;
+#chatContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 5em;
+  margin-left: 0px;
 }
 
 #messageContainer {
@@ -32,16 +31,14 @@
   color: #8c52ff;
   font-weight: bold;
   padding-inline: 34%;
-  
 }
-#chat_icon_pearson  {
-	color: #5935a0;
-  }
-  
-  #chat_icon_arrow {
-	color: #5935a0;
-  }
-  
+#chat_icon_pearson {
+  color: #5935a0;
+}
+
+#chat_icon_arrow {
+  color: #5935a0;
+}
 
 #listChat {
   padding: 0.5em;
@@ -49,14 +46,13 @@
   height: 100%;
   overflow: auto;
   overflow-y: scroll;
- 
 }
 
 #listChat::-webkit-scrollbar {
-	width:1em;
-	height: 1em;
-	background:#ebe2ff;
-	}
+  width: 1em;
+  height: 1em;
+  background: #ebe2ff;
+}
 
 #list-item {
   list-style: none;
@@ -73,7 +69,6 @@
   background: #5935a0;
   border-radius: 0.5em;
   color: beige;
-  
 }
 
 #chatForm {
@@ -95,4 +90,3 @@
   padding: 0.5em 0.5em;
   color: black;
 }
-
