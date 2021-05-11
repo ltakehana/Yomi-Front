@@ -1,4 +1,4 @@
-import api from './api';
+import api from "./api";
 
 const setAnnouncements = async (token, body) => {
 	let response = null;
@@ -10,10 +10,9 @@ const setAnnouncements = async (token, body) => {
 		name: body.name,
 		book_cover: body.book_cover,
 		author: body.author,
-		announceType: body.announceType,
 		cep: body.cep,
 		price: body.price,
-		contact_type: body.type,
+		announceType: body.type,
 		district: body.district,
 		city: body.city,
 		description: body.description,
@@ -21,9 +20,10 @@ const setAnnouncements = async (token, body) => {
 		synopsis: body.synopsi,
 		pages: body.pages,
 		year: body.year,
+		contact_type: body.contactType,
 	};
 	try {
-		response = await api.POST("/announcement", config);
+		response = await api.post("/announcement", config);
 		return response.data;
 	} catch (error) {
 		console.log(error);
