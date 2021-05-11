@@ -42,6 +42,7 @@ const Chat = () => {
 			<UserNavbar></UserNavbar>
 			</div>
 				<div id="messageContainer">
+					<div id="submitContainer">
 					<form id="chatForm" onSubmit={handleFormSubmit}>
 						<input
 							id="form-field"
@@ -50,8 +51,14 @@ const Chat = () => {
 							type="text"
 							value={message}
 						/>
-					</form>
-			
+					<button id = "send_button"onClick={handleFormSubmit}>
+						<div id="chat_send_message">
+							<span className="material-icons">send_white_24dp</span>
+						</div>
+							</button>
+							</form>
+							</div>
+
 					<ul id="listChat">
 						{messages.map((m) => (
 							<li id="list-item">
