@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 
@@ -7,76 +7,36 @@ import whatsapp from "../assets/whatsapp.svg";
 import email from "../assets/email.svg";
 import Footer from "../components/Footer";
 import mensagem from "../assets/mensagem.svg";
+import getAnnouncement from "../services/getAnnouncement";
+import getAnnouncements from "../services/getAnnouncements";
+import { useHistory } from "react-router-dom";
 
-const bookImage = [
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-];
 
-const ImagePreview = [
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		Number: 1,
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		Number: 2,
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		Number: 3,
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		Number: 4,
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		Number: 5,
-	},
-];
+function PageAnnouncement(props) {
+	const announceId = props.match.params.announceId;
+	const [popular, setPopular] = useState([]);
+	const [announce, setAnnounce] = useState([]);
+	const history = useHistory();
+  
 
-function PageAnnouncement() {
-	const [bookSelected, setbookSelected] = useState(ImagePreview[0]);
+    useEffect(async ()=>{
+		let announces =  await getAnnouncement(announceId)
+		setAnnounce(announces)
+		let popular = await getAnnouncements({orderBy:"popularity",limit:10});
+		setPopular(popular.announcements);
+	},[]);
+
+	const redirectToBook=(id)=>{
+		history.push("/announcement/"+id);
+		window.location.reload();
+	}
+
 	return (
 		<div id="body-book-container">
 			<Header></Header>
 			<div id="book-info-container">
 				<div id="book-image-preview">
-					<img id="book-image" src={bookSelected.img} />
+					<img id="book-image" src={"http://localhost:5050/static/books_images/"+announce.book_cover} />
 					{/*
 					<div id="BookPreviewCarousel">
 						<BookPreview>
@@ -96,26 +56,30 @@ function PageAnnouncement() {
 				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
-						<p>Lorem ipsum - sit amet</p>
+						<p>{announce.name}</p>
 					</div>
 					<div id="book-resume-description">
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Praesent nulla risus, viverra eu convallis
-							tempus, vehicula a mi. Suspendisse ultrices erat at
-							ligula lacinia, et convallis ex egestas
+							{announce.description}
 						</p>
 					</div>
 				</div>
 				<div id="book-sellers-container">
-					<div id="book-value">
-						<p>R$ 00,00</p>
-					</div>
-					<div id="book-seller-type">
-						<p>Venda/Troca</p>
-					</div>
+					
+					{(announce.announceType==2)&&(<div id="book-value">
+						<p>R$ {announce.price}</p>
+					</div>)}
+					{(announce.announceType==1)&&(<div id="book-seller-type">
+						<p>Doações</p>
+					</div>)}
+					{(announce.announceType==2)&&(<div id="book-seller-type">
+						<p>Venda</p>
+					</div>)}
+					{(announce.announceType==3)&&(<div id="book-seller-type">
+						<p>Trocas</p>
+					</div>)}
 					<div id="seller-name">
-						<p>Fulano da Silva Sicrano</p>
+						<p>{announce.user_name}</p>
 					</div>
 					<div id="seller-icon">
 						<img className="contact-icons" src={whatsapp}></img>
@@ -136,36 +100,33 @@ function PageAnnouncement() {
 				<table id="book-description">
 					<tr>
 						<td>Número de Páginas</td>
-						<td>176</td>
+						<td>{announce.pages}</td>
 					</tr>
 					<tr>
 						<td>Ano</td>
-						<td>1992</td>
+						<td>{announce.year}</td>
 					</tr>
 
 					<tr>
 						<td>Autor</td>
-						<td>Rezende</td>
+						<td>{announce.author}</td>
 					</tr>
 					<tr>
 						<td>Edição</td>
-						<td>1</td>
+						<td>{announce.edition}</td>
 					</tr>
 					<tr>
 						<td>Editora</td>
-						<td>youtube</td>
+						<td>{announce.publishing_company}</td>
 					</tr>
 					<tr>
 						<td>Categoria</td>
-						<td>Terror</td>
+						<td>{announce.categories}</td>
 					</tr>
 					<tr>
 						<td>Sinopse</td>
 						<td>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Praesent nulla risus, viverra eu convallis
-							tempus, vehicula a mi. Suspendisse ultrices erat at
-							ligula lacinia, et convallis ex egestas
+							{announce.synopsis}
 						</td>
 					</tr>
 				</table>
@@ -174,11 +135,11 @@ function PageAnnouncement() {
 				<p>Produtos Relacionados</p>
 			</div>
 			<ProductCarousel>
-				{bookImage.map((book, index) => (
-					<div className="bookTitle" key={index}>
-						<img src={book.img} />
+				{(popular && popular.length>0)&&(popular.map((book, index) => (
+					<div className="bookTitle" key={index} onClick={()=>{redirectToBook(book.id)}}>
+						<img src={"http://localhost:5050/static/books_images/"+book.book_cover} />
 						<label>{book.name}</label>
-					</div>
+					</div>)
 				))}
 			</ProductCarousel>
 

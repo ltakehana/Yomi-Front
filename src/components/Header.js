@@ -39,6 +39,7 @@ const Header = (props) => {
 
 	const searchRedirect=(data)=>{
 		history.push({pathname:"/search",state:data});
+		window.location.reload();
 	}
 
 	const [categories,setCategories] = useState([]);

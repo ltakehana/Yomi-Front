@@ -6,6 +6,7 @@ import BookSearch from "../pages/BookSearch";
 import Profile from "../pages/Profile";
 import MyAnnouncements from "../pages/MyAnnouncements";
 import MyLibrary from "../pages/MyLibrary";
+import PageAnnouncement from "../pages/PageAnnouncement"
 
 const AppRoutes = () => (
 	<Switch>
@@ -14,6 +15,7 @@ const AppRoutes = () => (
 		<Route component={Profile} path="/Profile" exact />
 		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />
 		<Route component={MyLibrary} path="/MyLibrary" exact />
+		<Route component={PageAnnouncement} path="/announcement/:announceId" />
 	</Switch>
 );
 export default AppRoutes;

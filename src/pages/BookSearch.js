@@ -82,6 +82,12 @@ const BookSearch = (props) => {
 		announcementsRender();
 	}, [annouceTypeToggle]);
 
+
+	const redirectToBook=(id)=>{
+		history.push("/announcement/"+id);
+	}
+
+
 	const gradeExpandHandle = () => {
 		if(announcements.announcements){
 			const tmpProductViewCount = productViewCount + Math.floor(window.innerWidth*0.75 / 288) * 3;
@@ -185,7 +191,7 @@ const BookSearch = (props) => {
 
 				<div className="gradeSearchContainer">
 					{productView.map((book, index) => (
-						<div className="bookSearchContainer" key={index}>
+						<div className="bookSearchContainer" onClick={()=>{redirectToBook(book.id)}} key={index}>
 							<div className="bookSearchTitle">
 								<img src={"http://localhost:5050/static/books_images/"+book.book_cover} />
 								<label>{book.name}</label>
@@ -204,6 +210,7 @@ const BookSearch = (props) => {
 					</button>)}
 				</div>
 			</div>
+			<div style={{height:"10vh",display:"block"}}>.</div>
 				
 		</div>
 		<Footer></Footer>

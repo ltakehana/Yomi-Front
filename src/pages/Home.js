@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 import "../styles/pages/home.css";
 import Footer from "../components/Footer"
-import getAnnouncements from "../services/getAnnouncements";
+import getAnnouncements from "../services/getAnnouncements"
+import { useHistory } from "react-router-dom";;
 
 
 const Home = (props) => {
@@ -13,6 +14,8 @@ const Home = (props) => {
 	const [popular, setPopular] = useState([]);
 	const [products, setProducts] = useState([]);
 	const [data, setData] = useState({});
+
+	const history = useHistory();
 
 
 	const [productViewCount, setProductViewCount] = useState(0);
@@ -84,13 +87,17 @@ const Home = (props) => {
 		renderProducts();
 	}
 
+	const redirectToBook=(id)=>{
+		history.push("/announcement/"+id);
+	}
+
 	return (
 		<div id="body-container">
 			<Header></Header>
 			<h3 className="carousel-title">Destaques</h3>
 			<ProductCarousel>
 				{(popular && popular.length>0)&&(popular.map((book, index) => (
-					<div className="bookTitle" key={index}>
+					<div className="bookTitle" key={index} onClick={()=>{redirectToBook(book.id)}}>
 						<img src={"http://localhost:5050/static/books_images/"+book.book_cover} />
 						<label>{book.name}</label>
 					</div>)
@@ -145,7 +152,7 @@ const Home = (props) => {
 			</div>
 			<div className="grade-container">
 				{productView.map((book, index) => (
-					<div className="bookContainer" key={index}>
+					<div className="bookContainer" key={index} onClick={()=>{redirectToBook(book.id)}}>
 						<div className="bookTitle">
 							<img src={"http://localhost:5050/static/books_images/"+book.book_cover} />
 							<label>{book.name}</label>

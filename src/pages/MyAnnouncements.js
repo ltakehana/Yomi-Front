@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModalAnnouncement from "../components/ModalAnnouncement";
+import { useHistory } from "react-router-dom";
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css";
 import getMyAnnouncements from "../services/getMyAnnouncements";
 
 const MyAnnouncements = (props) => {
+	const history = useHistory();
 	const [showModal, setShowModal] = useState(false);
 	const [announces, setAnnounces] = useState([]);
 
@@ -30,6 +32,10 @@ const MyAnnouncements = (props) => {
 			);
 		setAnnounces(announces);
 	}, []);
+
+	const redirectToBook=(id)=>{
+		history.push("/announcement/"+id);
+	}
 
 	useEffect(() => {
 		if (announces != null && announces.length > 0)
@@ -82,10 +88,11 @@ const MyAnnouncements = (props) => {
 										"http://localhost:5050/static/books_images/" +
 										announce.book_cover
 									}
+									onClick={()=>{redirectToBook(announce.id)}}
 								/>
 								<div className="announcesText">
-									<label className="announcesTitle">
-										{announce.name}
+									<div className="announcesTitle">
+										<span onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
 										<span className="material-icons">
 											delete
 										</span>
@@ -95,7 +102,7 @@ const MyAnnouncements = (props) => {
 										>
 											edit
 										</span>
-									</label>
+									</div>
 									<span className="announcesDescription">
 										{announce.description}
 									</span>
