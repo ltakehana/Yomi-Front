@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
 import getMyLibrary from "../services/getMyLibrary"
+import deleteMyLibraryItem from "../services/deleteMyLibraryItem"
 import {useHistory} from "react-router-dom"
 import "../styles/pages/myAnnouncements.css";
 
@@ -13,8 +14,9 @@ const MyLibrary = (props) => {
 	const [myAnnouncementsView, setMyAnnouncementsView] = useState([]);
 	const [myAnnouncementsCount, setMyAnnouncementsCount] = useState(5);
 
+	const token = sessionStorage.getItem("userToken");
+
 	useEffect(async () => {
-		const token = sessionStorage.getItem("userToken");
 		let announces = await getMyLibrary(token);
 		if (announces != null && announces.length > 0)
 			setMyAnnouncementsView(
@@ -81,8 +83,8 @@ const MyLibrary = (props) => {
 								/>
 								<div className="announcesText">
 									<div className="announcesTitle">
-										<span onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
-										<span className="material-icons">
+										<span style={{marginRight:"1vw"}} onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
+										<span className="material-icons" onClick={()=>{deleteMyLibraryItem(announce.id,token);window.location.reload()}}>
 											delete
 										</span>
 									</div>

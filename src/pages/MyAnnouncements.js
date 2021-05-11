@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModalAnnouncement from "../components/ModalAnnouncement";
+import deleteAnnouncement from "../services/deleteAnnouncement"
 import { useHistory } from "react-router-dom";
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css";
@@ -11,6 +12,7 @@ const MyAnnouncements = (props) => {
 	const history = useHistory();
 	const [showModal, setShowModal] = useState(false);
 	const [announces, setAnnounces] = useState([]);
+	const token = sessionStorage.getItem("userToken");
 
 	const openModal = () => {
 		if (showModal) setShowModal(false);
@@ -21,7 +23,6 @@ const MyAnnouncements = (props) => {
 	const [myAnnouncementsCount, setMyAnnouncementsCount] = useState(5);
 
 	useEffect(async () => {
-		const token = sessionStorage.getItem("userToken");
 		let announces = await getMyAnnouncements(token);
 		if (announces != null && announces.length > 0)
 			setMyAnnouncementsView(
@@ -92,8 +93,8 @@ const MyAnnouncements = (props) => {
 								/>
 								<div className="announcesText">
 									<div className="announcesTitle">
-										<span onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
-										<span className="material-icons">
+										<span style={{marginRight:"1vw"}} onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
+										<span className="material-icons" onClick={()=>{deleteAnnouncement(announce.id,token);window.location.reload()}}>
 											delete
 										</span>
 										<span
