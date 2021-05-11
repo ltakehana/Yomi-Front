@@ -37,8 +37,9 @@ const Chat = () => {
 	return (
 		<div id="chatBody">
 			<Header></Header>
+		
 			<div id="chatContainer">
-				<UserNavbar></UserNavbar>
+			<UserNavbar></UserNavbar>
 				<div id="messageContainer">
 					<form id="chatForm" onSubmit={handleFormSubmit}>
 						<input

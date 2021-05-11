@@ -7,53 +7,49 @@
 #chatContainer{
 	display: flex;
     flex-direction: row;
-    margin:5%;
+    margin:5em;
     margin-left: 0px;
 }
 
 #messageContainer {
   display: flex;
   flex-direction: column-reverse;
-  width: 80vw;
-  height: 100vh;
+  width: 55vw;
+  height: 70vh;
   background: #ebe2ff;
   border-radius: 0.5em;
-  padding: 2em 2em;
-  margin-left: 10em;
+  padding: 1em 1em;
+  align-content: center;
+  margin-left: 10%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #chatHeader {
   display: flex;
-  
-
-
 }
 
 #chat_title {
   color: #8c52ff;
   font-weight: bold;
-  width: 100%;
-  padding-inline: 16em;
+  padding-inline: 34%;
   
 }
 #chat_icon_pearson  {
 	color: #5935a0;
-  width: 10%;
   }
   
   #chat_icon_arrow {
 	color: #5935a0;
-	width: 10%;
   }
   
 
 #listChat {
-  padding: 0.1em;
+  padding: 0.5em;
   width: 100%;
-  height: 75%;
+  height: 100%;
   overflow: auto;
   overflow-y: scroll;
+ 
 }
 
 #listChat::-webkit-scrollbar {
