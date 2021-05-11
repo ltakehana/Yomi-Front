@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ModalAnnouncement from "../components/ModalAnnouncement";
-import deleteAnnouncement from "../services/deleteAnnouncement"
+import deleteAnnouncement from "../services/deleteAnnouncement";
 import { useHistory } from "react-router-dom";
 import UserNavbar from "../components/UserNavbar";
 import "../styles/pages/myAnnouncements.css";
@@ -34,9 +34,9 @@ const MyAnnouncements = (props) => {
 		setAnnounces(announces);
 	}, []);
 
-	const redirectToBook=(id)=>{
-		history.push("/announcement/"+id);
-	}
+	const redirectToBook = (id) => {
+		history.push("/announcement/" + id);
+	};
 
 	useEffect(() => {
 		if (announces != null && announces.length > 0)
@@ -89,12 +89,30 @@ const MyAnnouncements = (props) => {
 										"http://localhost:5050/static/books_images/" +
 										announce.book_cover
 									}
-									onClick={()=>{redirectToBook(announce.id)}}
+									onClick={() => {
+										redirectToBook(announce.id);
+									}}
 								/>
 								<div className="announcesText">
 									<div className="announcesTitle">
-										<span style={{marginRight:"1vw"}} onClick={()=>{redirectToBook(announce.id)}}>{announce.name}</span>
-										<span className="material-icons" onClick={()=>{deleteAnnouncement(announce.id,token);window.location.reload()}}>
+										<span
+											style={{ marginRight: "1vw" }}
+											onClick={() => {
+												redirectToBook(announce.id);
+											}}
+										>
+											{announce.name}
+										</span>
+										<span
+											className="material-icons"
+											onClick={() => {
+												deleteAnnouncement(
+													announce.id,
+													token,
+												);
+												window.location.reload();
+											}}
+										>
 											delete
 										</span>
 										<span
