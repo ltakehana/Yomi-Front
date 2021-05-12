@@ -141,6 +141,8 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		};
 		console.log(body);
 		await setAnnouncements(token, body);
+		setShowModal(false);
+		window.location.reload();
 	};
 
 	const closeModal = (e) => {

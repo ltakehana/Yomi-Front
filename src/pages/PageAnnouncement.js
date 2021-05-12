@@ -144,10 +144,6 @@ function PageAnnouncement(props) {
 						<td>{announce.author}</td>
 					</tr>
 					<tr>
-						<td>Edição</td>
-						<td>{announce.edition}</td>
-					</tr>
-					<tr>
 						<td>Editora</td>
 						<td>{announce.publishing_company}</td>
 					</tr>
