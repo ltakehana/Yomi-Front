@@ -5,11 +5,13 @@ import logo from "../assets/logo_white.svg";
 import { ModalLogin } from "./ModalLogin";
 import { useAuth } from '../contexts/auth';
 import getCategories from "../services/getCategories";
+import ModalRecoverPassword from "./ModalRecoverPassword";
 
 const Header = (props) => {
 	const history = useHistory();
 
 	const [showModal, setShowModal] = useState(false);
+	const [showModalPassword, setShowModalPassword] = useState(false);
 	const [searchInput, setSearchInput] = useState("");
 
 	const openModal = () => {
@@ -54,9 +56,15 @@ const Header = (props) => {
         }
 	},[]);
 
+	const openRecoverPass = () =>{
+		setShowModal(false);
+		setShowModalPassword(true);
+	}
+
 	return (
 		<div>
-			<ModalLogin showModal={showModal} setShowModal={setShowModal} />
+			<ModalLogin showModal={showModal} setShowModal={setShowModal} openRecoverPass={openRecoverPass} />
+			<ModalRecoverPassword showModal={showModalPassword} setShowModal={setShowModalPassword} />
 			<div id="header">
 				<div id="header_content">
 					<img id="header_logo" src={logo} style={{cursor:"pointer"}} onClick={homeRedirect} />
@@ -77,7 +85,7 @@ const Header = (props) => {
 							<>
 								<div className="dropdown">
 									{	(userPic)?
-										(<img className="headerProfilePic" src={"http://localhost:5050/static/users_profile_pic/"+userPic}/>)
+										(<img className="headerProfilePic" src={"http://35.198.10.112/static/users_profile_pic/"+userPic}/>)
 										:(<span className="material-icons">
 											person
 										</span>)

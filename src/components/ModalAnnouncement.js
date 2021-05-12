@@ -34,6 +34,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [announceCat, setAnnounceCat] = useState("");
 	const [announceImage, setAnnounceImage] = useState(defaultBookImage);
 	const [announceCategories, setAnnounceCategories] = useState([]);
+	const [announceEstado, setAnnounceEstado] = useState("");
 	const modalRef = useRef();
 
 	const fileToBase64 = async (file) =>
@@ -72,6 +73,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		let type = null;
 		let contactType = null;
 		let categoria = null;
+		let Estado = null;
 
 		if (announceName) {
 			name = announceName;
@@ -100,8 +102,8 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		if (announceDistrict) {
 			district = announceDistrict;
 		}
-		if (announceCity) {
-			city = announceCity;
+		if (announceCity && announceEstado) {
+			city = announceCity + "," + announceEstado;
 		}
 		if (announceDescription) {
 			description = announceDescription;
@@ -387,7 +389,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											) {
 												setPage(3);
 											} else {
-												console.log("erroaqui");
+												alert(
+													"preencha todos os dados!!",
+												);
 											}
 										}}
 										className="NextButton"
@@ -495,7 +499,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											placeholder="Estado"
 											type="input"
 											onChange={(e) =>
-												setAnnounceDistrict(
+												setAnnounceEstado(
 													e.target.value,
 												)
 											}
@@ -513,10 +517,11 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 										<input
 											id="BairroInput"
 											placeholder="Bairro"
-										></input>
-										<input
-											id="RuaInput"
-											placeholder="Rua"
+											onChange={(e) =>
+												setAnnounceDistrict(
+													e.target.value,
+												)
+											}
 										></input>
 									</div>
 									<div id="DescriptionRow">
@@ -555,13 +560,16 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													announceCity != "" &&
 													announceDistrict != "" &&
 													announceDescription != "" &&
-													announceContactType != 0
+													announceContactType != 0 &&
+													announceEstado != ""
 												) {
 													handleAnnounceUpdate();
 													setShowModal(false);
 													window.location.reload();
 												} else {
-													console.log("erroDepois");
+													alert(
+														"preencha todos os dados",
+													);
 												}
 											}}
 										>

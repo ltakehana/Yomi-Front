@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../styles/components/login.css";
 import { useAuth } from '../contexts/auth';
 
-function Login({onRegister= ()=>{}}) {
+function Login({onRegister= ()=>{},openRecoverPass=()=>{}}) {
 	
 	const {signIn} = useAuth();
 
@@ -33,6 +33,7 @@ function Login({onRegister= ()=>{}}) {
 					<input id="email" type="email" onChange={(e) => setEmail(e.target.value)}/>
 					<label htmlFor="Senha">Senha: </label>
 					<input id="senha" type="password" onChange={(e) => setPassword(e.target.value)} />
+					<label style={{cursor:"pointer"}} onClick={openRecoverPass}>Esqueci minha senha</label>
 					<button onClick={handleSignIn}>Login</button>
 					<br/>
 					<div className="register">

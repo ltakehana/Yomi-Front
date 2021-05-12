@@ -5,7 +5,7 @@ import Register from "./Register";
 import "../styles/components/Modal.css";
 import logo from "../assets/logo_purple.svg";
 
-export const ModalLogin = ({ showModal, setShowModal }) => {
+export const ModalLogin = ({ showModal, setShowModal, openRecoverPass }) => {
 	const modalRef = useRef();
 
 	const [showRegister,setShowRegister]=useState(false);
@@ -47,6 +47,8 @@ export const ModalLogin = ({ showModal, setShowModal }) => {
 		return () => document.removeEventListener("keydown", keyPress);
 	}, [keyPress]);
 
+
+
 	return (
 		<>
 			{showModal ? (
@@ -55,7 +57,7 @@ export const ModalLogin = ({ showModal, setShowModal }) => {
 						<div id="ModalWrapper">
 							<div id="ModalView">
 								<Register onLogin={()=>{setShowRegister(false)}}></Register>
-								<Login onRegister={()=>{setShowRegister(true)}}></Login>
+								<Login onRegister={()=>{setShowRegister(true)}} openRecoverPass={()=>{openRecoverPass()}}></Login>
 							</div>
 							<animated.div className="content-logo-login" style={animationLogo}>
 								<img src={logo} id="logoLogin" alt="Yomi icon" />

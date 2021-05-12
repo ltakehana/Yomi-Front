@@ -139,9 +139,6 @@ const Profile = (props) => {
 				</div>
 			</div>
 			<div className="profileContent">
-				<span id="profileChangePassword">
-					Gostaria de alterar sua senha?
-				</span>
 				<button id="profileUpdateButton" onClick={handleProfileUpdate}>
 					Salvar alterações
 				</button>
