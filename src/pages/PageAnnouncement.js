@@ -95,15 +95,33 @@ function PageAnnouncement(props) {
 					<div id="seller-name">
 						<p>{announce.user_name}</p>
 					</div>
-					<div id="seller-icon">
-						<img className="contact-icons" src={whatsapp}></img>
-
+					<div id="seller-icon">					
+						{(announce.contact_type == 2 ||
+					  	  announce.contact_type == 3 || 
+					      announce.contact_type == 6 || 
+					      announce.contact_type == 7) && (
 						<img className="contact-icons" src={email}></img>
+
+					)}
+						{(announce.contact_type == 4 ||
+					  	  announce.contact_type == 5 || 
+					      announce.contact_type == 6 || 
+					      announce.contact_type == 7) && (
+						<img className="contact-icons" src={whatsapp}></img>	
+					)}
+						
 					</div>
-					<div id="seller-chat">
-						<img id="mensagem-icon" src={mensagem}></img>
-						<p>Conversar com o vendedor</p>
-					</div>
+					{(console.log(announce.contact_type))}
+					{(announce.contact_type == 1 ||
+					  announce.contact_type == 3 || 
+					  announce.contact_type == 5 || 
+					  announce.contact_type == 7) && (
+						<div id={"seller-chat"}>
+							<img id="mensagem-icon" src={mensagem}></img>
+							<p>Conversar com o vendedor</p>
+						</div>
+					)}
+
 				</div>
 			</div>
 

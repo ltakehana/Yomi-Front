@@ -72,9 +72,10 @@
 	font-size: 2.4em;
 }
 #book-seller-type {
-	font-size: 1.3em;
+	font-size: 1.6em;
 	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 0.4em;
+	font-weight: bold;
 }
 #seller-name {
 	font-size: 1.2em;
@@ -87,7 +88,7 @@
 	margin-bottom: 1em;
 }
 .contact-icons {
-	width: 30%;
+	width: 4em;
 	margin-right: 0.8em;
 }
 #contact-icons:hover {
