@@ -38,6 +38,11 @@ const MyAnnouncements = (props) => {
 		history.push("/announcement/" + id);
 	};
 
+	const deleteRefresh = async (id, token) => {
+		let refresh = await deleteAnnouncement(id, token);
+		window.location.reload();
+	};
+
 	useEffect(() => {
 		if (announces != null && announces.length > 0)
 			setMyAnnouncementsView(
@@ -106,11 +111,10 @@ const MyAnnouncements = (props) => {
 										<span
 											className="material-icons"
 											onClick={() => {
-												deleteAnnouncement(
+												deleteRefresh(
 													announce.id,
 													token,
 												);
-												window.location.reload();
 											}}
 										>
 											delete
