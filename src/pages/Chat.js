@@ -8,7 +8,7 @@ const Chat = () => {
 	const [message, updateMessage] = useState("");
 	const [messages, updateMessages] = useState([]);
 
-	
+
 	const scrollToBottom = () => {
 		let scrollChat=document.getElementById("listChat");
 		scrollChat.scrollTop=scrollChat.scrollHeight;
@@ -26,6 +26,8 @@ const Chat = () => {
 			updateMessage(" ");
 		}
 	};
+
+       
 
 	const handleInputChange = (event) =>{
 		 updateMessage(event.target.value);

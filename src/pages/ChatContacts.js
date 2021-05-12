@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import "../styles/pages/chatContacts.css";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
+import profileImage from "../assets/person-24px 1.png"
+import getChat from "../services/getChat";
 
 const contacts = [
     {
@@ -77,9 +79,21 @@ const ChatContacts = (props) => {
     const [myContactsView,setContactsView] = useState([]);
     const [myContactsCount,setContactsCount] = useState(5);
 
+    const [contacts,setContacts] = useState([]);
+
+
+    useEffect(async ()=>{
+        const token = sessionStorage.getItem("userToken");
+        const chats = await getChat(token)
+        if (chats)
+        setContacts(chats.chats);
+        
+    },[])
+
     useEffect(()=>{
         setContactsView(contacts.slice(0,myContactsCount));
-    },[])
+    },[contacts]);
+
 
     const listExpandHandle = ()=>{
         let contactsCont = myContactsCount;
@@ -101,8 +115,8 @@ const ChatContacts = (props) => {
             <div id="contactsDiv"> 
                     {myContactsView.map((contacts,index)=>(
                         <div id="contactsItem">
-                              <img id="contactsImage" src={contacts.img} />  
-                              <label className="contactsName">{contacts.name}</label>
+                              <img id="contactsImage" src={profileImage} />  
+                              <label className="contactsName">{contacts.user_name}</label>
                               <button className= "open_chat">
 							                    <span className="material-icons">send_white_24dp</span>
                                 </button>
