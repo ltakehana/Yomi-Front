@@ -83,12 +83,6 @@ const Header = (props) => {
 						{(signed)?
 						(
 							<>
-<<<<<<< HEAD
-								<div class="dropdown">
-									<span className="material-icons">
-										person
-									</span>
-=======
 								<div className="dropdown">
 									{	(userPic)?
 										(<img className="headerProfilePic" src={"http://35.198.10.112/static/users_profile_pic/"+userPic}/>)
@@ -97,7 +91,6 @@ const Header = (props) => {
 										</span>)
 									}
 
->>>>>>> 831cb4041d2180c0627490cec69428b784f15472
 									<div className="dropdown-content">
 										<p className="dropdown-itens" onClick={myAnnouncementsRedirect}>
 											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>

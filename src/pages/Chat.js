@@ -4,9 +4,10 @@ import "../styles/pages/chat.css";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
 
-const Chat = () => {
-	const [message, updateMessage] = useState("");
-	const [messages, updateMessages] = useState([]);
+const Chat = (props) => {
+	const user_id = props.match.params.user_id;
+	const [message, setMessage] = useState("");
+	const [messages, getMessages] = useState([]);
 
 
 	const scrollToBottom = () => {
@@ -16,14 +17,14 @@ const Chat = () => {
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
 		if (message.trim()) {
-			updateMessages([
+			setMessages([
 				...messages,
 				{
 					id: 1,
 					message,
 				},
 			]);
-			updateMessage(" ");
+			getMessage(" ");
 		}
 	};
 

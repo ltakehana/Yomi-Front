@@ -9,13 +9,11 @@ const getMessage = async (token,user_id) => {
         Authorization: `Bearer ${token}`,
       }
 
-
 }
 
   try {
     response = await api.post('/message/'+ user_id,config);
 
-   
     return response.data;
   } catch (error) {
     console.log(error);
