@@ -139,7 +139,12 @@ const Profile = (props) => {
 				</div>
 			</div>
 			<div className="profileContent">
-				<button id="profileUpdateButton" onClick={handleProfileUpdate}>
+				<button
+					id="profileUpdateButton"
+					onClick={() => {
+						handleProfileUpdate;
+					}}
+				>
 					Salvar alterações
 				</button>
 			</div>
