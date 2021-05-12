@@ -9,11 +9,12 @@ import "../styles/components/page2ModalAnnouncement.css";
 import "../styles/components/page3ModalAnnouncement.css";
 import defaultBookImage from "../assets/batman.png";
 import setAnnouncements from "../services/setAnnouncements";
+import getCategories from "../services/getCategories";
 
 const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [page, setPage] = useState(1);
 	const [announceType, setAnnounceType] = useState(1);
-	const [contactChat, setContactChat] = useState(true);
+	const [contactChat, setContactChat] = useState(false);
 	const [contactTelephone, setContactTelephone] = useState(false);
 	const [contactEmail, setContactEmail] = useState(false);
 	const token = sessionStorage.getItem("userToken");
@@ -30,8 +31,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [announceCity, setAnnounceCity] = useState("");
 	const [announceDescription, setAnnounceDescription] = useState("");
 	const [announcePrice, setAnnouncePrice] = useState("");
-	const [announceCategoria, setAnnounceCategoria] = useState("");
+	const [announceCat, setAnnounceCat] = useState("");
 	const [announceImage, setAnnounceImage] = useState(defaultBookImage);
+	const [announceCategories, setAnnounceCategories] = useState([]);
 	const modalRef = useRef();
 
 	const fileToBase64 = async (file) =>
@@ -47,6 +49,12 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		let imageBase64 = await fileToBase64(file);
 		setAnnounceImage(imageBase64);
 	};
+	useEffect(async () => {
+		const responseCategories = await getCategories();
+		if (responseCategories) {
+			setAnnounceCategories(responseCategories);
+		}
+	}, []);
 
 	const handleAnnounceUpdate = () => {
 		let name = null;
@@ -107,8 +115,8 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		if (announceContactType) {
 			contactType = announceContactType;
 		}
-		if (announceCategoria) {
-			categoria = announceCategoria.toLocaleLowerCase;
+		if (announceCat) {
+			categoria = announceCat;
 		}
 
 		let body = {
@@ -311,16 +319,32 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 												></input>
 											</div>
 											<div id="lastInput">
-												<input
+												<select
 													id="CategoriaInput"
 													placeholder="Categoria"
 													type="Input"
 													onChange={(e) =>
-														setAnnounceCategoria(
+														setAnnounceCat(
 															e.target.value,
 														)
 													}
-												></input>
+												>
+													{announceCategories &&
+														announceCategories.map(
+															(
+																categories,
+																index,
+															) => (
+																<option
+																	value={categories.name.toLowerCase()}
+																>
+																	{
+																		categories.name
+																	}
+																</option>
+															),
+														)}
+												</select>
 												<input
 													id="PageInput"
 													placeholder="N° de páginas"
@@ -348,7 +372,23 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 									</div>
 									<div
 										onClick={() => {
-											setPage(3);
+											if (
+												announceAuthor != "" &&
+												announceYear != "" &&
+												announceName != "" &&
+												announcePublishing_company !=
+													"" &&
+												announceYear != "" &&
+												announceCategories != "" &&
+												announcePages != "" &&
+												announceSynopsis != "" &&
+												announceImage !=
+													defaultBookImage
+											) {
+												setPage(3);
+											} else {
+												console.log("erroaqui");
+											}
 										}}
 										className="NextButton"
 									>
@@ -509,7 +549,21 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 										<p>Finalizar</p>
 										<div
 											className="arrowNext"
-											onClick={handleAnnounceUpdate}
+											onClick={() => {
+												if (
+													announceCep != "" &&
+													announceCity != "" &&
+													announceDistrict != "" &&
+													announceDescription != "" &&
+													announceContactType != 0
+												) {
+													handleAnnounceUpdate();
+													setShowModal(false);
+													window.location.reload();
+												} else {
+													console.log("erroDepois");
+												}
+											}}
 										>
 											<span className="material-icons">
 												check_circle
