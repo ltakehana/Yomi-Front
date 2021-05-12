@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "../styles/components/header.css";
 import logo from "../assets/logo_white.svg";
 import { ModalLogin } from "./ModalLogin";
 import { useAuth } from '../contexts/auth';
+import getCategories from "../services/getCategories";
+import ModalRecoverPassword from "./ModalRecoverPassword";
 
 const Header = (props) => {
 	const history = useHistory();
 
 	const [showModal, setShowModal] = useState(false);
+	const [showModalPassword, setShowModalPassword] = useState(false);
+	const [searchInput, setSearchInput] = useState("");
 
 	const openModal = () => {
 		setShowModal((prev) => !prev);
@@ -17,6 +21,7 @@ const Header = (props) => {
 	const {signed} = useAuth();
 	const {name} = useAuth();
 	const {signOut} = useAuth();
+	const userPic = sessionStorage.getItem("userPic");
 
 	const myAnnouncementsRedirect=()=>{
 		history.push("/MyAnnouncements")
@@ -33,18 +38,41 @@ const Header = (props) => {
 	const myLibraryRedirect=()=>{
 	  history.push("/MyLibrary");
 	}
+
+	const searchRedirect=(data)=>{
+		history.push({pathname:"/search",state:data});
+		window.location.reload();
+	}
+
+	const [categories,setCategories] = useState([]);
   
+    useEffect(async ()=>{
+		const responseCategories = await getCategories();
+        if(responseCategories){
+			let categories=responseCategories.map((categories,index)=>(
+				<li onClick={()=>{searchRedirect({categories:categories})}}>{categories.name}</li>
+			));
+			setCategories(categories);
+        }
+	},[]);
+
+	const openRecoverPass = () =>{
+		setShowModal(false);
+		setShowModalPassword(true);
+	}
 
 	return (
 		<div>
-			<ModalLogin showModal={showModal} setShowModal={setShowModal} />
+			<ModalLogin showModal={showModal} setShowModal={setShowModal} openRecoverPass={openRecoverPass} />
+			<ModalRecoverPassword showModal={showModalPassword} setShowModal={setShowModalPassword} />
 			<div id="header">
 				<div id="header_content">
 					<img id="header_logo" src={logo} style={{cursor:"pointer"}} onClick={homeRedirect} />
 
 					<div id="header_search">
-						<input />
+						<input onChange={(e) => setSearchInput(e.target.value.toLocaleLowerCase())} />
 						<span
+							onClick={()=>{searchRedirect({search:searchInput})}}
 							className="material-icons"
 							id="header_search_icon"
 						>
@@ -55,26 +83,49 @@ const Header = (props) => {
 						{(signed)?
 						(
 							<>
+<<<<<<< HEAD
 								<div class="dropdown">
 									<span className="material-icons">
 										person
 									</span>
+=======
+								<div className="dropdown">
+									{	(userPic)?
+										(<img className="headerProfilePic" src={"http://35.198.10.112/static/users_profile_pic/"+userPic}/>)
+										:(<span className="material-icons">
+											person
+										</span>)
+									}
+
+>>>>>>> 831cb4041d2180c0627490cec69428b784f15472
 									<div className="dropdown-content">
 										<p className="dropdown-itens" onClick={myAnnouncementsRedirect}>
-											Meus anúncios
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+												campaign
+											</span>
+											<span style={{fontSize:"1em"}}>Meus anúncios</span>
 										</p>
 										<p className="dropdown-itens" onClick={myLibraryRedirect}>
-											Minha biblioteca
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+												bookmark
+											</span>
+											<span style={{fontSize:"1em"}}>Minha biblioteca</span>
 										</p>
 										<p className="dropdown-itens" onClick={profileRedirect}>
-											Meu Perfil
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+												person
+											</span>
+											<span style={{fontSize:"1em"}}>Meu Perfil</span>
 										</p>
 										<p className="dropdown-itens" onClick={signOut}>
-											Sair
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+												logout
+											</span>
+											<span style={{fontSize:"1em"}}>Sair</span>
 										</p>
 									</div>
 								</div>
-								<label>Olá, {name}</label>
+								<label >Olá, {name}</label>
 
 							</>
 						):(
@@ -85,14 +136,10 @@ const Header = (props) => {
 								<label onClick={openModal}>Entre ou cadastre-se</label>
 							</>
 						)}
-						<span className="material-icons">bookmark</span>
 					</div>
 				</div>
 				<ul id="header_categories">
-					<li>lorem ipsum</li>
-					<li>lorem ipsum</li>
-					<li>lorem ipsum</li>
-					<li>lorem ipsum</li>
+					{categories}
 				</ul>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 import api from './api';
 
-const userInfo = async (token) => {
+const deleteAnnouncement = async (id,token) => {
 
   let response = null;
 
@@ -11,9 +11,7 @@ const userInfo = async (token) => {
   };
 
   try {
-    response = await api.get('/user',config);
-    sessionStorage.setItem('userName',response.data.name);
-    sessionStorage.setItem('userPic',response.data.picture);
+    response = await api.delete('/announcement/'+id,config);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -21,4 +19,4 @@ const userInfo = async (token) => {
   }
 };
 
-export default userInfo;
+export default deleteAnnouncement;

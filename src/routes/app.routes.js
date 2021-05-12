@@ -7,6 +7,9 @@ import BookSearch from "../pages/BookSearch";
 import Chat from "../pages/Chat";
 import MyLibrary from "../pages/MyLibrary";
 import ChatContacts from "../pages/ChatContacts";
+import PageAnnouncement from "../pages/PageAnnouncement"
+import ResetPassword from "../pages/ResetPassword"
+
 
 const AppRoutes = () => (
 	<Switch>
@@ -20,6 +23,8 @@ const AppRoutes = () => (
 		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />
 		<Route component={MyLibrary} path="/MyLibrary" exact />
 		<Route component={ChatContacts} path="/contacts" exact />
+		<Route component={PageAnnouncement} path="/announcement/:announceId" />
+		<Route component={ResetPassword} path="/reset_password/:token" />
 	</Switch>
 );
 export default AppRoutes;

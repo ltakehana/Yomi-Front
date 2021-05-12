@@ -5,6 +5,18 @@
 	display: flex;
 	flex-direction: row;
 }
+
+.Book-announce-container input{
+	color: #8c52ff;
+	font-weight:bold;
+	font-size: larger;
+}
+
+.Book-announce-container textarea{
+	color: #8c52ff;
+	font-weight:bold;
+	font-size: larger;
+}
 #Logo-home {
 	width: 40%;
 	padding-left: 4%;
