@@ -64,7 +64,7 @@ const Profile = (props) => {
 			birth_date: birth_date,
 			profile_image: profile_image,
 		};
-		let refresh = await updateUser(token, body);
+		await updateUser(token, body);
 		window.location.reload();
 	};
 

@@ -39,7 +39,7 @@ const MyAnnouncements = (props) => {
 	};
 
 	const deleteRefresh = async (id, token) => {
-		let refresh = await deleteAnnouncement(id, token);
+		await deleteAnnouncement(id, token);
 		window.location.reload();
 	};
 

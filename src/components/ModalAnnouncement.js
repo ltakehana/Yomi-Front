@@ -50,6 +50,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		let imageBase64 = await fileToBase64(file);
 		setAnnounceImage(imageBase64);
 	};
+
 	useEffect(async () => {
 		const responseCategories = await getCategories();
 		if (responseCategories) {
@@ -57,7 +58,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		}
 	}, []);
 
-	const handleAnnounceUpdate = () => {
+	const handleAnnounceUpdate = async () => {
 		let name = null;
 		let author = null;
 		let year = null;
@@ -139,7 +140,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			categoria: categoria,
 		};
 		console.log(body);
-		setAnnouncements(token, body);
+		await setAnnouncements(token, body);
+		setShowModal(false);
+		window.location.reload();
 	};
 
 	const closeModal = (e) => {
@@ -564,8 +567,6 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													announceEstado != ""
 												) {
 													handleAnnounceUpdate();
-													setShowModal(false);
-													window.location.reload();
 												} else {
 													alert(
 														"preencha todos os dados",
