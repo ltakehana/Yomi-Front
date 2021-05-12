@@ -18,10 +18,13 @@ const BookSearch = (props) => {
 
 	const [annouceTypeToggle, setAnnouceTypeToggle] = useState(0);
 
+
 	const announcementsRender = async () => {
 		let locationState = history.location.state;
 		let filter = [];
 		let data = {};
+
+
 		if (locationState.search) {
 			locationState.search
 				.toLowerCase()
@@ -87,6 +90,8 @@ const BookSearch = (props) => {
 
 	useEffect(async () => {
 		announcementsRender();
+		const userExpiration = Date.parse(sessionStorage.getItem("userExpiration"));
+		console.log(userExpiration);
 	}, [annouceTypeToggle]);
 
 	const redirectToBook = (id) => {

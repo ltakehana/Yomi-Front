@@ -6,7 +6,7 @@ const updateUser = async (token,body) => {
 
   const config = {
     headers: {
-      Authorization: `Bearer ${token}`
+      authorization: `Bearer ${token}`
     }
   };
   if(body.name)
@@ -19,6 +19,8 @@ const updateUser = async (token,body) => {
     config.birth_date = body.birth_date;
   if(body.profile_image)
     config.profile_image = body.profile_image;
+  if(body.password)
+    config.password = body.password;
 
 
   try {
