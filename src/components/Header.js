@@ -38,18 +38,12 @@ const Header = (props) => {
 		history.push("/MyLibrary");
 	};
 
-<<<<<<< HEAD
-	const contactsRedirect=()=>{
+	const contactsRedirect = () => {
 		history.push("/contacts");
-	  }
-  
+	};
 
-	const searchRedirect=(data)=>{
-		history.push({pathname:"/search",state:data});
-=======
 	const searchRedirect = (data) => {
 		history.push({ pathname: "/search", state: data });
->>>>>>> cd965f4c364ca7ab194f8ec0a1c88fe620feada5
 		window.location.reload();
 	};
 
@@ -175,16 +169,23 @@ const Header = (props) => {
 												Meus anúncios
 											</span>
 										</p>
-<<<<<<< HEAD
-										<p className="dropdown-itens" onClick={contactsRedirect}>
-											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+										<p
+											className="dropdown-itens"
+											onClick={contactsRedirect}
+										>
+											<span
+												className="material-icons"
+												style={{
+													fontSize: "1.5em",
+													textAlign: "middle",
+												}}
+											>
 												mark_chat_read
 											</span>
-											<span style={{fontSize:"1em"}}>Minhas conversas</span>
+											<span style={{ fontSize: "1em" }}>
+												Minhas conversas
+											</span>
 										</p>
-										<p className="dropdown-itens" onClick={myLibraryRedirect}>
-											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
-=======
 										<p
 											className="dropdown-itens"
 											onClick={myLibraryRedirect}
@@ -196,7 +197,6 @@ const Header = (props) => {
 													textAlign: "middle",
 												}}
 											>
->>>>>>> cd965f4c364ca7ab194f8ec0a1c88fe620feada5
 												bookmark
 											</span>
 											<span style={{ fontSize: "1em" }}>
