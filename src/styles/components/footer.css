@@ -12,12 +12,16 @@
 }
 
 #Contacts{
-    width: 12em;
-    height: 5em;
+    width: 35em;
     /* background-color:rgb(163, 163, 211); */
     font-size: 0.8em;
     font-weight: normal;
     margin-top: 0.5em;
+}
+
+
+#Contacts label{
+    display: block;
 }
 
 #Contacts_direita{
@@ -34,7 +38,6 @@
     width: 50%;
     height: 100%;
     float: left;
-    padding-top: 10%;
     border-right-style: solid;
     border-width: 0.01em;
     /* background-color:rgb(224, 189, 144); */

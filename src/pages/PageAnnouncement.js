@@ -120,13 +120,13 @@ function PageAnnouncement(props) {
 							announce.contact_type == 3 ||
 							announce.contact_type == 6 ||
 							announce.contact_type == 7) && (
-								<a href={"mailto:"+announce.user_email}><img className="contact-icons" src={email}></img></a>
+								<a style={{cursor:"pointer"}} href={"mailto:"+announce.user_email}><img className="contact-icons" src={email}></img></a>
 						)}
 						{(announce.contact_type == 4 ||
 							announce.contact_type == 5 ||
 							announce.contact_type == 6 ||
 							announce.contact_type == 7) && (
-							<a href={"tel:"+announce.user_telephone}><img className="contact-icons" src={whatsapp}></img></a>
+							<a style={{cursor:"pointer"}} href={"tel:"+announce.user_telephone}><img className="contact-icons" src={whatsapp}></img></a>
 						)}
 					</div>
 					{(announce.contact_type == 1 ||
@@ -134,7 +134,7 @@ function PageAnnouncement(props) {
 						announce.contact_type == 5 ||
 						announce.contact_type == 7) && (
 						<div id={"seller-chat"} onClick={()=>redirectToChat(announce.user_id)}>
-							<img id="mensagem-icon" src={mensagem}></img>
+							<img id="mensagem-icon" style={{cursor:"pointer"}} src={mensagem}></img>
 							<p>Conversar com o vendedor</p>
 						</div>
 					)}

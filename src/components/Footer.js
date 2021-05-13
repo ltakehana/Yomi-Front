@@ -6,13 +6,9 @@ const Footer= (props) => {
 <div id = "Footer">
         Contato
     <div>
-        <div id = "Buttons_Footer">
-            <button> <img src={github} alt = "icon Github"></img></button> 
-        </div>
 
         <div id = "Contacts">
-                <div id = "Contacts_esquerda"> lorem ipsum  lorem ipsum lorem ipsum</div>
-                <div id = "Contacts_direita"> lorem ipsum  lorem ipsum lorem ipsum</div> 
+                <div id = "Contacts_esquerda"> <label>Julia de Farias - 180103792</label>  <label>Leonardo Takehana - 190032430</label> <label>Yuri Bacarias - 180078640</label></div>
         </div>
 
     </div>
