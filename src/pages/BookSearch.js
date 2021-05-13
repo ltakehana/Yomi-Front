@@ -92,7 +92,6 @@ const BookSearch = (props) => {
 		const userExpiration = Date.parse(
 			sessionStorage.getItem("userExpiration"),
 		);
-		console.log(userExpiration);
 	}, [annouceTypeToggle]);
 
 	const searchRedirect = (data) => {

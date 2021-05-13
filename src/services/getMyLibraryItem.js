@@ -1,6 +1,6 @@
 import api from "./api";
 
-const deleteAnnouncement = async (id, token) => {
+const getMyLibraryItem = async (token, announcement_id) => {
 	let response = null;
 
 	const config = {
@@ -10,7 +10,7 @@ const deleteAnnouncement = async (id, token) => {
 	};
 
 	try {
-		response = await api.delete("/announcement/" + id, config);
+		response = await api.get("/myLibrary/" + announcement_id, config);
 		return response.data;
 	} catch (error) {
 		console.log(error);
@@ -18,4 +18,4 @@ const deleteAnnouncement = async (id, token) => {
 	}
 };
 
-export default deleteAnnouncement;
+export default getMyLibraryItem;

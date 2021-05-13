@@ -139,7 +139,6 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			contactType: contactType,
 			categoria: categoria,
 		};
-		console.log(body);
 		await setAnnouncements(token, body);
 		setShowModal(false);
 		window.location.reload();

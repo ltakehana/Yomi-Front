@@ -12,11 +12,26 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	margin-left: 4em;
+}
+
+#Selected {
+	color: white;
+	z-index: 2;
+	position: absolute;
+	font-size: 2.3em;
+	cursor: pointer;
+}
+#Selected-true {
+	color: #8c52ff;
+	z-index: 2;
+	position: absolute;
+	font-size: 4em;
+	cursor: pointer;
 }
 #book-image {
 	width: 60%;
 	height: 100%;
-	margin-left: 4em;
 }
 /*
 

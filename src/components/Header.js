@@ -9,10 +9,10 @@ import ModalRecoverPassword from "./ModalRecoverPassword";
 
 const Header = (props) => {
 	const history = useHistory();
-
 	const [showModal, setShowModal] = useState(false);
 	const [showModalPassword, setShowModalPassword] = useState(false);
 	const [searchInput, setSearchInput] = useState("");
+	const [userPic, setUserPic] = useState(null);
 
 	const openModal = () => {
 		setShowModal((prev) => !prev);
@@ -21,7 +21,6 @@ const Header = (props) => {
 	const { signed } = useAuth();
 	const { name } = useAuth();
 	const { signOut } = useAuth();
-	const userPic = sessionStorage.getItem("userPic");
 
 	const myAnnouncementsRedirect = () => {
 		history.push("/MyAnnouncements");
@@ -47,7 +46,19 @@ const Header = (props) => {
 	const [categories, setCategories] = useState([]);
 
 	useEffect(async () => {
+		const userPic = sessionStorage.getItem("userPic");
 		const responseCategories = await getCategories();
+
+		if (signed && userPic != undefined) {
+			setUserPic(userPic);
+		}
+		if (signed) {
+			const exp = Date.parse(sessionStorage.getItem("userExpiration"));
+			if (exp < Date.now()) {
+				signOut();
+				alert("Você foi deslogado por tempo de sessão!!");
+			}
+		}
 		if (responseCategories) {
 			let categories = responseCategories.map((categories, index) => (
 				<li
