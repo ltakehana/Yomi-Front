@@ -15,12 +15,14 @@ const MyAnnouncements = (props) => {
 	const token = sessionStorage.getItem("userToken");
 
 	const openModal = () => {
-		if (showModal) setShowModal(false);
-		else setShowModal(true);
+        if(showModal)
+            setShowModal(false);
+        else
+            setShowModal(true);
 	};
 
-	const [myAnnouncementsView, setMyAnnouncementsView] = useState([]);
-	const [myAnnouncementsCount, setMyAnnouncementsCount] = useState(5);
+    const [myAnnouncementsView,setMyAnnouncementsView] = useState([]);
+    const [myAnnouncementsCount,setMyAnnouncementsCount] = useState(5);
 
 	useEffect(async () => {
 		let announces = await getMyAnnouncements(token);
@@ -65,10 +67,7 @@ const MyAnnouncements = (props) => {
 
 	return (
 		<div id="body-container">
-			<ModalAnnouncement
-				showModal={showModal}
-				setShowModal={setShowModal}
-			/>
+            <ModalAnnouncement showModal={showModal} setShowModal={setShowModal} />
 			<Header></Header>
 			<div className="myAnnouncementsContent">
 				<UserNavbar selectedItem={1}></UserNavbar>

@@ -11,6 +11,8 @@ import defaultBookImage from "../assets/batman.png";
 import setAnnouncements from "../services/setAnnouncements";
 import getCategories from "../services/getCategories";
 
+
+
 const ModalAnnouncement = ({ showModal, setShowModal }) => {
 	const [page, setPage] = useState(1);
 	const [announceType, setAnnounceType] = useState(1);
@@ -157,6 +159,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		opacity: showModal ? 1 : 0,
 		transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
 	});
+	
 
 	const keyPress = useCallback(
 		(e) => {
@@ -648,10 +651,8 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 							<div
 								id="Close"
 								className="material-icons"
-								onClick={() => {
-									setShowModal(false);
-								}}
-								style={{ color: "white" }}
+								onClick={() => {setShowModal(false)}}
+								style={{color:"white"}}
 							>
 								close
 							</div>

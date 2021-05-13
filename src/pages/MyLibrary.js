@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer"
 import UserNavbar from "../components/UserNavbar";
 import getMyLibrary from "../services/getMyLibrary";
 import deleteMyLibraryItem from "../services/deleteMyLibraryItem";
