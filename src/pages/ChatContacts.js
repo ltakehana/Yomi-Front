@@ -53,7 +53,7 @@ const ChatContacts = (props) => {
             <UserNavbar selectedItem={2}></UserNavbar>
             <div id="contactsDiv"> 
                     {myContactsView.map((contacts,index)=>(
-                        <div id="contactsItem" onClick= {
+                        <div id={(contacts.notification)?("contactsItemNotification"):("contactsItem")} onClick= {
                             ()=>{redirectToChat(contacts.user_id)}
                         }>
                               <img id="contactsImage" src={(contacts.user_picture)?("http://35.198.10.112/static/users_profile_pic/"+contacts.user_picture):(profileImage)} />  
@@ -61,9 +61,10 @@ const ChatContacts = (props) => {
                               <button className= "open_chat">
 							                    <span className="material-icons">send_white_24dp</span>
                                 </button>
-                            </div>
+                        </div>
 
-    ) )}
+                        )
+                    )}
 			</div>
             </div>
             <button

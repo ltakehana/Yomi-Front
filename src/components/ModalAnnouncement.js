@@ -195,10 +195,10 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 										<div id="Announce-buttons-container">
 											<button
 												onClick={() => {
-													setAnnounceType(3);
+													setAnnounceType(1);
 												}}
 												className={
-													announceType == 3
+													announceType == 1
 														? "Announce-buttons-selected"
 														: "Announce-buttons"
 												}
@@ -219,10 +219,10 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											</button>
 											<button
 												onClick={() => {
-													setAnnounceType(1);
+													setAnnounceType(3);
 												}}
 												className={
-													announceType == 1
+													announceType == 3
 														? "Announce-buttons-selected"
 														: "Announce-buttons"
 												}

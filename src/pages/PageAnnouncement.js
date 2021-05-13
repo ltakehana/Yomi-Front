@@ -40,7 +40,12 @@ function PageAnnouncement(props) {
 		history.push("/announcement/" + id);
 		window.location.reload();
 	};
-
+     
+    const redirectToChat = (id)=>{
+        history.push("/chat/"+id);
+        window.location.reload();
+	}
+	
 	return (
 		<div id="body-book-container">
 			<Header></Header>
@@ -72,6 +77,18 @@ function PageAnnouncement(props) {
 					</div>
 					<div id="book-resume-description">
 						<p>{announce.description}</p>
+					{(announce.contact_type == 2 ||
+						announce.contact_type == 3 ||
+						announce.contact_type == 6 ||
+						announce.contact_type == 7) && (
+							announce.user_email+"	"
+					)}
+					{(announce.contact_type == 4 ||
+						announce.contact_type == 5 ||
+						announce.contact_type == 6 ||
+						announce.contact_type == 7) && (
+						announce.user_telephone
+					)}
 					</div>
 				</div>
 				<div id="book-sellers-container">
@@ -103,20 +120,20 @@ function PageAnnouncement(props) {
 							announce.contact_type == 3 ||
 							announce.contact_type == 6 ||
 							announce.contact_type == 7) && (
-							<img className="contact-icons" src={email}></img>
+								<a href={"mailto:"+announce.user_email}><img className="contact-icons" src={email}></img></a>
 						)}
 						{(announce.contact_type == 4 ||
 							announce.contact_type == 5 ||
 							announce.contact_type == 6 ||
 							announce.contact_type == 7) && (
-							<img className="contact-icons" src={whatsapp}></img>
+							<a href={"tel:"+announce.user_telephone}><img className="contact-icons" src={whatsapp}></img></a>
 						)}
 					</div>
 					{(announce.contact_type == 1 ||
 						announce.contact_type == 3 ||
 						announce.contact_type == 5 ||
 						announce.contact_type == 7) && (
-						<div id={"seller-chat"}>
+						<div id={"seller-chat"} onClick={()=>redirectToChat(announce.user_id)}>
 							<img id="mensagem-icon" src={mensagem}></img>
 							<p>Conversar com o vendedor</p>
 						</div>

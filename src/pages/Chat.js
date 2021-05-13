@@ -22,13 +22,15 @@ const Chat = (props) => {
 	} ;
 
 	useEffect(async()=>{
-		const messages = await getMessage(token,user_id);  
+		const messages = await getMessage(token,user_id);
+		  
 		setMessages(messages.messages); 
 		setUserName(messages.user_name);
 		if(messages.user_picture){
 		setUserPicture(	"http://35.198.10.112/static/users_profile_pic/"+messages.user_picture);
 		}
 		automaticReload();
+		scrollToBottom()
 	},[]);
 
 	const scrollToBottom = () => {
@@ -73,25 +75,24 @@ const Chat = (props) => {
 			<Header></Header>
 		
 			<div id="chatContainer">
-				<div id ="chatNavBar">
-			<UserNavbar></UserNavbar>
-			</div>
+					<UserNavbar></UserNavbar>
+			<div id="chatListContainer">
 				<div id="messageContainer">
 					<div id="submitContainer">
-					<form id="chatForm" onSubmit={handleFormSubmit}>
-						<input
-							id="form-field"
-							onChange={(e)=>{handleInputChange(e)}}
-							placeholder="Escreva uma mensagem"
-							type="text"
-						/>
-					<button id = "send_button"onClick={handleFormSubmit}>
-						<div id="chat_send_message">
-							<span className="material-icons">send_white_24dp</span>
-						</div>
+						<form id="chatForm" onSubmit={handleFormSubmit}>
+							<input
+								id="form-field"
+								onChange={(e)=>{handleInputChange(e)}}
+								placeholder="Escreva uma mensagem"
+								type="text"
+							/>
+							<button id = "send_button"onClick={handleFormSubmit}>
+								<div id="chat_send_message">
+									<span className="material-icons">send_white_24dp</span>
+								</div>
 							</button>
-							</form>
-							</div>
+						</form>
+					</div>
 
 					<ul id="listChat">
 						{messages.map((message) => (
@@ -103,12 +104,13 @@ const Chat = (props) => {
 						))}
 					</ul>
 					<div id="chatHeader">
-					<div id="chat_icon_arrow" onClick={redirectToContacts}>
+						<div id="chat_icon_arrow" onClick={redirectToContacts}>
 							<span className="material-icons">arrow_back</span>
 						</div>
 						<div id="chat_title">{userName}</div>
 						{(userPicture!="")&&(<img  id="chat_icon_pearson"src={userPicture}/>)}
 						</div>
+					</div>
 				</div>
 			</div>
 			<Footer></Footer>
