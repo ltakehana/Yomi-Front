@@ -12,7 +12,7 @@ const getMessage = async (token,user_id) => {
 }
 
   try {
-    response = await api.post('/message/'+ user_id,config);
+    response = await api.get('/message/'+ user_id,config);
 
     return response.data;
   } catch (error) {

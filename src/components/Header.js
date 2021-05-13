@@ -39,6 +39,11 @@ const Header = (props) => {
 	  history.push("/MyLibrary");
 	}
 
+	const contactsRedirect=()=>{
+		history.push("/contacts");
+	  }
+  
+
 	const searchRedirect=(data)=>{
 		history.push({pathname:"/search",state:data});
 		window.location.reload();
@@ -97,6 +102,12 @@ const Header = (props) => {
 												campaign
 											</span>
 											<span style={{fontSize:"1em"}}>Meus anúncios</span>
+										</p>
+										<p className="dropdown-itens" onClick={contactsRedirect}>
+											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>
+												mark_chat_read
+											</span>
+											<span style={{fontSize:"1em"}}>Minhas conversas</span>
 										</p>
 										<p className="dropdown-itens" onClick={myLibraryRedirect}>
 											<span className="material-icons" style={{fontSize:"1.5em",textAlign:"middle"}}>

@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import "../styles/pages/chatContacts.css";
 import Footer from "../components/Footer";
 import UserNavbar from "../components/UserNavbar";
-import profileImage from "../assets/person-24px 1.png"
+import defaultImage from "../assets/person-24px 1.png"
 import getChat from "../services/getChat";
 import { useHistory } from "react-router-dom";
 
@@ -11,9 +11,9 @@ const ChatContacts = (props) => {
 
     const [myContactsView,setContactsView] = useState([]);
     const [myContactsCount,setContactsCount] = useState(5);
-
+    const[profileImage, setProfileImage] = useState(defaultImage);
     const [contacts,setContacts] = useState([]);
-
+   
 
     useEffect(async ()=>{
         const token = sessionStorage.getItem("userToken");
@@ -56,7 +56,7 @@ const ChatContacts = (props) => {
                         <div id="contactsItem" onClick= {
                             ()=>{redirectToChat(contacts.user_id)}
                         }>
-                              <img id="contactsImage" src={profileImage} />  
+                              <img id="contactsImage" src={(contacts.user_picture)?("http://35.198.10.112/static/users_profile_pic/"+contacts.user_picture):(profileImage)} />  
                               <label className="contactsName">{contacts.user_name}</label>
                               <button className= "open_chat">
 							                    <span className="material-icons">send_white_24dp</span>

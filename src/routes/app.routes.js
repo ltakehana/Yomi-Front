@@ -17,7 +17,7 @@ const AppRoutes = () => (
 		<Route component={Profile} path="/Profile" exact />
     <Route component={MyAnnouncements} path="/MyAnnouncements" exact/>
 	<Route component={BookSearch} path="/search" exact />
-		<Route component={Chat} path="/chat/user_id" />
+		<Route component={Chat} path="/chat/:user_id" />
 		<Route component={BookSearch} path="/search" exact />
 		<Route component={Profile} path="/Profile" exact />
 		<Route component={MyAnnouncements} path="/MyAnnouncements" exact />

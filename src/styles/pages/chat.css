@@ -33,11 +33,15 @@
   padding-inline: 36%;
 }
 #chat_icon_pearson {
-  color: #5935a0;
+  border-radius: 5em;
+  width: 3em;
+  height: 3em;
+  margin: 0.3em;
 }
 
 #chat_icon_arrow {
   color: #5935a0;
+  cursor: pointer;
 }
 
 #listChat {
@@ -56,20 +60,44 @@
 
 #list-item {
   list-style: none;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+
 }
 
-#messageChat {
+.messageChat-user1{
   border: none;
   border-radius: 0.1em;
-  display: inline-block;
+  display: block;
   list-style: none;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   background: #5935a0;
   border-radius: 0.5em;
   color: beige;
+  float: right;
+  max-width: 70%;
+  margin-right: 0px;
+  margin-left: auto;
 }
+.messageChat-user2{
+  border: none;
+  border-radius: 0.1em;
+  display: block;
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 0.5em;
+  color:#5935a0;
+  text-align: left;
+  max-width: 70%;
+  margin-left: 0px;
+  margin-right: auto;
+  
+}
+
+
 
 #chatForm {
   background: rgba(248, 245, 255, 1);

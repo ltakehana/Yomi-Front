@@ -7,12 +7,13 @@ const postMessages = async (token,user_id,message) => {
   const config ={
     headers: {
         Authorization: `Bearer ${token}`,
-      }
+      },
+    
 
 }
 const body = {
    message: message,
-   user_id: user_id
+   user_id: parseInt(user_id)
 }
 
   try {
