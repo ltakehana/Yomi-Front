@@ -52,6 +52,11 @@ const MyLibrary = (props) => {
 		setMyAnnouncementsCount(announcesCont);
 	};
 
+	const deleteLibrary = async (id, token) => {
+		await deleteMyLibraryItem(id, token);
+		window.location.reload();
+	};
+
 	return (
 		<div id="body-container">
 			<Header></Header>
@@ -96,11 +101,10 @@ const MyLibrary = (props) => {
 										<span
 											className="material-icons"
 											onClick={() => {
-												deleteMyLibraryItem(
+												deleteLibrary(
 													announce.id,
 													token,
 												);
-												window.location.reload();
 											}}
 										>
 											delete

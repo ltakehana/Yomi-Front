@@ -40,7 +40,7 @@ const Profile = (props) => {
 		}
 	}, []);
 
-	const handleProfileUpdate = () => {
+	const handleProfileUpdate = async () => {
 		let name = null;
 		let email = null;
 		let telephone = null;
@@ -64,7 +64,8 @@ const Profile = (props) => {
 			birth_date: birth_date,
 			profile_image: profile_image,
 		};
-		updateUser(token, body);
+		await updateUser(token, body);
+		window.location.reload();
 	};
 
 	const fileToBase64 = async (file) =>
@@ -139,7 +140,12 @@ const Profile = (props) => {
 				</div>
 			</div>
 			<div className="profileContent">
-				<button id="profileUpdateButton" onClick={handleProfileUpdate}>
+				<button
+					id="profileUpdateButton"
+					onClick={() => {
+						handleProfileUpdate();
+					}}
+				>
 					Salvar alterações
 				</button>
 			</div>

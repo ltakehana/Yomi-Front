@@ -1,16 +1,17 @@
 import api from "./api";
 
-const deleteAnnouncement = async (id, token) => {
+const postMyLibrary = async (token, announcement_id) => {
 	let response = null;
 
 	const config = {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
+		announcement_id: announcement_id,
 	};
 
 	try {
-		response = await api.delete("/announcement/" + id, config);
+		response = await api.post("/myLibrary", config);
 		return response.data;
 	} catch (error) {
 		console.log(error);
@@ -18,4 +19,4 @@ const deleteAnnouncement = async (id, token) => {
 	}
 };
 
-export default deleteAnnouncement;
+export default postMyLibrary;

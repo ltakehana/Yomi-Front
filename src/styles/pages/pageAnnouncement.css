@@ -12,11 +12,26 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	margin-left: 4em;
+}
+
+#Selected {
+	color: white;
+	z-index: 2;
+	position: absolute;
+	font-size: 2.3em;
+	cursor: pointer;
+}
+#Selected-true {
+	color: #8c52ff;
+	z-index: 2;
+	position: absolute;
+	font-size: 4em;
+	cursor: pointer;
 }
 #book-image {
 	width: 60%;
 	height: 100%;
-	margin-left: 4em;
 }
 /*
 
@@ -72,9 +87,10 @@
 	font-size: 2.4em;
 }
 #book-seller-type {
-	font-size: 1.3em;
+	font-size: 1.6em;
 	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 0.4em;
+	font-weight: bold;
 }
 #seller-name {
 	font-size: 1.2em;
@@ -87,7 +103,7 @@
 	margin-bottom: 1em;
 }
 .contact-icons {
-	width: 30%;
+	width: 4em;
 	margin-right: 0.8em;
 }
 #contact-icons:hover {

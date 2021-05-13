@@ -10,15 +10,24 @@ import mensagem from "../assets/mensagem.svg";
 import getAnnouncement from "../services/getAnnouncement";
 import getAnnouncements from "../services/getAnnouncements";
 import { useHistory } from "react-router-dom";
+import postMyLibrary from "../services/postMyLibrary";
+import getMyLibraryItem from "../services/getMyLibraryItem";
 
 function PageAnnouncement(props) {
 	const announceId = props.match.params.announceId;
 	const [popular, setPopular] = useState([]);
 	const [announce, setAnnounce] = useState([]);
+	const [announceFav, setAnnounceFav] = useState(false);
+	const token = sessionStorage.getItem("userToken");
 	const history = useHistory();
 
 	useEffect(async () => {
 		let announces = await getAnnouncement(announceId);
+		let announceFav = await getMyLibraryItem(token, announceId);
+		console.log(announceFav);
+		if (announceFav) {
+			setAnnounceFav(true);
+		}
 		setAnnounce(announces);
 		let popular = await getAnnouncements({
 			orderBy: "popularity",
@@ -46,22 +55,16 @@ function PageAnnouncement(props) {
 							}
 						/>
 					)}
-					{/*
-					<div id="BookPreviewCarousel">
-						<BookPreview>
-							{ImagePreview.map((book, index) => (
-								<div className="bookPreview" key={index}>
-									<img
-										src={book.img}
-										onClick={() => {
-											setbookSelected(book);
-										}}
-									/>
-								</div>
-							))}
-						</BookPreview>
-					</div>
-						*/}
+					<span
+						className="material-icons"
+						id={announceFav ? "Selected-true" : "Selected"}
+						onClick={() => {
+							setAnnounceFav(true);
+							postMyLibrary(token, announceId);
+						}}
+					>
+						bookmark
+					</span>
 				</div>
 				<div id="book-resume-container">
 					<div id="book-resume-title">
@@ -96,14 +99,28 @@ function PageAnnouncement(props) {
 						<p>{announce.user_name}</p>
 					</div>
 					<div id="seller-icon">
-						<img className="contact-icons" src={whatsapp}></img>
-
-						<img className="contact-icons" src={email}></img>
+						{(announce.contact_type == 2 ||
+							announce.contact_type == 3 ||
+							announce.contact_type == 6 ||
+							announce.contact_type == 7) && (
+							<img className="contact-icons" src={email}></img>
+						)}
+						{(announce.contact_type == 4 ||
+							announce.contact_type == 5 ||
+							announce.contact_type == 6 ||
+							announce.contact_type == 7) && (
+							<img className="contact-icons" src={whatsapp}></img>
+						)}
 					</div>
-					<div id="seller-chat">
-						<img id="mensagem-icon" src={mensagem}></img>
-						<p>Conversar com o vendedor</p>
-					</div>
+					{(announce.contact_type == 1 ||
+						announce.contact_type == 3 ||
+						announce.contact_type == 5 ||
+						announce.contact_type == 7) && (
+						<div id={"seller-chat"}>
+							<img id="mensagem-icon" src={mensagem}></img>
+							<p>Conversar com o vendedor</p>
+						</div>
+					)}
 				</div>
 			</div>
 
@@ -124,10 +141,6 @@ function PageAnnouncement(props) {
 					<tr>
 						<td>Autor</td>
 						<td>{announce.author}</td>
-					</tr>
-					<tr>
-						<td>Edição</td>
-						<td>{announce.edition}</td>
 					</tr>
 					<tr>
 						<td>Editora</td>

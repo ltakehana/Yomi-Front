@@ -44,7 +44,20 @@ function Register({onLogin=()=>{}}) {
 				<input id="senha" type="password" onChange={(e) => setPassword(e.target.value)}/>
 				<label htmlFor="Email">Confirma senha: </label>
 				<input id="TrueSenha" type="password" onChange={(e) => setConfirmPassword(e.target.value)}/>
-				<button type="submit" onClick={handleSignUp}>Cadastre-se</button>
+				<button type="submit" onClick={() => {
+												if (
+													confirmPassword != "" &&
+													password != "" &&
+													email != "" &&
+													name != ""
+												) {
+													handleSignUp();
+												} else {
+													alert(
+														"preencha todos os dados",
+													);
+												}
+											}}>Cadastre-se</button>
 				<span id="returnLogin" onClick={onLogin}>Já tem uma conta?</span>
 				</div>
 			</div>

@@ -52,6 +52,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		let imageBase64 = await fileToBase64(file);
 		setAnnounceImage(imageBase64);
 	};
+
 	useEffect(async () => {
 		const responseCategories = await getCategories();
 		if (responseCategories) {
@@ -59,7 +60,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 		}
 	}, []);
 
-	const handleAnnounceUpdate = () => {
+	const handleAnnounceUpdate = async () => {
 		let name = null;
 		let author = null;
 		let year = null;
@@ -105,7 +106,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			district = announceDistrict;
 		}
 		if (announceCity && announceEstado) {
-			city = announceCity + "," + announceEstado;
+			city = announceEstado + "," + announceCity;
 		}
 		if (announceDescription) {
 			description = announceDescription;
@@ -140,8 +141,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 			contactType: contactType,
 			categoria: categoria,
 		};
-		console.log(body);
-		setAnnouncements(token, body);
+		await setAnnouncements(token, body);
+		setShowModal(false);
+		window.location.reload();
 	};
 
 	const closeModal = (e) => {
@@ -283,6 +285,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											<input
 												id="TitleInput"
 												placeholder="Título"
+												value={announceName}
 												type="input"
 												onChange={(e) =>
 													setAnnounceName(
@@ -296,6 +299,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													id="AutorInput"
 													placeholder="Autor(a)"
 													type="input"
+													value={announceAuthor}
 													onChange={(e) =>
 														setAnnounceAuthor(
 															e.target.value,
@@ -306,6 +310,9 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													id="EditoraInput"
 													placeholder="Editora"
 													type="input"
+													value={
+														announcePublishing_company
+													}
 													onChange={(e) =>
 														setAnnouncePublishing_company(
 															e.target.value,
@@ -316,6 +323,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													id="YearInput"
 													placeholder="Ano"
 													type="number"
+													value={announceYear}
 													onChange={(e) =>
 														setAnnounceYear(
 															e.target.value,
@@ -327,6 +335,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 												<select
 													id="CategoriaInput"
 													placeholder="Categoria"
+													value={announceCat}
 													type="Input"
 													onChange={(e) =>
 														setAnnounceCat(
@@ -354,6 +363,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 													id="PageInput"
 													placeholder="N° de páginas"
 													type="number"
+													value={announcePages}
 													onChange={(e) =>
 														setAnnouncePages(
 															e.target.value,
@@ -368,6 +378,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											id="SinopseInput"
 											placeholder="Sinopse do livro"
 											type="input"
+											value={announceSynopsis}
 											onChange={(e) =>
 												setAnnounceSynopsis(
 													e.target.value,
@@ -492,24 +503,63 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 										<input
 											className="CepInput"
 											placeholder="CEP"
+											value={announceCep}
 											type="input"
 											onChange={(e) => {
 												setAnnounceCep(e.target.value);
 											}}
 										></input>
-										<input
+										<select
 											className="CepInput"
 											placeholder="Estado"
+											value={announceEstado}
 											type="input"
 											onChange={(e) =>
 												setAnnounceEstado(
 													e.target.value,
 												)
 											}
-										></input>
+										>
+											<option>Acre (AC)</option>
+											<option>Alagoas (AL)</option>
+											<option>Amapá (AP)</option>
+											<option>Amazonas (AM)</option>
+											<option>Bahia (BA)</option>
+											<option>Ceará (CE)</option>
+											<option>
+												Distrito Federal (DF)
+											</option>
+											<option>Espírito Santo (ES)</option>
+											<option>Goiás (GO)</option>
+											<option>Maranhão (MA)</option>
+											<option>Mato Grosso (MT)</option>
+											<option>
+												Mato Grosso do Sul (MS)
+											</option>
+											<option>Minas Gerais (MG)</option>
+											<option>Pará (PA)</option>
+											<option>Paraíba (PB)</option>
+											<option>Paraná (PR)</option>
+											<option>Pernambuco (PE)</option>
+											<option>Piauí (PI)</option>
+											<option>Rio de Janeiro (RJ)</option>
+											<option>
+												Rio Grande do Norte (RN)
+											</option>
+											<option>
+												Rio Grande do Sul (RS)
+											</option>
+											<option>Rondônia (RO)</option>
+											<option>Roraima (RR)</option>
+											<option>Santa Catarina (SC)</option>
+											<option>São Paulo (SP)</option>
+											<option>Sergipe (SE)</option>
+											<option>Tocantins (TO)</option>
+										</select>
 										<input
 											className="CepInput"
 											placeholder="Cidade"
+											value={announceCity}
 											type="input"
 											onChange={(e) =>
 												setAnnounceCity(e.target.value)
@@ -520,6 +570,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 										<input
 											id="BairroInput"
 											placeholder="Bairro"
+											value={announceDistrict}
 											onChange={(e) =>
 												setAnnounceDistrict(
 													e.target.value,
@@ -532,6 +583,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											id="DiscriptionInput"
 											placeholder="Descrição do anúncio"
 											type="input"
+											value={announceDescription}
 											onChange={(e) =>
 												setAnnounceDescription(
 													e.target.value,
@@ -545,6 +597,7 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											<input
 												id="PriceInput"
 												placeholder="R$ 0,00"
+												value={announcePrice}
 												onChange={(e) =>
 													setAnnouncePrice(
 														e.target.value,
@@ -553,29 +606,27 @@ const ModalAnnouncement = ({ showModal, setShowModal }) => {
 											></input>
 										</div>
 									)}
-									<div className="NextButton">
+									<div
+										className="NextButton"
+										onClick={() => {
+											if (
+												announceCep != "" &&
+												announceCity != "" &&
+												announceDistrict != "" &&
+												announceDescription != "" &&
+												announceContactType != 0 &&
+												announceEstado != ""
+											) {
+												handleAnnounceUpdate();
+											} else {
+												alert(
+													"preencha todos os dados",
+												);
+											}
+										}}
+									>
 										<p>Finalizar</p>
-										<div
-											className="arrowNext"
-											onClick={() => {
-												if (
-													announceCep != "" &&
-													announceCity != "" &&
-													announceDistrict != "" &&
-													announceDescription != "" &&
-													announceContactType != 0 &&
-													announceEstado != ""
-												) {
-													handleAnnounceUpdate();
-													setShowModal(false);
-													window.location.reload();
-												} else {
-													alert(
-														"preencha todos os dados",
-													);
-												}
-											}}
-										>
+										<div className="arrowNext">
 											<span className="material-icons">
 												check_circle
 											</span>

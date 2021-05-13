@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import getAnnouncements from "../services/getAnnouncements";
+import getCategories from "../services/getCategories";
 import "../styles/pages/bookSearch.css";
 
 const BookSearch = (props) => {
@@ -18,12 +19,10 @@ const BookSearch = (props) => {
 
 	const [annouceTypeToggle, setAnnouceTypeToggle] = useState(0);
 
-
 	const announcementsRender = async () => {
 		let locationState = history.location.state;
 		let filter = [];
 		let data = {};
-
 
 		if (locationState.search) {
 			locationState.search
@@ -90,9 +89,15 @@ const BookSearch = (props) => {
 
 	useEffect(async () => {
 		announcementsRender();
-		const userExpiration = Date.parse(sessionStorage.getItem("userExpiration"));
-		console.log(userExpiration);
+		const userExpiration = Date.parse(
+			sessionStorage.getItem("userExpiration"),
+		);
 	}, [annouceTypeToggle]);
+
+	const searchRedirect = (data) => {
+		history.push({ pathname: "/search", state: data });
+		window.location.reload();
+	};
 
 	const redirectToBook = (id) => {
 		history.push("/announcement/" + id);
@@ -197,18 +202,42 @@ const BookSearch = (props) => {
 						{announcements.publishing_company &&
 							announcements.publishing_company.map(
 								(publishing_company, index) => (
-									<li>{publishing_company}</li>
+									<li
+										onClick={() => {
+											searchRedirect({
+												search: publishing_company,
+											});
+										}}
+									>
+										{publishing_company}
+									</li>
 								),
 							)}
 						<p>Gênero</p>
 						{announcements.categories &&
 							announcements.categories.map(
-								(categories, index) => <li>{categories}</li>,
+								(categories, index) => (
+									<li
+										onClick={() => {
+											searchRedirect({
+												search: categories,
+											});
+										}}
+									>
+										{categories}
+									</li>
+								),
 							)}
 						<p>Autor</p>
 						{announcements.authors &&
 							announcements.authors.map((authors, index) => (
-								<li>{authors}</li>
+								<li
+									onClick={() => {
+										searchRedirect({ search: authors });
+									}}
+								>
+									{authors}
+								</li>
 							))}
 					</div>
 
