@@ -2,351 +2,34 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
 import "../styles/pages/home.css";
-import Footer from "../components/Footer"
-
-const destaques = [
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-];
-
-const produtos = [
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-	{
-		img:
-			"https://img.travessa.com.br/livro/GR/44/44916ab9-4f6c-487e-ae2c-071e888a71ed.jpg",
-		name: "livro do rezende evil",
-	},
-	{
-		img:
-			"http://lojasaraiva.vteximg.com.br/arquivos/ids/12112327/1006600468.jpg?v=637142260469930000",
-		name: "livro do lucas neto",
-	},
-];
+import Footer from "../components/Footer";
+import getAnnouncements from "../services/getAnnouncements";
+import { useHistory } from "react-router-dom";
 
 const Home = (props) => {
 	const [invisibleProducts, setInvisibleProducts] = useState([]);
 
 	const [productView, setProductView] = useState([]);
+	const [popular, setPopular] = useState([]);
+	const [products, setProducts] = useState([]);
+	const [data, setData] = useState({});
+
+	const history = useHistory();
 
 	const [productViewCount, setProductViewCount] = useState(0);
 
-	const [annouceTypeToggle, setAnnouceTypeToggle] = useState("trocas");
-	useEffect(() => {
+	const [annouceTypeToggle, setAnnouceTypeToggle] = useState(0);
+
+	const renderProducts = async () => {
+		let mainProducts = await getAnnouncements(data);
+		setProducts(mainProducts.announcements);
 		const productViewCount = Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(productViewCount);
-		setProductView(produtos.slice(0, productViewCount));
+		const productView = mainProducts.announcements.slice(
+			0,
+			productViewCount,
+		);
+		setProductView(productView);
 		if (productView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
@@ -364,14 +47,23 @@ const Home = (props) => {
 			}
 			setInvisibleProducts(invisibleElements);
 		}
+	};
+
+	useEffect(async () => {
+		renderProducts();
+		let popular = await getAnnouncements({
+			orderBy: "popularity",
+			limit: 10,
+		});
+		setPopular(popular.announcements);
 	}, []);
 
 	const gradeExpandHandle = () => {
 		const tmpProductViewCount =
 			productViewCount + Math.floor(window.innerWidth / 288) * 3;
 		setProductViewCount(tmpProductViewCount);
-		setProductView(produtos.slice(0, tmpProductViewCount));
-		const tmpProductView = produtos.slice(0, tmpProductViewCount);
+		setProductView(products.slice(0, tmpProductViewCount));
+		const tmpProductView = products.slice(0, tmpProductViewCount);
 		if (tmpProductView.length % Math.floor(window.innerWidth / 288) === 0) {
 			setInvisibleProducts([]);
 		} else {
@@ -392,59 +84,83 @@ const Home = (props) => {
 		}
 	};
 
+	const handleFilterButton = (announceType) => {
+		let tmpData = data;
+		tmpData.announceType = announceType;
+		setData(tmpData);
+		renderProducts();
+	};
+
+	const redirectToBook = (id) => {
+		history.push("/announcement/" + id);
+	};
+
 	return (
 		<div id="body-container">
 			<Header></Header>
 			<h3 className="carousel-title">Destaques</h3>
 			<ProductCarousel>
-				{destaques.map((book, index) => (
-					<div className="bookTitle" key={index}>
-						<img src={book.img} />
-						<label>{book.name}</label>
-					</div>
-				))}
+				{popular &&
+					popular.length > 0 &&
+					popular.map((book, index) => (
+						<div
+							className="bookTitle"
+							key={index}
+							onClick={() => {
+								redirectToBook(book.id);
+							}}
+						>
+							<img
+								src={
+									"http://35.198.10.112/static/books_images/" +
+									book.book_cover
+								}
+							/>
+							<label>{book.name}</label>
+						</div>
+					))}
 			</ProductCarousel>
 			<div id="gradeHomeHeader">
 				<h3 className="carousel-title">Produtos</h3>
 				<div id="homeFilterButtons">
 					<button
 						className={
-							annouceTypeToggle == "doacoes"
+							annouceTypeToggle == 1
 								? "filterSelected"
 								: "filterButtons"
 						}
 						type="outline"
 						onClick={() => {
-							setAnnouceTypeToggle("doacoes");
-							gradeExpandHandle();
+							setAnnouceTypeToggle(1);
+							handleFilterButton(1);
 						}}
 					>
 						Doações
 					</button>
 					<button
 						className={
-							annouceTypeToggle == "vendas"
+							annouceTypeToggle == 2
 								? "filterSelected"
 								: "filterButtons"
 						}
 						type="outline"
 						onClick={() => {
-							setAnnouceTypeToggle("vendas");
-							gradeExpandHandle();
+							setAnnouceTypeToggle(2);
+							handleFilterButton(2);
 						}}
 					>
 						Vendas
 					</button>
 					<button
 						className={
-							annouceTypeToggle == "trocas"
+							annouceTypeToggle == 3
 								? "filterSelected"
 								: "filterButtons"
 						}
 						type="outline"
 						onClick={() => {
-							setAnnouceTypeToggle("trocas");
-							gradeExpandHandle();
+							setAnnouceTypeToggle(3);
+							handleFilterButton(3);
 						}}
 					>
 						Trocas
@@ -453,22 +169,35 @@ const Home = (props) => {
 			</div>
 			<div className="grade-container">
 				{productView.map((book, index) => (
-					<div className="bookContainer" key={index}>
+					<div
+						className="bookContainer"
+						key={index}
+						onClick={() => {
+							redirectToBook(book.id);
+						}}
+					>
 						<div className="bookTitle">
-							<img src={book.img} />
+							<img
+								src={
+									"http://35.198.10.112/static/books_images/" +
+									book.book_cover
+								}
+							/>
 							<label>{book.name}</label>
 						</div>
 					</div>
 				))}
 				{invisibleProducts}
-				<button
-					onClick={() => {
-						gradeExpandHandle();
-					}}
-					className="grade-expand"
-				>
-					&middot;&middot;&middot;
-				</button>
+				{invisibleProducts.length == 0 && products.length != 0 && (
+					<button
+						onClick={() => {
+							gradeExpandHandle();
+						}}
+						className="grade-expand"
+					>
+						&middot;&middot;&middot;
+					</button>
+				)}
 			</div>
 			<Footer></Footer>
 		</div>

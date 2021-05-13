@@ -6,6 +6,14 @@
 	padding: 0px;
 }
 
+.headerProfilePic {
+	display: flex;
+	width: 3em;
+	height: 3em;
+	border-radius: 2em;
+	margin-right: 1em;
+}
+
 #header_content {
 	display: flex;
 	width: 100vw;
@@ -17,7 +25,7 @@
 
 #header_logo {
 	margin-top: 1.2em;
-	margin-left: 0.5em;
+	margin-left: 5%;
 	height: 7.2em;
 	vertical-align: middle;
 }
@@ -25,7 +33,7 @@
 #header_search {
 	width: 50vw;
 	height: 3.6em;
-	margin-top: 3em;
+	margin-top: 3.5%;
 	margin-left: 2em;
 	margin-right: 2em;
 	border: none;
@@ -83,7 +91,7 @@
 	width: 30%;
 	margin-right: 0px;
 	padding-right: 0px;
-	margin-top: 2.5%;
+	margin-top: 3.8%;
 	padding-top: 0px;
 }
 
@@ -142,41 +150,41 @@
 .dropdown {
 	position: relative;
 	display: inline-block;
-  }
-  
+}
+
 .dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #f8f5ff;
 	min-width: 260px;
-	box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
 	padding: 12px 16px;
 	z-index: 1;
 	border-radius: 0.3em;
 }
-  
+
 .dropdown:hover .dropdown-content {
-	display: block;	
+	display: block;
 }
 
-
-.dropdown-itens{
+.dropdown-itens {
 	font-size: 1em;
 	font-weight: bold;
-	padding:1em;
+	padding: 1em;
 	cursor: pointer;
+	text-align: top;
 }
 
-.dropdown-itens:hover{
+.dropdown-itens:hover {
 	background-color: #8c52ff;
 	color: #f8f5ff;
 	font-size: 1em;
 	font-weight: bold;
-	padding:1em;
-	border-radius:1em;
+	padding: 1em;
+	border-radius: 1em;
 	cursor: pointer;
 }
 
-.dropdown-itens span{
+.dropdown-itens span {
 	font-size: 1em;
 }
